@@ -1,0 +1,26 @@
+Metric,Value
+Training Cross-Entropy Loss,3.1863934690990146
+Validation Cross-Entropy Loss,2.7611412239074706
+Best Validation Cross-Entropy Loss,2.7611412239074706
+Perplexity,15.817884399476874
+Bits-Per-Character,3.983484750925391
+Generalization Gap,-0.4252522451915439
+Top-1 Next-Character Accuracy,0.292421875
+Distinct-1,0.4642857142857143
+Distinct-2,0.5384615384615384
+Distinct-3,0.625
+Repeated 4-gram Rate,0.25
+Gradient Norm Mean,1.1317350977943057
+Gradient Norm Max,2.254696846008301
+Gradient Norm Last,0.7933741807937622
+Loss Spikes,0
+NaN or Inf Losses,0
+Parameter Count,113152
+Training Tokens/sec,42518.726954080536
+Generation Tokens/sec,579.8035897571771
+Peak Memory (MB),417.6
+Peak Memory Source,process_rss
+Total Training Time (sec),3.0104382038116455
+Epochs,1
+Optimizer Steps,63
+Device,cpu

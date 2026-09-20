@@ -1,0 +1,16 @@
+[
+ {
+  "prompt": "Once upon a time",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "Once upon a time t t t the the the the the the the the the the t the the the",
+  "continuation": " t t t the the the the the the the the the the t the the the"
+ },
+ {
+  "prompt": "Once upon a time",
+  "mode": "temperature_1.0",
+  "temperature": 1.0,
+  "text": "Once upon a timer uy,  od\"!.se iceydy,a ikir j8oed carh, ghwnIes hey mdn e.y",
+  "continuation": "r uy,  od\"!.se iceydy,a ikir j8oed carh, ghwnIes hey mdn e.y"
+ }
+]

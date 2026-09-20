@@ -1,0 +1,14 @@
+{
+  "source": "roneneldan/TinyStories",
+  "seed": 20,
+  "block_size": 64,
+  "n_train_sequences": 2000,
+  "n_val_sequences": 200,
+  "train_tokens": 128000,
+  "val_tokens": 12800,
+  "vocab_size": 70,
+  "n_stories_total": 188,
+  "n_train_stories": 170,
+  "n_val_stories": 18,
+  "val_unk_tokens": 0
+}

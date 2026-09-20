@@ -1,0 +1,44 @@
+2026-09-20 16:48:39,187 INFO run_id smoke_20260920_164839 member Poushali_Purkayastha task task1_llm
+2026-09-20 16:48:39,189 INFO config task1_llm/Poushali_Purkayastha/src/configs/smoke.yaml {"run_name": "smoke", "is_final": false, "seed": 20, "data": {"source": "hf", "hf_dataset": "roneneldan/TinyStories", "block_size": 64, "n_train": 2000, "n_val": 200, "val_story_fraction": 0.1, "char_margin": 1.05}, "model": {"n_layer": 2, "d_model": 64, "n_head": 2, "d_ff": 256, "dropout": 0.1}, "train": {"epochs": 1, "batch_size": 32, "lr": 0.001, "min_lr": 0.0001, "warmup_steps": 10, "schedule": "cosine", "weight_decay": 0.1, "betas": [0.9, 0.95], "grad_clip": 1.0, "amp": true, "log_interval": 10, "eval_batch_size": 64}, "generation": {"prompts": ["Once upon a time"], "max_new_tokens": 60, "temperatures": [1.0], "n_per_prompt": 1}}
+2026-09-20 16:48:39,189 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-20 16:48:39,189 INFO git {"commit": "80bbe993a703884b96e3406c0a252054f55e0560", "branch": "poushali-branch", "dirty": true}
+2026-09-20 16:48:39,189 INFO using cached data in task1_llm/Poushali_Purkayastha/data_processed/smoke
+2026-09-20 16:48:40,501 INFO device cpu amp False dtype float32
+2026-09-20 16:48:40,501 INFO model {"n_layer": 2, "d_model": 64, "n_head": 2, "d_ff": 256, "dropout": 0.1} params 113152
+2026-09-20 16:48:40,501 INFO train sequences 2000 val sequences 200 steps/epoch 63 total steps 63
+2026-09-20 16:48:40,568 INFO epoch 1 step 1/63 loss 4.2535 lr 1.00e-04 grad_norm 2.255
+2026-09-20 16:48:40,996 INFO epoch 1 step 10/63 loss 3.7975 lr 1.00e-03 grad_norm 1.622
+2026-09-20 16:48:41,474 INFO epoch 1 step 20/63 loss 3.3216 lr 9.37e-04 grad_norm 1.268
+2026-09-20 16:48:41,917 INFO epoch 1 step 30/63 loss 3.0430 lr 7.44e-04 grad_norm 1.026
+2026-09-20 16:48:42,434 INFO epoch 1 step 40/63 loss 2.8978 lr 4.84e-04 grad_norm 0.804
+2026-09-20 16:48:42,942 INFO epoch 1 step 50/63 loss 2.7735 lr 2.46e-04 grad_norm 0.812
+2026-09-20 16:48:43,394 INFO epoch 1 step 60/63 loss 2.7942 lr 1.13e-04 grad_norm 0.711
+2026-09-20 16:48:43,579 INFO epoch 1 done train_loss 3.1864 val_loss 2.7611 val_top1 0.2924 time 3.0s tokens/sec 42519
+2026-09-20 16:48:44,202 INFO generated 2 samples, 120 tokens, 580 tokens/sec
+2026-09-20 16:48:44,203 INFO metric Training Cross-Entropy Loss = 3.1863934690990146
+2026-09-20 16:48:44,203 INFO metric Validation Cross-Entropy Loss = 2.7611412239074706
+2026-09-20 16:48:44,203 INFO metric Best Validation Cross-Entropy Loss = 2.7611412239074706
+2026-09-20 16:48:44,203 INFO metric Perplexity = 15.817884399476874
+2026-09-20 16:48:44,203 INFO metric Bits-Per-Character = 3.983484750925391
+2026-09-20 16:48:44,203 INFO metric Generalization Gap = -0.4252522451915439
+2026-09-20 16:48:44,203 INFO metric Top-1 Next-Character Accuracy = 0.292421875
+2026-09-20 16:48:44,203 INFO metric Distinct-1 = 0.4642857142857143
+2026-09-20 16:48:44,203 INFO metric Distinct-2 = 0.5384615384615384
+2026-09-20 16:48:44,203 INFO metric Distinct-3 = 0.625
+2026-09-20 16:48:44,203 INFO metric Repeated 4-gram Rate = 0.25
+2026-09-20 16:48:44,203 INFO metric Gradient Norm Mean = 1.1317350977943057
+2026-09-20 16:48:44,203 INFO metric Gradient Norm Max = 2.254696846008301
+2026-09-20 16:48:44,203 INFO metric Gradient Norm Last = 0.7933741807937622
+2026-09-20 16:48:44,203 INFO metric Loss Spikes = 0
+2026-09-20 16:48:44,203 INFO metric NaN or Inf Losses = 0
+2026-09-20 16:48:44,203 INFO metric Parameter Count = 113152
+2026-09-20 16:48:44,203 INFO metric Training Tokens/sec = 42518.726954080536
+2026-09-20 16:48:44,203 INFO metric Generation Tokens/sec = 579.8035897571771
+2026-09-20 16:48:44,203 INFO metric Peak Memory (MB) = 417.6
+2026-09-20 16:48:44,203 INFO metric Peak Memory Source = process_rss
+2026-09-20 16:48:44,203 INFO metric Total Training Time (sec) = 3.0104382038116455
+2026-09-20 16:48:44,203 INFO metric Epochs = 1
+2026-09-20 16:48:44,203 INFO metric Optimizer Steps = 63
+2026-09-20 16:48:44,219 INFO metric Device = cpu
+2026-09-20 16:48:45,058 INFO manifest reproducibility/manifests/Poushali_Purkayastha_task1_llm_smoke_20260920_164839.json
+2026-09-20 16:48:45,059 INFO run finished in 5.9 sec

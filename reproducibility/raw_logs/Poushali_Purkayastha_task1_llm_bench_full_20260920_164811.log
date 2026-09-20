@@ -1,0 +1,12 @@
+2026-09-20 16:48:11,659 INFO run_id bench_full_20260920_164811 member Poushali_Purkayastha task task1_llm
+2026-09-20 16:48:11,660 INFO config task1_llm/Poushali_Purkayastha/src/configs/full.yaml {"run_name": "full", "is_final": true, "seed": 20, "data": {"source": "hf", "hf_dataset": "roneneldan/TinyStories", "block_size": 128, "n_train": 100000, "n_val": 10000, "val_story_fraction": 0.1, "char_margin": 1.05}, "model": {"n_layer": 4, "d_model": 256, "n_head": 4, "d_ff": 1024, "dropout": 0.1}, "train": {"epochs": 10, "batch_size": 128, "lr": 0.0006, "min_lr": 6e-05, "warmup_steps": 300, "schedule": "cosine", "weight_decay": 0.1, "betas": [0.9, 0.95], "grad_clip": 1.0, "amp": true, "log_interval": 50, "eval_batch_size": 512}, "generation": {"prompts": ["Once upon a time", "One day, a little girl", "The cat"], "max_new_tokens": 400, "temperatures": [0.7, 1.0], "n_per_prompt": 2}}
+2026-09-20 16:48:11,662 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-20 16:48:11,662 INFO git {"commit": "80bbe993a703884b96e3406c0a252054f55e0560", "branch": "poushali-branch", "dirty": true}
+2026-09-20 16:48:16,161 INFO collected 16786 stories, 14901188 chars from hf
+2026-09-20 16:48:16,349 INFO prepared data {"source": "roneneldan/TinyStories", "seed": 20, "block_size": 128, "n_train_sequences": 100000, "n_val_sequences": 10000, "train_tokens": 12800000, "val_tokens": 1280000, "vocab_size": 93, "n_stories_total": 16786, "n_train_stories": 15108, "n_val_stories": 1678, "val_unk_tokens": 2}
+2026-09-20 16:48:17,987 INFO device cpu amp False dtype float32
+2026-09-20 16:48:17,987 INFO model {"n_layer": 4, "d_model": 256, "n_head": 4, "d_ff": 1024, "dropout": 0.1} params 3239936
+2026-09-20 16:48:17,987 INFO train sequences 100000 val sequences 10000 steps/epoch 782 total steps 7820
+2026-09-20 16:48:22,839 INFO epoch 1 step 1/7820 loss 4.5771 lr 2.00e-06 grad_norm 10.444
+2026-09-20 16:48:29,900 INFO benchmark {"bench_steps": 3, "device": "cpu", "param_count": 3239936, "train_tokens_per_sec": 4125.875425991976, "sec_per_step": 3.9710360368092856, "total_steps": 7820, "estimated_full_train_sec": 31053.501807848614, "estimated_full_train_min": 517.5583634641436, "peak_memory_mb": 931.4, "peak_memory_source": "process_rss"}
+2026-09-20 16:48:29,903 INFO benchmark finished in 18.3 sec

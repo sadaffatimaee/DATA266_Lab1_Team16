@@ -1,0 +1,5 @@
+=== sample 1 | prompt: 'Once upon a time' | mode: greedy ===
+Once upon a time t t t the the the the the the the the the the t the the the
+
+=== sample 2 | prompt: 'Once upon a time' | mode: temperature_1.0 ===
+Once upon a timer uy,  od"!.se iceydy,a ikir j8oed carh, ghwnIes hey mdn e.y

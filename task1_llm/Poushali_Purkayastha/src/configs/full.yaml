@@ -1,0 +1,35 @@
+run_name: full
+is_final: true
+seed: 20
+data:
+  source: hf
+  hf_dataset: roneneldan/TinyStories
+  block_size: 128
+  n_train: 100000
+  n_val: 10000
+  val_story_fraction: 0.1
+  char_margin: 1.05
+model:
+  n_layer: 4
+  d_model: 256
+  n_head: 4
+  d_ff: 1024
+  dropout: 0.1
+train:
+  epochs: 10
+  batch_size: 128
+  lr: 6.0e-4
+  min_lr: 6.0e-5
+  warmup_steps: 300
+  schedule: cosine
+  weight_decay: 0.1
+  betas: [0.9, 0.95]
+  grad_clip: 1.0
+  amp: true
+  log_interval: 50
+  eval_batch_size: 512
+generation:
+  prompts: ["Once upon a time", "One day, a little girl", "The cat"]
+  max_new_tokens: 400
+  temperatures: [0.7, 1.0]
+  n_per_prompt: 2
