@@ -10,7 +10,6 @@ import yaml
 
 SRC_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SRC_DIR))
-sys.path.insert(0, str(SRC_DIR.parents[1]))
 
 from data import load_arrays, prepare
 from evaluate_task1 import compute_metrics, write_csv

@@ -4,7 +4,7 @@ Poushali Purkayastha, Team 16
 
 ## What was built
 
-A decoder-only Transformer written from scratch in PyTorch: 4 pre-norm blocks, 4 attention heads, d_model 256, feed-forward width 1024, a 128-character context, learnable token and positional embeddings, and a linear language-modelling head. It is trained as a next-character predictor on 100,000 TinyStories sequences for 10 epochs with AdamW, linear warm-up, and cosine decay. The code is in src/, split into data.py, model.py, train.py, generate.py, and run.py. Metrics are computed by the shared task1_llm/evaluate_task1.py so they are comparable with Sadaf's.
+A decoder-only Transformer written from scratch in PyTorch: 4 pre-norm blocks, 4 attention heads, d_model 256, feed-forward width 1024, a 128-character context, learnable token and positional embeddings, and a linear language-modelling head. It is trained as a next-character predictor on 100,000 TinyStories sequences for 10 epochs with AdamW, linear warm-up, and cosine decay. The code is in src/, split into data.py, model.py, train.py, generate.py, and run.py. Metrics are computed by src/evaluate_task1.py, the same script used in Sadaf's folder, so the two sets of numbers are comparable.
 
 Final numbers are in metrics_report.csv. Sections marked "to fill" are completed from the final GPU run.
 

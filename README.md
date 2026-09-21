@@ -6,14 +6,22 @@ Members: Poushali Purkayastha, Sadaf Fatima Syeda. Each member builds, trains, a
 
 ## Layout
 
+The repo follows the structure given in the lab brief.
+
 ```
+README.md
 task1_llm/
-  data/                      shared raw dataset pointer
-  evaluate_task1.py          shared Task 1 metric script
-  Poushali_Purkayastha/      Poushali's Task 1 work
-  Sadaf_Fatima_Syeda/        Sadaf's Task 1 work
+  data/                      shared raw TinyStories pointer
+  Poushali_Purkayastha/
+  Sadaf_Fatima_Syeda/
 task2_sentiment/
+  data/                      shared raw Yelp polarity pointer
+  Poushali_Purkayastha/
+  Sadaf_Fatima_Syeda/
 task3_gan/
+  data/                      shared Monet and photo images pointer
+  Poushali_Purkayastha/
+  Sadaf_Fatima_Syeda/
 reproducibility/
   manifests/                 one JSON per run: config, hardware, package versions, checkpoint to metric mapping
   raw_logs/                  one untouched log per run
@@ -21,7 +29,7 @@ report/
   DATA266_Lab1_Report_Team_16.pdf
 ```
 
-Inside each member folder: `src/` (code and the notebook with outputs), `data_processed/`, `checkpoints/`, `outputs/`, `metrics_report.csv`, `failure_analysis.md`, `results.md`.
+Inside each member folder: `src/` (code and the notebook with outputs), `data_processed/`, `checkpoints/`, `outputs/`, `metrics_report.csv`, `failure_analysis.md`, `results.md`. Task 3 folders also hold `outputs/pred_A2B/`, `outputs/pred_B2A/`, `evaluate_local.py`, `submission.csv`, and `full_metrics_report.csv`.
 
 ## Setup
 
@@ -76,12 +84,12 @@ Where results live:
 
 Per-epoch checkpoints and last.pt are not committed. They are backed up to Drive after each run.
 
-## Shared Task 1 evaluation
+## Task 1 evaluation script
 
-`task1_llm/evaluate_task1.py` computes every Task 1 metric from two files so both members' numbers are computed the same way:
+`task1_llm/Poushali_Purkayastha/src/evaluate_task1.py` computes every Task 1 metric from two files. Each member's src folder carries the same script so both members' numbers are computed the same way.
 
 ```
-python task1_llm/evaluate_task1.py --summary <run_summary.json> --samples <samples.json> --out metrics_report.csv
+python task1_llm/Poushali_Purkayastha/src/evaluate_task1.py --summary <run_summary.json> --samples <samples.json> --out metrics_report.csv
 ```
 
 `run_summary.json` needs these keys: final_train_loss, final_val_loss, best_val_loss, val_top1_accuracy, grad_norm_mean, grad_norm_max, grad_norm_last, loss_spikes, nan_losses, param_count, train_tokens_per_sec, generation_tokens_per_sec, peak_memory_mb, peak_memory_source, train_time_sec, epochs, optimizer_steps, device. `samples.json` is a list of objects with a `continuation` field holding the generated text without the prompt. Distinct-n and the repeated 4-gram rate are computed on whitespace-split words of the continuations; the repeated 4-gram rate is averaged per sample.

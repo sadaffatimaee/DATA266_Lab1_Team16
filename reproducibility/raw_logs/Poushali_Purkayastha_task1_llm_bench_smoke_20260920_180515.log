@@ -1,0 +1,11 @@
+2026-09-20 18:05:15,434 INFO run_id bench_smoke_20260920_180515 member Poushali_Purkayastha task task1_llm
+2026-09-20 18:05:15,442 INFO config task1_llm/Poushali_Purkayastha/src/configs/smoke.yaml {"run_name": "smoke", "is_final": false, "seed": 20, "data": {"source": "hf", "hf_dataset": "roneneldan/TinyStories", "block_size": 64, "n_train": 2000, "n_val": 200, "val_story_fraction": 0.1, "char_margin": 1.05}, "model": {"n_layer": 2, "d_model": 64, "n_head": 2, "d_ff": 256, "dropout": 0.1}, "train": {"epochs": 1, "batch_size": 32, "lr": 0.001, "min_lr": 0.0001, "warmup_steps": 10, "schedule": "cosine", "weight_decay": 0.1, "betas": [0.9, 0.95], "grad_clip": 1.0, "amp": true, "log_interval": 10, "eval_batch_size": 64}, "generation": {"prompts": ["Once upon a time"], "max_new_tokens": 60, "temperatures": [1.0], "n_per_prompt": 1}}
+2026-09-20 18:05:15,442 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-20 18:05:15,442 INFO git {"commit": "8cda5bf6fa5c7d26c6a5202f605f96b5df53971d", "branch": "poushali-branch", "dirty": true}
+2026-09-20 18:05:15,442 INFO using cached data in task1_llm/Poushali_Purkayastha/data_processed/smoke
+2026-09-20 18:05:21,293 INFO device cpu amp False dtype float32
+2026-09-20 18:05:21,293 INFO model {"n_layer": 2, "d_model": 64, "n_head": 2, "d_ff": 256, "dropout": 0.1} params 113152
+2026-09-20 18:05:21,293 INFO train sequences 2000 val sequences 200 steps/epoch 63 total steps 63
+2026-09-20 18:05:21,792 INFO epoch 1 step 1/63 loss 4.2535 lr 1.00e-04 grad_norm 2.255
+2026-09-20 18:05:21,977 INFO benchmark {"bench_steps": 2, "device": "cpu", "param_count": 113152, "train_tokens_per_sec": 6047.009763988833, "sec_per_step": 0.33867979049682617, "total_steps": 63, "estimated_full_train_sec": 21.33682680130005, "estimated_full_train_min": 0.3556137800216675, "peak_memory_mb": 358.5, "peak_memory_source": "process_rss"}
+2026-09-20 18:05:21,984 INFO benchmark finished in 6.9 sec
