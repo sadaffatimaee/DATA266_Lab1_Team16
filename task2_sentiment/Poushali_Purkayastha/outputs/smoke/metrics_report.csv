@@ -1,0 +1,195 @@
+Model,Metric,Value
+baseline,Accuracy,0.5055
+baseline,Precision (macro),0.6103912601626016
+baseline,Recall (macro),0.5069520625685631
+baseline,F1 (macro),0.35544313284616824
+baseline,Precision (micro),0.5055
+baseline,Recall (micro),0.5055
+baseline,F1 (micro),0.5055
+baseline,Precision (weighted),0.6107163363821138
+baseline,Recall (weighted),0.5055
+baseline,F1 (weighted),0.3545101367809631
+baseline,Confusion TN,23
+baseline,Confusion FP,980
+baseline,Confusion FN,9
+baseline,Confusion TP,988
+baseline,ROC-AUC,0.6546738920650286
+baseline,PR-AUC,0.6511458515840626
+baseline,MCC,0.055405665691260694
+baseline,Brier Score,0.247251391259361
+baseline,ECE,0.022111122474074336
+baseline,Accuracy 95% CI low,0.4782375
+baseline,Accuracy 95% CI high,0.5292625
+baseline,Macro-F1 95% CI low,0.3410629980648722
+baseline,Macro-F1 95% CI high,0.36862413544515454
+baseline,MCC 95% CI low,0.007032720400116966
+baseline,MCC 95% CI high,0.08609133413264454
+baseline,Macro-F1 [length_bucket=long],0.2919664646501031
+baseline,Error Rate [length_bucket=long],0.5961844197138315
+baseline,Support [length_bucket=long],629
+baseline,Macro-F1 [length_bucket=medium],0.3660640434833983
+baseline,Error Rate [length_bucket=medium],0.47027027027027024
+baseline,Support [length_bucket=medium],925
+baseline,Macro-F1 [length_bucket=short],0.4252039369001591
+baseline,Error Rate [length_bucket=short],0.4013452914798207
+baseline,Support [length_bucket=short],446
+baseline,Macro-F1 [has_negation=0],0.46735911602209945
+baseline,Error Rate [has_negation=0],0.22718446601941744
+baseline,Support [has_negation=0],515
+baseline,Macro-F1 [has_negation=1],0.3092286354422277
+baseline,Error Rate [has_negation=1],0.5872053872053873
+baseline,Support [has_negation=1],1485
+baseline,Macro-F1 [has_but=0],0.3971618291513408
+baseline,Error Rate [has_but=0],0.43560209424083773
+baseline,Support [has_but=0],955
+baseline,Macro-F1 [has_but=1],0.3184635224299182
+baseline,Error Rate [has_but=1],0.5483253588516747
+baseline,Support [has_but=1],1045
+baseline,Macro-F1 [has_exclamation=0],0.3262799224443961
+baseline,Error Rate [has_exclamation=0],0.5654205607476636
+baseline,Support [has_exclamation=0],1070
+baseline,Macro-F1 [has_exclamation=1],0.3817217332289942
+baseline,Error Rate [has_exclamation=1],0.41290322580645167
+baseline,Support [has_exclamation=1],930
+baseline,Parameter Count,161089
+baseline,Training Time (sec),0.13937139511108398
+baseline,Training Examples/sec,21525.220419935475
+baseline,Inference Examples/sec,62549.27225005965
+baseline,Peak Memory (MB),476.0
+baseline,Peak Memory Source,process_rss
+baseline,Device,cpu
+baseline,Epochs,1
+baseline,Best Epoch,1
+baseline,Optimizer Steps,47
+textcnn,Accuracy,0.6
+textcnn,Precision (macro),0.6007669214662328
+textcnn,Recall (macro),0.5998583987255885
+textcnn,F1 (macro),0.5990372885297599
+textcnn,Precision (micro),0.6
+textcnn,Recall (micro),0.6
+textcnn,F1 (micro),0.6
+textcnn,Precision (weighted),0.600742702893615
+textcnn,Recall (weighted),0.6
+textcnn,F1 (weighted),0.599096230048346
+textcnn,Confusion TN,649
+textcnn,Confusion FP,354
+textcnn,Confusion FN,446
+textcnn,Confusion TP,551
+textcnn,ROC-AUC,0.6345817112354011
+textcnn,PR-AUC,0.627330719972359
+textcnn,MCC,0.20062326307908696
+textcnn,Brier Score,0.2435103956058253
+textcnn,ECE,0.0745348233431578
+textcnn,Accuracy 95% CI low,0.5807125
+textcnn,Accuracy 95% CI high,0.623525
+textcnn,Macro-F1 95% CI low,0.579791792978194
+textcnn,Macro-F1 95% CI high,0.6228612921539176
+textcnn,MCC 95% CI low,0.16223557147522744
+textcnn,MCC 95% CI high,0.2475280982360769
+textcnn,Macro-F1 [length_bucket=long],0.5655604864147578
+textcnn,Error Rate [length_bucket=long],0.4038155802861685
+textcnn,Support [length_bucket=long],629
+textcnn,Macro-F1 [length_bucket=medium],0.5880772966509693
+textcnn,Error Rate [length_bucket=medium],0.4118918918918919
+textcnn,Support [length_bucket=medium],925
+textcnn,Macro-F1 [length_bucket=short],0.6186789783767819
+textcnn,Error Rate [length_bucket=short],0.3699551569506726
+textcnn,Support [length_bucket=short],446
+textcnn,Macro-F1 [has_negation=0],0.5564168819982773
+textcnn,Error Rate [has_negation=0],0.3669902912621359
+textcnn,Support [has_negation=0],515
+textcnn,Macro-F1 [has_negation=1],0.5695511274118416
+textcnn,Error Rate [has_negation=1],0.4114478114478114
+textcnn,Support [has_negation=1],1485
+textcnn,Macro-F1 [has_but=0],0.6101610767872905
+textcnn,Error Rate [has_but=0],0.38743455497382195
+textcnn,Support [has_but=0],955
+textcnn,Macro-F1 [has_but=1],0.576921483557042
+textcnn,Error Rate [has_but=1],0.4114832535885168
+textcnn,Support [has_but=1],1045
+textcnn,Macro-F1 [has_exclamation=0],0.5787818979853622
+textcnn,Error Rate [has_exclamation=0],0.4121495327102803
+textcnn,Support [has_exclamation=0],1070
+textcnn,Macro-F1 [has_exclamation=1],0.6124185791119072
+textcnn,Error Rate [has_exclamation=1],0.38602150537634405
+textcnn,Support [has_exclamation=1],930
+textcnn,Parameter Count,166241
+textcnn,Training Time (sec),0.6304843425750732
+textcnn,Training Examples/sec,4758.246632655724
+textcnn,Inference Examples/sec,23429.313566399192
+textcnn,Peak Memory (MB),501.8
+textcnn,Peak Memory Source,process_rss
+textcnn,Device,cpu
+textcnn,Epochs,1
+textcnn,Best Epoch,1
+textcnn,Optimizer Steps,47
+textcnn,"McNemar b (baseline right, model wrong)",449
+textcnn,"McNemar c (baseline wrong, model right)",638
+textcnn,McNemar Statistic,32.51517939282429
+textcnn,McNemar p-value,1.1826518890936424e-08
+bilstm,Accuracy,0.5985
+bilstm,Precision (macro),0.6034682782999112
+bilstm,Recall (macro),0.5988188893700044
+bilstm,F1 (macro),0.5940671113729707
+bilstm,Precision (micro),0.5985
+bilstm,Recall (micro),0.5985
+bilstm,F1 (micro),0.5985
+bilstm,Precision (weighted),0.60353858412491
+bilstm,Recall (weighted),0.5985
+bilstm,F1 (weighted),0.5939398514123861
+bilstm,Confusion TN,494
+bilstm,Confusion FP,509
+bilstm,Confusion FN,294
+bilstm,Confusion TP,703
+bilstm,ROC-AUC,0.640112761014849
+bilstm,PR-AUC,0.6521886561677294
+bilstm,MCC,0.2022337295964622
+bilstm,Brier Score,0.24371010957572123
+bilstm,ECE,0.07577191215753559
+bilstm,Accuracy 95% CI low,0.57535
+bilstm,Accuracy 95% CI high,0.6192875
+bilstm,Macro-F1 95% CI low,0.5700621188542543
+bilstm,Macro-F1 95% CI high,0.6153985208474851
+bilstm,MCC 95% CI low,0.15393414801482497
+bilstm,MCC 95% CI high,0.24428504512479673
+bilstm,Macro-F1 [length_bucket=long],0.5318518743544565
+bilstm,Error Rate [length_bucket=long],0.46740858505564387
+bilstm,Support [length_bucket=long],629
+bilstm,Macro-F1 [length_bucket=medium],0.6030569663905827
+bilstm,Error Rate [length_bucket=medium],0.38810810810810814
+bilstm,Support [length_bucket=medium],925
+bilstm,Macro-F1 [length_bucket=short],0.647337901950448
+bilstm,Error Rate [length_bucket=short],0.3363228699551569
+bilstm,Support [length_bucket=short],446
+bilstm,Macro-F1 [has_negation=0],0.5653713332298619
+bilstm,Error Rate [has_negation=0],0.3378640776699029
+bilstm,Support [has_negation=0],515
+bilstm,Macro-F1 [has_negation=1],0.5762088210487059
+bilstm,Error Rate [has_negation=1],0.4235690235690236
+bilstm,Support [has_negation=1],1485
+bilstm,Macro-F1 [has_but=0],0.6039872408293461
+bilstm,Error Rate [has_but=0],0.38115183246073303
+bilstm,Support [has_but=0],955
+bilstm,Macro-F1 [has_but=1],0.5796826054172022
+bilstm,Error Rate [has_but=1],0.4200956937799043
+bilstm,Support [has_but=1],1045
+bilstm,Macro-F1 [has_exclamation=0],0.5794377829951367
+bilstm,Error Rate [has_exclamation=0],0.42056074766355145
+bilstm,Support [has_exclamation=0],1070
+bilstm,Macro-F1 [has_exclamation=1],0.5998312974856743
+bilstm,Error Rate [has_exclamation=1],0.37956989247311823
+bilstm,Support [has_exclamation=1],930
+bilstm,Parameter Count,176961
+bilstm,Training Time (sec),7.58071231842041
+bilstm,Training Examples/sec,395.74117496983564
+bilstm,Inference Examples/sec,3855.404321618895
+bilstm,Peak Memory (MB),519.1
+bilstm,Peak Memory Source,process_rss
+bilstm,Device,cpu
+bilstm,Epochs,1
+bilstm,Best Epoch,1
+bilstm,Optimizer Steps,47
+bilstm,"McNemar b (baseline right, model wrong)",294
+bilstm,"McNemar c (baseline wrong, model right)",480
+bilstm,McNemar Statistic,44.218346253229974
+bilstm,McNemar p-value,2.937156005156971e-11

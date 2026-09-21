@@ -1,0 +1,48 @@
+{
+  "source": "fancyzhx/yelp_polarity",
+  "seed": 20,
+  "official_train_rows": 560000,
+  "official_test_rows": 38000,
+  "n_train": 100000,
+  "n_val": 10000,
+  "n_test": 38000,
+  "train_class_counts": {
+    "negative": 49555,
+    "positive": 50445
+  },
+  "val_class_counts": {
+    "negative": 5046,
+    "positive": 4954
+  },
+  "test_class_counts": {
+    "negative": 19000,
+    "positive": 19000
+  },
+  "preprocessing": {
+    "lowercase": true,
+    "literal_newlines_replaced": true,
+    "punctuation_and_special_characters_removed": true,
+    "apostrophes_kept_inside_words": true,
+    "remove_stopwords": true,
+    "keep_negations": true,
+    "stemmer": "snowball_english"
+  },
+  "max_len": 256,
+  "vocab_size": 20000,
+  "min_freq": 2,
+  "train_encoding": {
+    "unk_rate": 0.010102977907756253,
+    "truncated_fraction": 0.0217,
+    "mean_tokens": 68.88662
+  },
+  "val_encoding": {
+    "unk_rate": 0.011432581094550734,
+    "truncated_fraction": 0.0209,
+    "mean_tokens": 68.1211
+  },
+  "test_encoding": {
+    "unk_rate": 0.011426799678738777,
+    "truncated_fraction": 0.021026315789473685,
+    "mean_tokens": 68.5783947368421
+  }
+}

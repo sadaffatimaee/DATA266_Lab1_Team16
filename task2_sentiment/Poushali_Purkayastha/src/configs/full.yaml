@@ -1,0 +1,55 @@
+run_name: full
+is_final: true
+seed: 20
+data:
+  hf_dataset: fancyzhx/yelp_polarity
+  eda_rows: null
+  n_train: 100000
+  n_val: 10000
+  n_test: null
+  max_len: 256
+  vocab_size: 20000
+  min_freq: 2
+  remove_stopwords: true
+  keep_negations: true
+  stem: true
+models:
+  baseline:
+    type: mean_mlp
+    embed_dim: 128
+    hidden_dim: 128
+    dropout: 0.3
+    lr: 1.0e-3
+    epochs: 4
+    batch_size: 256
+  textcnn:
+    type: textcnn
+    embed_dim: 128
+    n_filters: 100
+    kernel_sizes: [3, 4, 5]
+    dropout: 0.5
+    lr: 1.0e-3
+    epochs: 4
+    batch_size: 256
+  bilstm:
+    type: bilstm
+    embed_dim: 128
+    hidden_dim: 128
+    n_layers: 1
+    dropout: 0.3
+    lr: 1.0e-3
+    epochs: 4
+    batch_size: 256
+train:
+  weight_decay: 0.0
+  grad_clip: 1.0
+  amp: true
+  log_interval: 50
+  eval_batch_size: 1024
+evaluation:
+  baseline: baseline
+  bootstrap_samples: 1000
+  ece_bins: 10
+  error_review_model: bilstm
+  n_review_per_group: 5
+  slice_min_support: 200

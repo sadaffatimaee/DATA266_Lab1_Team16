@@ -1,0 +1,33 @@
+{
+  "model": "baseline",
+  "type": "mean_mlp",
+  "model_config": {
+    "type": "mean_mlp",
+    "embed_dim": 128,
+    "hidden_dim": 128,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "epochs": 4,
+    "batch_size": 256
+  },
+  "device": "cpu",
+  "amp_dtype": "float32",
+  "param_count": 2576641,
+  "epochs": 4,
+  "steps_per_epoch": 391,
+  "optimizer_steps": 1564,
+  "best_epoch": 3,
+  "best_val_macro_f1": 0.9199988447833187,
+  "final_train_loss": 0.16836519184929635,
+  "train_examples": 400000,
+  "train_time_sec": 71.05578970909119,
+  "train_examples_per_sec": 5629.379416338008,
+  "test_inference_time_sec": 1.7529640197753906,
+  "test_inference_examples_per_sec": 21677.569859573607,
+  "grad_norm_mean": 0.0990763460607518,
+  "grad_norm_max": 0.21611717343330383,
+  "nan_losses": 0,
+  "checkpoint": "best.pt",
+  "peak_memory_mb": 903.0,
+  "peak_memory_source": "process_rss"
+}

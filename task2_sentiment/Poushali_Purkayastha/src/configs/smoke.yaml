@@ -1,0 +1,55 @@
+run_name: smoke
+is_final: false
+seed: 20
+data:
+  hf_dataset: fancyzhx/yelp_polarity
+  eda_rows: 20000
+  n_train: 3000
+  n_val: 300
+  n_test: 2000
+  max_len: 128
+  vocab_size: 5000
+  min_freq: 1
+  remove_stopwords: true
+  keep_negations: true
+  stem: true
+models:
+  baseline:
+    type: mean_mlp
+    embed_dim: 32
+    hidden_dim: 32
+    dropout: 0.3
+    lr: 1.0e-3
+    epochs: 1
+    batch_size: 64
+  textcnn:
+    type: textcnn
+    embed_dim: 32
+    n_filters: 16
+    kernel_sizes: [3, 4, 5]
+    dropout: 0.5
+    lr: 1.0e-3
+    epochs: 1
+    batch_size: 64
+  bilstm:
+    type: bilstm
+    embed_dim: 32
+    hidden_dim: 32
+    n_layers: 1
+    dropout: 0.3
+    lr: 1.0e-3
+    epochs: 1
+    batch_size: 64
+train:
+  weight_decay: 0.0
+  grad_clip: 1.0
+  amp: true
+  log_interval: 10
+  eval_batch_size: 256
+evaluation:
+  baseline: baseline
+  bootstrap_samples: 100
+  ece_bins: 10
+  error_review_model: bilstm
+  n_review_per_group: 5
+  slice_min_support: 50

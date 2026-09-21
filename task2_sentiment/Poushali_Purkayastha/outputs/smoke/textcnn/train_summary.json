@@ -1,0 +1,38 @@
+{
+  "model": "textcnn",
+  "type": "textcnn",
+  "model_config": {
+    "type": "textcnn",
+    "embed_dim": 32,
+    "n_filters": 16,
+    "kernel_sizes": [
+      3,
+      4,
+      5
+    ],
+    "dropout": 0.5,
+    "lr": 0.001,
+    "epochs": 1,
+    "batch_size": 64
+  },
+  "device": "cpu",
+  "amp_dtype": "float32",
+  "param_count": 166241,
+  "epochs": 1,
+  "steps_per_epoch": 47,
+  "optimizer_steps": 47,
+  "best_epoch": 1,
+  "best_val_macro_f1": 0.5039992850440145,
+  "final_train_loss": 0.7341679055640038,
+  "train_examples": 3000,
+  "train_time_sec": 0.6304843425750732,
+  "train_examples_per_sec": 4758.246632655724,
+  "test_inference_time_sec": 0.08536314964294434,
+  "test_inference_examples_per_sec": 23429.313566399192,
+  "grad_norm_mean": 1.0423349941030462,
+  "grad_norm_max": 1.8635830879211426,
+  "nan_losses": 0,
+  "checkpoint": "best.pt",
+  "peak_memory_mb": 501.8,
+  "peak_memory_source": "process_rss"
+}

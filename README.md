@@ -51,6 +51,12 @@ python task1_llm/Poushali_Purkayastha/src/run.py --config configs/smoke.yaml
 
 Outputs land in `task1_llm/Poushali_Purkayastha/outputs/smoke/`, the log in `reproducibility/raw_logs/`, and the manifest in `reproducibility/manifests/`.
 
+The Task 2 equivalent trains the three sentiment models on 3,000 reviews and evaluates on 2,000, in under a minute after a one-time dataset download:
+
+```
+python task2_sentiment/Poushali_Purkayastha/src/run.py --config configs/smoke.yaml
+```
+
 ## Task 1, Poushali Purkayastha
 
 Full run, 10 epochs on 100K training sequences, meant for a GPU:
@@ -100,6 +106,51 @@ python task1_llm/Poushali_Purkayastha/src/evaluate_task1.py --summary <run_summa
 - Every run writes one raw log to `reproducibility/raw_logs/` and one manifest to `reproducibility/manifests/`. Neither is edited after the run.
 - Raw datasets are not committed. Each task's `data/README.md` points to the shared copy.
 
-## Task 2 and Task 3
+## Task 2, Poushali Purkayastha
+
+Full run, three models on 100K training reviews, evaluated on the official 38K test split, meant for a GPU:
+
+```
+python task2_sentiment/Poushali_Purkayastha/src/run.py --config configs/full.yaml
+```
+
+Train a subset of the models, for example only the two experimental ones:
+
+```
+python task2_sentiment/Poushali_Purkayastha/src/run.py --config configs/full.yaml --models textcnn,bilstm
+```
+
+The same run through the notebook, so its outputs are saved in place:
+
+```
+bash task2_sentiment/Poushali_Purkayastha/src/run_task2.sh
+```
+
+Throughput benchmark, 30 steps per model:
+
+```
+python task2_sentiment/Poushali_Purkayastha/src/run.py --config configs/full.yaml --bench-steps 30
+```
+
+Re-run only the evaluation on saved predictions, for example after adding a model:
+
+```
+python task2_sentiment/Poushali_Purkayastha/src/evaluate_task2.py --config configs/full.yaml
+```
+
+Where results live:
+
+| File | Content |
+| --- | --- |
+| task2_sentiment/Poushali_Purkayastha/metrics_report.csv | every required Task 2 metric for every model, long format |
+| task2_sentiment/Poushali_Purkayastha/outputs/full/metrics_wide.csv | the same metrics with models side by side |
+| task2_sentiment/Poushali_Purkayastha/outputs/full/eda/ | class distribution, length distributions, eda.json with malformed-row checks |
+| task2_sentiment/Poushali_Purkayastha/outputs/full/<model>/ | curves, confusion matrix, ROC and PR curves, reliability diagram, test probabilities, error_review_candidates.md |
+| task2_sentiment/Poushali_Purkayastha/checkpoints/full/<model>/best.pt | best-epoch weights per model |
+| task2_sentiment/Poushali_Purkayastha/data_processed/full/ | tokenized splits, vocabulary, test slices, test texts, meta.json |
+| task2_sentiment/Poushali_Purkayastha/results.md | preprocessing, model and hyperparameter justification, results |
+| task2_sentiment/Poushali_Purkayastha/failure_analysis.md | the 20-error manual review and the proposed fix |
+
+## Task 3
 
 Added as the work lands.

@@ -1,0 +1,38 @@
+2026-09-21 16:20:50,490 INFO run_id smoke_20260921_162050 member Poushali_Purkayastha task task2_sentiment models baseline,textcnn,bilstm
+2026-09-21 16:20:50,494 INFO config task2_sentiment/Poushali_Purkayastha/src/configs/smoke.yaml {"run_name": "smoke", "is_final": false, "seed": 20, "data": {"hf_dataset": "fancyzhx/yelp_polarity", "eda_rows": 20000, "n_train": 3000, "n_val": 300, "n_test": 2000, "max_len": 128, "vocab_size": 5000, "min_freq": 1, "remove_stopwords": true, "keep_negations": true, "stem": true}, "models": {"baseline": {"type": "mean_mlp", "embed_dim": 32, "hidden_dim": 32, "dropout": 0.3, "lr": 0.001, "epochs": 1, "batch_size": 64}, "textcnn": {"type": "textcnn", "embed_dim": 32, "n_filters": 16, "kernel_sizes": [3, 4, 5], "dropout": 0.5, "lr": 0.001, "epochs": 1, "batch_size": 64}, "bilstm": {"type": "bilstm", "embed_dim": 32, "hidden_dim": 32, "n_layers": 1, "dropout": 0.3, "lr": 0.001, "epochs": 1, "batch_size": 64}}, "train": {"weight_decay": 0.0, "grad_clip": 1.0, "amp": true, "log_interval": 10, "eval_batch_size": 256}, "evaluation": {"baseline": "baseline", "bootstrap_samples": 100, "ece_bins": 10, "error_review_model": "bilstm", "n_review_per_group": 5, "slice_min_support": 50}}
+2026-09-21 16:20:50,497 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-21 16:20:50,498 INFO git {"commit": "3ce84b78d08bcba1ceb0b85d0e1046432790631b", "branch": "main", "dirty": true}
+2026-09-21 16:20:50,502 INFO using cached data in task2_sentiment/Poushali_Purkayastha/data_processed/smoke
+2026-09-21 16:20:50,541 INFO data meta {"source": "fancyzhx/yelp_polarity", "seed": 20, "official_train_rows": 560000, "official_test_rows": 38000, "n_train": 3000, "n_val": 300, "n_test": 2000, "train_class_counts": {"negative": 1488, "positive": 1512}, "val_class_counts": {"negative": 154, "positive": 146}, "test_class_counts": {"negative": 1003, "positive": 997}, "preprocessing": {"lowercase": true, "literal_newlines_replaced": true, "punctuation_and_special_characters_removed": true, "apostrophes_kept_inside_words": true, "remove_stopwords": true, "keep_negations": true, "stemmer": "snowball_english"}, "max_len": 128, "vocab_size": 5000, "min_freq": 1, "train_encoding": {"unk_rate": 0.04433213636565146, "truncated_fraction": 0.12866666666666668, "mean_tokens": 60.152}, "val_encoding": {"unk_rate": 0.0583862297706868, "truncated_fraction": 0.12, "mean_tokens": 58.29}, "test_encoding": {"unk_rate": 0.06022287139762358, "truncated_fraction": 0.1305, "mean_tokens": 60.932}}
+2026-09-21 16:20:52,482 INFO baseline device cpu amp False params 161089 config {"type": "mean_mlp", "embed_dim": 32, "hidden_dim": 32, "dropout": 0.3, "lr": 0.001, "epochs": 1, "batch_size": 64}
+2026-09-21 16:20:52,482 INFO baseline train 3000 val 300 test 2000 steps/epoch 47 total steps 47
+2026-09-21 16:20:52,497 INFO baseline epoch 1 step 1/47 loss 0.6800 grad_norm 0.177
+2026-09-21 16:20:52,529 INFO baseline epoch 1 step 10/47 loss 0.7047 grad_norm 0.156
+2026-09-21 16:20:52,553 INFO baseline epoch 1 step 20/47 loss 0.6986 grad_norm 0.081
+2026-09-21 16:20:52,569 INFO baseline epoch 1 step 30/47 loss 0.6948 grad_norm 0.087
+2026-09-21 16:20:52,607 INFO baseline epoch 1 step 40/47 loss 0.6760 grad_norm 0.070
+2026-09-21 16:20:52,621 INFO baseline epoch 1 done train_loss 0.6915 val_loss 0.6865 val_acc 0.4900 val_macro_f1 0.3506 time 0.1s examples/sec 21525
+2026-09-21 16:20:52,990 INFO textcnn device cpu amp False params 166241 config {"type": "textcnn", "embed_dim": 32, "n_filters": 16, "kernel_sizes": [3, 4, 5], "dropout": 0.5, "lr": 0.001, "epochs": 1, "batch_size": 64}
+2026-09-21 16:20:52,996 INFO textcnn train 3000 val 300 test 2000 steps/epoch 47 total steps 47
+2026-09-21 16:20:53,022 INFO textcnn epoch 1 step 1/47 loss 0.7601 grad_norm 0.900
+2026-09-21 16:20:53,137 INFO textcnn epoch 1 step 10/47 loss 0.7982 grad_norm 1.441
+2026-09-21 16:20:53,293 INFO textcnn epoch 1 step 20/47 loss 0.7048 grad_norm 0.690
+2026-09-21 16:20:53,406 INFO textcnn epoch 1 step 30/47 loss 0.7425 grad_norm 0.878
+2026-09-21 16:20:53,517 INFO textcnn epoch 1 step 40/47 loss 0.7049 grad_norm 0.707
+2026-09-21 16:20:53,646 INFO textcnn epoch 1 done train_loss 0.7342 val_loss 0.6886 val_acc 0.5067 val_macro_f1 0.5040 time 0.6s examples/sec 4758
+2026-09-21 16:20:54,072 INFO bilstm device cpu amp False params 176961 config {"type": "bilstm", "embed_dim": 32, "hidden_dim": 32, "n_layers": 1, "dropout": 0.3, "lr": 0.001, "epochs": 1, "batch_size": 64}
+2026-09-21 16:20:54,073 INFO bilstm train 3000 val 300 test 2000 steps/epoch 47 total steps 47
+2026-09-21 16:20:54,267 INFO bilstm epoch 1 step 1/47 loss 0.6843 grad_norm 0.198
+2026-09-21 16:20:55,685 INFO bilstm epoch 1 step 10/47 loss 0.7053 grad_norm 0.160
+2026-09-21 16:20:57,160 INFO bilstm epoch 1 step 20/47 loss 0.6835 grad_norm 0.123
+2026-09-21 16:20:58,800 INFO bilstm epoch 1 step 30/47 loss 0.6998 grad_norm 0.108
+2026-09-21 16:21:00,670 INFO bilstm epoch 1 step 40/47 loss 0.6922 grad_norm 0.108
+2026-09-21 16:21:01,700 INFO bilstm epoch 1 done train_loss 0.6913 val_loss 0.6825 val_acc 0.5633 val_macro_f1 0.5598 time 7.6s examples/sec 396
+2026-09-21 16:21:03,202 INFO baseline accuracy 0.5055 macro-F1 0.3554 MCC 0.0554 ROC-AUC 0.6547 ECE 0.0221
+2026-09-21 16:21:03,770 INFO textcnn accuracy 0.6000 macro-F1 0.5990 MCC 0.2006 ROC-AUC 0.6346 ECE 0.0745
+2026-09-21 16:21:04,248 INFO bilstm accuracy 0.5985 macro-F1 0.5941 MCC 0.2022 ROC-AUC 0.6401 ECE 0.0758
+2026-09-21 16:21:04,264 INFO McNemar textcnn vs baseline: b 449 c 638 statistic 32.515 p 1.183e-08
+2026-09-21 16:21:04,264 INFO McNemar bilstm vs baseline: b 294 c 480 statistic 44.218 p 2.937e-11
+2026-09-21 16:21:04,264 INFO error review candidates for bilstm: 20 rows, worst slice {"slice": "length_bucket=long", "support": 629, "macro_f1": 0.5318518743544565, "error_rate": 0.46740858505564387}
+2026-09-21 16:21:04,988 INFO manifest reproducibility/manifests/Poushali_Purkayastha_task2_sentiment_smoke_20260921_162050.json
+2026-09-21 16:21:04,989 INFO run finished in 14.6 sec
