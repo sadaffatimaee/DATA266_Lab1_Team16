@@ -11,3 +11,8 @@ task*/data/*
 **/checkpoints/**/epoch_*.pt
 **/checkpoints/**/last.pt
 **/outputs/**/bench_*.json
+task3_gan/**/data_processed/**/*.npy
+task3_gan/**/outputs/**/pred_A2B/
+task3_gan/**/outputs/**/pred_B2A/
+task3_gan/**/outputs/**/kaggle/images.zip
+task3_gan/**/outputs/**/audit/blind/

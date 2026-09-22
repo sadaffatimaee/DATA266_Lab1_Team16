@@ -1,0 +1,68 @@
+Metric,Value
+FID photo->monet,330.53456153335327
+KID mean photo->monet,0.3435613214969635
+KID std photo->monet,0.019393419846892357
+Precision photo->monet,0.375
+Recall photo->monet,0.0
+Density photo->monet,0.125
+Coverage photo->monet,0.02500000037252903
+"Images compared photo->monet (real, fake)","40, 40"
+FID monet->photo,331.0407844657929
+KID mean monet->photo,0.3057263493537903
+KID std monet->photo,0.011814350262284279
+Precision monet->photo,0.02500000037252903
+Recall monet->photo,0.0
+Density monet->photo,0.01666666753590107
+Coverage monet->photo,0.05000000074505806
+"Images compared monet->photo (real, fake)","40, 40"
+Memorization distance photo->monet,0.3813557028770447
+MiFID-like photo->monet (epsilon 0.1),330.53456153335327
+Cycle-reconstruction L1 photo->monet->photo,0.21373403072357178
+Cycle-reconstruction L1 monet->photo->monet,0.2038899064064026
+Identity L1 G_BA(photo) vs photo,0.21418824791908264
+Identity L1 G_AB(monet) vs monet,0.19948932528495789
+LPIPS input vs translation photo->monet,0.8544210195541382
+LPIPS input vs translation monet->photo,0.7199088931083679
+LPIPS input vs reconstruction photo->monet->photo,0.968319296836853
+LPIPS input vs reconstruction monet->photo->monet,0.7453082203865051
+Content cosine similarity photo->monet,0.48748579621315
+Content cosine similarity monet->photo,0.5168834924697876
+"Holdout images (photo, monet)","20, 8"
+Final epoch mean loss_g,14.076165358225504
+Final epoch mean loss_d_a,0.3676719268163045
+Final epoch mean loss_d_b,0.36920441935459775
+Final epoch mean loss_gan_ab,0.5433411101500193
+Final epoch mean loss_gan_ba,0.4773043592770894
+Final epoch mean loss_cycle,0.8715444405873617
+Final epoch mean loss_identity,0.8680150906244913
+Gradient norm G mean,71.88675053914388
+Gradient norm G max,93.13325500488281
+Gradient norm D mean,13.2610445022583
+Gradient norm D max,21.023792266845703
+NaN or Inf losses,0
+Mixed precision disabled at step,
+Parameter count g_ab,198659
+Parameter count g_ba,198659
+Parameter count d_a,175089
+Parameter count d_b,175089
+Parameter count total,747496
+Training time (sec),4.11349081993103
+Training images/sec,11.668921142944182
+Training image size,64
+Epochs,2
+Optimizer steps,12
+Peak memory (MB),459.1
+Peak memory source,process_rss
+Device,cpu
+Inference images/sec photo->monet,131.035504564549
+Inference images/sec monet->photo,164.4441395047038
+Inference image size,64
+Submission images,80
+Human audit style mean,to fill: run audit.py
+Human audit content mean,to fill: run audit.py
+Human audit artifacts mean,to fill: run audit.py
+Human audit Cohen's kappa (mean over criteria),to fill: run audit.py
+Human audit percent agreement (mean over criteria),to fill: run audit.py
+Kaggle public score,to fill: outputs/<run>/kaggle/kaggle_results.json
+Kaggle private score,to fill
+Kaggle leaderboard rank,to fill

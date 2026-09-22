@@ -151,6 +151,56 @@ Where results live:
 | task2_sentiment/Poushali_Purkayastha/results.md | preprocessing, model and hyperparameter justification, results |
 | task2_sentiment/Poushali_Purkayastha/failure_analysis.md | the 20-error manual review and the proposed fix |
 
-## Task 3
+## Task 3, Poushali Purkayastha
 
-Added as the work lands.
+Domain A is photos, domain B is Monet paintings. pred_A2B holds Monet-styled photos (the Kaggle direction) and pred_B2A holds photo-styled Monets.
+
+Data: place the competition's monet_jpg and photo_jpg folders under task3_gan/data (see task3_gan/data/README.md). Full run, training at 128 px for 7,200 steps, translation of every image at 256 px, the Kaggle zip, and all metrics:
+
+```
+python task3_gan/Poushali_Purkayastha/src/run.py --config configs/full.yaml
+```
+
+Stages can run separately, for example training and translation in the lab and metrics afterwards:
+
+```
+python task3_gan/Poushali_Purkayastha/src/run.py --config configs/full.yaml --stage train
+python task3_gan/Poushali_Purkayastha/src/run.py --config configs/full.yaml --stage translate
+python task3_gan/Poushali_Purkayastha/evaluate_local.py --config configs/full.yaml
+```
+
+The same through the notebook, with `TASK3_STAGE` choosing the stage:
+
+```
+bash task3_gan/Poushali_Purkayastha/src/run_task3.sh
+```
+
+Throughput benchmark, 30 steps:
+
+```
+python task3_gan/Poushali_Purkayastha/src/run.py --config configs/full.yaml --bench-steps 30
+```
+
+Human audit, after both members' pred_A2B folders exist. `make` builds a blinded set from 30 fixed holdout photos, `score` computes means and Cohen's kappa from the two filled sheets:
+
+```
+python task3_gan/Poushali_Purkayastha/src/audit.py make --config configs/full.yaml --extra Sadaf_Fatima_Syeda=task3_gan/Sadaf_Fatima_Syeda/outputs/pred_A2B
+python task3_gan/Poushali_Purkayastha/src/audit.py score --config configs/full.yaml --sheets task3_gan/Poushali_Purkayastha/outputs/full/audit/sheet_Poushali.csv task3_gan/Poushali_Purkayastha/outputs/full/audit/sheet_Sadaf.csv
+```
+
+Where results live:
+
+| File | Content |
+| --- | --- |
+| task3_gan/Poushali_Purkayastha/full_metrics_report.csv | every required Task 3 metric, both directions |
+| task3_gan/Poushali_Purkayastha/submission.csv | index of the images in the Kaggle zip |
+| task3_gan/Poushali_Purkayastha/outputs/full/kaggle/images.zip | the Kaggle submission, not committed, backed up to Drive |
+| task3_gan/Poushali_Purkayastha/outputs/full/pred_A2B_preview, pred_B2A_preview | the first 60 translated images of each direction; the full sets are not committed |
+| task3_gan/Poushali_Purkayastha/outputs/full/samples | one grid per epoch: real photo, fake Monet, reconstruction, real Monet, fake photo, reconstruction |
+| task3_gan/Poushali_Purkayastha/outputs/full/loss_curves.png, lr_schedule.png | generator, discriminator, cycle, identity losses, gradient norms, learning rate |
+| task3_gan/Poushali_Purkayastha/outputs/full/audit | blinded audit set, rating sheets, audit_results.json |
+| task3_gan/Poushali_Purkayastha/checkpoints/full/generators.pt | both generators in fp16 |
+| task3_gan/Poushali_Purkayastha/data_processed/full/holdout.json | the holdout file names and split sizes |
+| task3_gan/Poushali_Purkayastha/results.md, failure_analysis.md | justification, results, artifact analysis |
+
+Kaggle scores are pulled into the metrics report from outputs/full/kaggle/kaggle_results.json once it is filled with public_score, private_score, and rank.

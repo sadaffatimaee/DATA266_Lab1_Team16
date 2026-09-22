@@ -1,0 +1,47 @@
+{
+  "device": "cpu",
+  "amp_dtype": "float32",
+  "amp_disabled_step": null,
+  "param_count": {
+    "g_ab": 198659,
+    "g_ba": 198659,
+    "d_a": 175089,
+    "d_b": 175089,
+    "total": 747496
+  },
+  "image_size": 64,
+  "epochs": 2,
+  "steps_per_epoch": 6,
+  "optimizer_steps": 12,
+  "batch_size": 2,
+  "train_time_sec": 4.11349081993103,
+  "train_images_per_sec": 11.668921142944182,
+  "final_epoch_losses": {
+    "epoch": 2,
+    "lr": 0.0001,
+    "epoch_time_sec": 2.26850962638855,
+    "loss_g": 14.076165358225504,
+    "loss_d_a": 0.3676719268163045,
+    "loss_d_b": 0.36920441935459775,
+    "loss_gan_ab": 0.5433411101500193,
+    "loss_gan_ba": 0.4773043592770894,
+    "loss_cycle": 0.8715444405873617,
+    "loss_identity": 0.8680150906244913
+  },
+  "grad_norm_g_mean": 71.88675053914388,
+  "grad_norm_g_max": 93.13325500488281,
+  "grad_norm_d_mean": 13.2610445022583,
+  "grad_norm_d_max": 21.023792266845703,
+  "nan_losses": 0,
+  "checkpoints": {
+    "generators.pt": {
+      "epoch": 2
+    },
+    "last.pt": {
+      "epoch": 2
+    }
+  },
+  "peak_memory_mb": 459.1,
+  "peak_memory_source": "process_rss",
+  "run_id": "smoke_20260921_184537"
+}

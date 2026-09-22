@@ -1,0 +1,20 @@
+2026-09-21 17:42:52,323 INFO run_id smoke_20260921_174251 member Poushali_Purkayastha task task3_gan stage all
+2026-09-21 17:42:52,329 INFO config task3_gan/Poushali_Purkayastha/src/configs/smoke.yaml {"run_name": "smoke", "is_final": false, "seed": 20, "data": {"photo_dir": "task3_gan/data/photo_jpg", "monet_dir": "task3_gan/data/monet_jpg", "max_photos": 80, "max_monet": 40, "image_size": 64, "infer_size": 64, "holdout_photo": 20, "holdout_monet": 8}, "model": {"ngf": 16, "ndf": 16, "n_res_blocks": 2, "n_d_layers": 3, "dropout": 0.0}, "train": {"epochs": 2, "steps_per_epoch": 6, "batch_size": 2, "lr": 0.0002, "beta1": 0.5, "decay_start_epoch": 1, "gan_mode": "lsgan", "lambda_cycle": 10.0, "lambda_identity": 5.0, "pool_size": 8, "grad_clip": 10.0, "amp": true, "amp_nan_limit": 5, "log_interval": 3, "sample_every": 1}, "translate": {"batch_size": 8, "preview_images": 10}, "metrics": {"fid_max_images": 40, "kid_subsets": 5, "kid_subset_size": 20, "knn_k": 3, "mifid_epsilon": 0.1, "lpips_net": "alex", "batch_size": 20}, "audit": {"n_samples": 6, "raters": ["Poushali", "Sadaf"]}, "kaggle": {"competition": "data-266-fall-2026-gan-image-style-transfer", "zip_name": "images.zip"}}
+2026-09-21 17:42:52,329 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-21 17:42:52,329 INFO git {"commit": "f08e6966bf1ea06ac662fc33ba1109417d199131", "branch": "main", "dirty": true}
+2026-09-21 17:42:53,218 INFO data photos 80 (train 60 holdout 20) monets 40 (train 32 holdout 8) size 64
+2026-09-21 17:42:58,379 INFO device cpu amp False dtype float32
+2026-09-21 17:42:58,379 INFO model {"ngf": 16, "ndf": 16, "n_res_blocks": 2, "n_d_layers": 3, "dropout": 0.0} params {"g_ab": 198659, "g_ba": 198659, "d_a": 175089, "d_b": 175089, "total": 747496}
+2026-09-21 17:42:58,379 INFO train photos 60 monets 32 batch 2 steps/epoch 6 epochs 2 total steps 12
+2026-09-21 17:42:59,196 INFO epoch 1 step 1/12 loss_g 18.237 loss_d_a 0.933 loss_d_b 0.471 gan_ab 0.412 gan_ba 1.233 cycle 1.103 idt 1.113 grad_g 77.56 grad_d 21.02 lr 2.0e-04
+2026-09-21 17:43:00,147 INFO epoch 1 step 3/12 loss_g 16.419 loss_d_a 0.604 loss_d_b 0.395 gan_ab 0.648 gan_ba 0.498 cycle 1.018 idt 1.019 grad_g 71.95 grad_d 14.39 lr 2.0e-04
+2026-09-21 17:43:01,657 INFO epoch 1 step 6/12 loss_g 15.023 loss_d_a 0.455 loss_d_b 0.309 gan_ab 0.491 gan_ba 0.354 cycle 0.945 idt 0.946 grad_g 71.55 grad_d 12.42 lr 2.0e-04
+2026-09-21 17:43:01,657 INFO epoch 1 done loss_g 16.514 loss_d_a 0.622 loss_d_b 0.408 cycle 1.013 idt 1.015 time 3.3s images/sec 7.4
+2026-09-21 17:43:05,187 INFO epoch 2 step 9/12 loss_g 13.477 loss_d_a 0.364 loss_d_b 0.417 gan_ab 0.585 gan_ba 0.407 cycle 0.833 idt 0.830 grad_g 65.56 grad_d 11.56 lr 1.0e-04
+2026-09-21 17:43:06,637 INFO epoch 2 step 12/12 loss_g 13.498 loss_d_a 0.353 loss_d_b 0.243 gan_ab 0.575 gan_ba 0.483 cycle 0.833 idt 0.822 grad_g 60.49 grad_d 9.33 lr 1.0e-04
+2026-09-21 17:43:06,647 INFO epoch 2 done loss_g 14.076 loss_d_a 0.368 loss_d_b 0.369 cycle 0.872 idt 0.868 time 3.1s images/sec 7.8
+2026-09-21 17:43:09,616 INFO translated 80 photos to monet style at 64px, 58.9 images/sec
+2026-09-21 17:43:10,227 INFO translated 40 monets to photo style at 64px, 65.7 images/sec
+2026-09-21 17:43:12,051 INFO submission zip with 80 images at task3_gan/Poushali_Purkayastha/outputs/smoke/kaggle/images.zip
+2026-09-21 17:44:32,249 INFO inception feature extraction on cpu
+2026-09-21 17:45:22,290 INFO features {"real_monet": [40, 2048], "real_photo": [40, 2048], "fake_monet": [40, 2048], "fake_photo": [40, 2048]}

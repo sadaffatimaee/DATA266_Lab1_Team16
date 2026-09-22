@@ -1,0 +1,51 @@
+run_name: smoke
+is_final: false
+seed: 20
+data:
+  photo_dir: task3_gan/data/photo_jpg
+  monet_dir: task3_gan/data/monet_jpg
+  max_photos: 80
+  max_monet: 40
+  image_size: 64
+  infer_size: 64
+  holdout_photo: 20
+  holdout_monet: 8
+model:
+  ngf: 16
+  ndf: 16
+  n_res_blocks: 2
+  n_d_layers: 3
+  dropout: 0.0
+train:
+  epochs: 2
+  steps_per_epoch: 6
+  batch_size: 2
+  lr: 2.0e-4
+  beta1: 0.5
+  decay_start_epoch: 1
+  gan_mode: lsgan
+  lambda_cycle: 10.0
+  lambda_identity: 5.0
+  pool_size: 8
+  grad_clip: 10.0
+  amp: true
+  amp_nan_limit: 5
+  log_interval: 3
+  sample_every: 1
+translate:
+  batch_size: 8
+  preview_images: 10
+metrics:
+  fid_max_images: 40
+  kid_subsets: 5
+  kid_subset_size: 20
+  knn_k: 3
+  mifid_epsilon: 0.1
+  lpips_net: alex
+  batch_size: 20
+audit:
+  n_samples: 6
+  raters: [Poushali, Sadaf]
+kaggle:
+  competition: data-266-fall-2026-gan-image-style-transfer
+  zip_name: images.zip

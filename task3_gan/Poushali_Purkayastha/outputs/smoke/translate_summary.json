@@ -1,0 +1,18 @@
+{
+  "run_id": "smoke_20260921_184537",
+  "infer_size": 64,
+  "device": "cpu",
+  "a2b": {
+    "images": 80,
+    "images_per_sec": 131.035504564549,
+    "seconds": 0.6105215549468994
+  },
+  "b2a": {
+    "images": 40,
+    "images_per_sec": 164.4441395047038,
+    "seconds": 0.24324369430541992
+  },
+  "preview_images": 10,
+  "submission_images": 80,
+  "submission_zip": "task3_gan/Poushali_Purkayastha/outputs/smoke/kaggle/images.zip"
+}
