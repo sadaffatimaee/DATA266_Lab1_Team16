@@ -35,18 +35,32 @@ I chose 6 layers and 192 dimensions because they provide enough capacity while k
 
 ## Results
 
-| Metric | Value |
-|---|---:|
-| Best validation loss | 1.314 at epoch 2 |
-| Final train / validation loss | 0.055 / 2.609 |
-| Perplexity | 13.58 |
-| Bits per character | 3.76 |
-| Top-1 accuracy | Not reported |
-| Distinct-1 / 2 / 3 | Not reported |
-| Repeated 4-gram rate | Not reported |
-| Loss spikes / NaNs | 0 / 0 |
-| Throughput | 95,654 tokens/sec |
-| Peak memory | 1,273 MB |
+Metric,Value
+Training Cross-Entropy Loss,0.0553982596939955
+Validation Cross-Entropy Loss,2.6086549758911133
+Best Validation Loss,1.3140264749526978
+Perplexity,13.580772096016522
+Bits-Per-Character (BPC),3.7634935971084276
+Generalization Gap (Val - Train),2.553256716197118
+Top-1 Next-Character Accuracy,0.6420272435897436
+Distinct-1 (temp sampling),0.07666666666666666
+Distinct-2 (temp sampling),0.36740146960587844
+Distinct-3 (temp sampling),0.6298527443105756
+Repeated 4-gram Rate (temp sampling),0.2293762575452716
+Repeated 4-gram Rate (greedy),0.2857142857142857
+Gradient Norm Mean,2.3091898074478676
+Gradient Norm Max,6.027122497558594
+Gradient Norm Last,2.321993350982666
+Loss Spikes,0
+NaN/Inf Losses,0
+Parameter Count,2750299
+Training Throughput (tokens/sec),95654.1843507542
+Generation Speed (tokens/sec),59.73162349732671
+Peak Memory Usage (MB),1273.18994140625
+Total Training Time (sec),668.0063233375549
+Epochs,10
+Optimizer Steps,7800
+Device,Tesla T4
 
 ## What I Found
 
