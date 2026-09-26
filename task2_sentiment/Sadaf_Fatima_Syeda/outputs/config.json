@@ -1,0 +1,39 @@
+{
+  "member": "Sadaf_Fatima_Syeda",
+  "seed": 266,
+  "n_train": 100000,
+  "n_val": 5000,
+  "test": "official",
+  "max_len": 256,
+  "max_vocab": 20000,
+  "min_freq": 2,
+  "batch_size": 64,
+  "lemmatize": true,
+  "slices": {
+    "short_max_words": 50,
+    "long_min_words": 150
+  },
+  "models": {
+    "Baseline": {
+      "embed_dim": 128,
+      "lr": 0.001,
+      "epochs": 3
+    },
+    "BiGRU_Attention": {
+      "embed_dim": 128,
+      "hidden_dim": 64,
+      "lr": 0.001,
+      "epochs": 3
+    },
+    "Transformer_Encoder": {
+      "embed_dim": 128,
+      "n_head": 4,
+      "n_layer": 2,
+      "dropout": 0.1,
+      "lr": 0.0005,
+      "epochs": 3
+    }
+  },
+  "n_bootstrap": 1000,
+  "ece_bins": 15
+}

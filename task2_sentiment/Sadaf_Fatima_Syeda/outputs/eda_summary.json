@@ -1,0 +1,40 @@
+{
+  "test": {
+    "n": 38000,
+    "class_counts": {
+      "negative": 19000,
+      "positive": 19000
+    },
+    "positive_share": 0.5,
+    "non_string": 0,
+    "empty": 0,
+    "literal_escape_sequences": 20219,
+    "contains_url": 180,
+    "non_ascii": 0,
+    "duplicates": 0,
+    "words_mean": 132.6,
+    "words_median": 97,
+    "words_p95": 367,
+    "words_max": 1007,
+    "share_over_256_words": 0.1221
+  },
+  "train": {
+    "n": 100000,
+    "class_counts": {
+      "negative": 50216,
+      "positive": 49784
+    },
+    "positive_share": 0.4978,
+    "non_string": 0,
+    "empty": 0,
+    "literal_escape_sequences": 53498,
+    "contains_url": 422,
+    "non_ascii": 0,
+    "duplicates": 0,
+    "words_mean": 133.2,
+    "words_median": 97,
+    "words_p95": 373,
+    "words_max": 1015,
+    "share_over_256_words": 0.1223
+  }
+}

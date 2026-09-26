@@ -1,0 +1,20 @@
+{
+  "stopwords": "nltk",
+  "negations_kept": [
+    "cannot",
+    "neither",
+    "never",
+    "no",
+    "nobody",
+    "none",
+    "nor",
+    "not",
+    "nothing",
+    "nowhere",
+    "without"
+  ],
+  "lemmatizer": "wordnet",
+  "max_len": 256,
+  "vocab_size": 20000,
+  "seed": 266
+}
