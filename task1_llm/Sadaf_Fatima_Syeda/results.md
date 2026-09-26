@@ -35,32 +35,28 @@ I chose 6 layers and 192 dimensions because they provide enough capacity while k
 
 ## Results
 
-Metric,Value
-Training Cross-Entropy Loss,0.0553982596939955
-Validation Cross-Entropy Loss,2.6086549758911133
-Best Validation Loss,1.3140264749526978
-Perplexity,13.580772096016522
-Bits-Per-Character (BPC),3.7634935971084276
-Generalization Gap (Val - Train),2.553256716197118
-Top-1 Next-Character Accuracy,0.6420272435897436
-Distinct-1 (temp sampling),0.07666666666666666
-Distinct-2 (temp sampling),0.36740146960587844
-Distinct-3 (temp sampling),0.6298527443105756
-Repeated 4-gram Rate (temp sampling),0.2293762575452716
-Repeated 4-gram Rate (greedy),0.2857142857142857
-Gradient Norm Mean,2.3091898074478676
-Gradient Norm Max,6.027122497558594
-Gradient Norm Last,2.321993350982666
-Loss Spikes,0
-NaN/Inf Losses,0
-Parameter Count,2750299
-Training Throughput (tokens/sec),95654.1843507542
-Generation Speed (tokens/sec),59.73162349732671
-Peak Memory Usage (MB),1273.18994140625
-Total Training Time (sec),668.0063233375549
-Epochs,10
-Optimizer Steps,7800
-Device,Tesla T4
+| Metric | Value |
+|---|---:|
+| Best validation loss | 1.314 at epoch 2 |
+| Perplexity at best epoch (2) | 3.72 |
+| Final train / validation loss (epoch 10) | 0.055 / 2.609 |
+| Perplexity (epoch 10) | 13.58 |
+| Bits per character (epoch 10) | 3.76 |
+| Generalization gap (val - train) | 2.553 |
+| Top-1 next-character accuracy | 64.20% |
+| Distinct-1 / 2 / 3 | 0.077 / 0.367 / 0.630 |
+| Repeated 4-gram rate (sampling / greedy) | 22.9% / 28.6% |
+| Gradient norm mean / max | 2.31 / 6.03 |
+| Loss spikes / NaNs | 0 / 0 |
+| Parameters | 2,750,299 |
+| Training throughput | 95,654 tokens/sec |
+| Generation speed | 59.7 tokens/sec |
+| Peak GPU memory | 1,273 MB |
+| Training time | 668 s (11 min) |
+
+![Loss curves](outputs/loss_curves.png)
+
+![Training diagnostics](outputs/training_diagnostics.png)
 
 ## What I Found
 
