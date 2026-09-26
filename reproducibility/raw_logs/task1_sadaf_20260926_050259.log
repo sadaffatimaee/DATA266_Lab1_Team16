@@ -1,0 +1,37 @@
+[2026-09-26T05:02:59] RUN_ID 20260926_050259
+[2026-09-26T05:02:59] python 3.13.15 | torch 2.11.0+cu128 | device cuda
+[2026-09-26T05:02:59] GPU: Tesla T4
+[2026-09-26T05:03:00] nvidia-smi:
+Sat Sep 26 05:02:59 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   47C    P8             14W /   70W |       3MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+[2026-09-26T05:03:00] CPU: x86_64 | 2 cores
+[2026-09-26T05:03:00] lscpu model: Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz
+[2026-09-26T05:03:00] CONFIG {"member": "Sadaf_Fatima_Syeda", "seed": 266, "n_train_chars": 100000, "n_val_chars": 10000, "stride": 2, "n_layer": 6, "n_embd": 192, "n_head": 6, "block_size": 256, "dropout": 0.2, "activation": "ReLU", "batch_size": 32, "epochs": 10, "lr": 0.0006, "warmup_frac": 0.05, "weight_decay": 0.1, "grad_clip": 1.0, "amp": true, "gen_tokens": 500, "temperature": 0.8}
+[2026-09-26T05:04:38] dataset file: tinystories_data/TinyStoriesV2-GPT4-valid.txt (22.5 MB)
+[2026-09-26T05:04:48] source TinyStoriesV2-GPT4-valid.txt | total chars 22,493,387 | vocab 91
+[2026-09-26T05:04:48] train chars 100,000 -> 49,872 sequences of 256 | val chars 10,000 -> 39 sequences
+[2026-09-26T05:04:48] sample text: 'u don\'t have to be scared of the loud dog, I\'ll protect you". The mole felt so safe with the little girl. She was very kind and the mole soon came to trust her. He leaned against her and she kept him '
+[2026-09-26T05:05:16] Parameters: 2,750,299
+[2026-09-26T05:05:16] steps/epoch 1559 | total steps 15590 | warmup 779
+[2026-09-26T05:05:24] ETA for full run ≈ 36.2 min
+[2026-09-26T05:05:39] epoch 1 step 200/15590 | loss 2.4231 | grad 0.637 | lr 1.55e-04
+[2026-09-26T05:05:55] epoch 1 step 400/15590 | loss 2.2090 | grad 0.882 | lr 3.09e-04
+[2026-09-26T05:06:13] epoch 1 step 600/15590 | loss 1.9222 | grad 1.386 | lr 4.63e-04

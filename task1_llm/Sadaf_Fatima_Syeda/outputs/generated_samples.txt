@@ -1,0 +1,24 @@
+===== greedy =====
+Once upon a time, there was a little girl named Lily. She loved to eat blueberries. One day, Lily went to the park with her mom. There, she found a big blueberry bush with lots of sweet blueberries.
+Lily was so happy to see the blueberries. But she was confused too. She didn't know if she could pick them. She asked her mom, "Can I pick the blueberries?" Her mom said, "Yes, you can pick some. But remember to say 'thank you' to the blueberry bush."
+Lily picked some blueberries and said, "Thank you
+
+===== temp0.8_seed0 =====
+They saw a little hut. The hut had an open door. The cat said, "Let's go in!" The dog said, "I don't know. It's not our hut."
+They went in anyway. Inside the hut, they saw a big tree. On the tree, there was a swing. The swing was hanging from a branch. The cat said, "I want to play on the swing!" The dog said, "Me too!"
+The cat and the dog took turns swinging. They were having so much fun! But then, something unexpected happened. The tree began to talk! The tree said, "Please stop swinging on my
+
+===== temp0.8_seed1 =====
+
+Lily and Tom said bye-bye to the lady and went back to the park. They played some more, but they held their hats tight. They did not want to lose them again. They seemed happy and safe.
+<|endoftext|>
+
+
+Sara and Tom were having lunch with their mom. They liked to eat pasta with cheese and tomato sauce. Mom gave them each a fork and a plate. Sara and Tom said thank you and started to eat.
+But Tom was not very hungry. He played with his fork and made funny noises. He poked his pasta and threw some
+
+===== temp0.8_seed2 =====
+They played together and had a lot of fun. But they never forgot their little frog friend who gave them the special day.
+<|endoftext|>
+One day, a little boy named Tim found a soft, small board. He picked it up and saw a tiny ant on it. Tim said, "Hi, little ant! What are you doing on my bake it!" Tim mom said, "I have a special poor my for the bird." So, I wanted to fold the paper to make a boat." Her mom smiled and said, "That's better. I love you both." She joined them at the table and they ha
+

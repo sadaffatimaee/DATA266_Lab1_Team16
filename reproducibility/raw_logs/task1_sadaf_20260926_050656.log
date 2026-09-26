@@ -1,0 +1,93 @@
+[2026-09-26T05:06:56] RUN_ID 20260926_050656
+[2026-09-26T05:06:56] python 3.13.15 | torch 2.11.0+cu128 | device cuda
+[2026-09-26T05:06:56] GPU: Tesla T4
+[2026-09-26T05:06:56] nvidia-smi:
+Sat Sep 26 05:06:56 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   70C    P0             32W /   70W |    1443MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            1333      C   /usr/bin/python3                       1440MiB |
++-----------------------------------------------------------------------------------------+
+[2026-09-26T05:06:56] CPU: x86_64 | 2 cores
+[2026-09-26T05:06:56] lscpu model: Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz
+[2026-09-26T05:06:56] CONFIG {"member": "Sadaf_Fatima_Syeda", "seed": 266, "n_train_chars": 100000, "n_val_chars": 10000, "stride": 4, "n_layer": 6, "n_embd": 192, "n_head": 6, "block_size": 256, "dropout": 0.2, "activation": "ReLU", "batch_size": 32, "epochs": 10, "lr": 0.0006, "min_lr_frac": 0.1, "warmup_frac": 0.05, "weight_decay": 0.1, "grad_clip": 1.0, "amp": true, "gen_tokens": 500, "temperature": 0.8}
+[2026-09-26T05:07:00] dataset file: tinystories_data/TinyStoriesV2-GPT4-valid.txt (22.5 MB)
+[2026-09-26T05:07:07] source TinyStoriesV2-GPT4-valid.txt | total chars 22,493,387 | vocab 91
+[2026-09-26T05:07:07] train chars 100,000 -> 24,936 sequences of 256 | val chars 10,000 -> 39 sequences
+[2026-09-26T05:07:07] sample text: 'u don\'t have to be scared of the loud dog, I\'ll protect you". The mole felt so safe with the little girl. She was very kind and the mole soon came to trust her. He leaned against her and she kept him '
+[2026-09-26T05:07:32] Parameters: 2,750,299
+[2026-09-26T05:07:32] steps/epoch 780 | total steps 7800 | warmup 390
+[2026-09-26T05:07:34] ETA for full run ≈ 14.5 min
+[2026-09-26T05:07:49] epoch 1 step 200/7800 | loss 2.3232 | grad 0.584 | lr 3.09e-04
+[2026-09-26T05:08:07] epoch 1 step 400/7800 | loss 2.1500 | grad 0.988 | lr 5.99e-04
+[2026-09-26T05:08:24] epoch 1 step 600/7800 | loss 1.5762 | grad 1.898 | lr 5.85e-04
+[2026-09-26T05:08:39] EPOCH  1 | train 1.2169 | val 1.4115 | ppl 4.10 | bpc 2.036 | val acc 58.62% | lr 5.72e-04 | elapsed 67s
+[2026-09-26T05:08:41] epoch 2 step 800/7800 | loss 1.3054 | grad 2.813 | lr 5.70e-04
+[2026-09-26T05:08:58] epoch 2 step 1000/7800 | loss 1.1922 | grad 3.282 | lr 5.56e-04
+[2026-09-26T05:09:15] epoch 2 step 1200/7800 | loss 1.0504 | grad 2.759 | lr 5.41e-04
+[2026-09-26T05:09:32] epoch 2 step 1400/7800 | loss 0.9271 | grad 2.265 | lr 5.26e-04
+[2026-09-26T05:09:45] EPOCH  2 | train 0.6685 | val 1.3140 | ppl 3.72 | bpc 1.896 | val acc 64.04% | lr 5.15e-04 | elapsed 133s
+[2026-09-26T05:09:49] epoch 3 step 1600/7800 | loss 0.8449 | grad 2.694 | lr 5.12e-04
+[2026-09-26T05:10:05] epoch 3 step 1800/7800 | loss 0.7293 | grad 2.948 | lr 4.97e-04
+[2026-09-26T05:10:22] epoch 3 step 2000/7800 | loss 0.7019 | grad 3.343 | lr 4.83e-04
+[2026-09-26T05:10:40] epoch 3 step 2200/7800 | loss 0.6043 | grad 2.869 | lr 4.68e-04
+[2026-09-26T05:10:52] EPOCH  3 | train 0.3483 | val 1.5447 | ppl 4.69 | bpc 2.229 | val acc 64.14% | lr 4.58e-04 | elapsed 200s
+[2026-09-26T05:10:57] epoch 4 step 2400/7800 | loss 0.5272 | grad 2.817 | lr 4.54e-04
+[2026-09-26T05:11:14] epoch 4 step 2600/7800 | loss 0.5261 | grad 3.036 | lr 4.39e-04
+[2026-09-26T05:11:31] epoch 4 step 2800/7800 | loss 0.4614 | grad 3.392 | lr 4.24e-04
+[2026-09-26T05:11:48] epoch 4 step 3000/7800 | loss 0.4000 | grad 2.950 | lr 4.10e-04
+[2026-09-26T05:11:58] EPOCH  4 | train 0.1741 | val 1.7783 | ppl 5.92 | bpc 2.565 | val acc 64.48% | lr 4.01e-04 | elapsed 266s
+[2026-09-26T05:12:05] epoch 5 step 3200/7800 | loss 0.3672 | grad 2.522 | lr 3.95e-04
+[2026-09-26T05:12:22] epoch 5 step 3400/7800 | loss 0.3469 | grad 3.249 | lr 3.81e-04
+[2026-09-26T05:12:39] epoch 5 step 3600/7800 | loss 0.3203 | grad 2.833 | lr 3.66e-04
+[2026-09-26T05:12:56] epoch 5 step 3800/7800 | loss 0.2802 | grad 2.531 | lr 3.51e-04
+[2026-09-26T05:13:04] EPOCH  5 | train 0.1093 | val 2.0073 | ppl 7.44 | bpc 2.896 | val acc 63.69% | lr 3.44e-04 | elapsed 332s
+[2026-09-26T05:13:13] epoch 6 step 4000/7800 | loss 0.2845 | grad 2.333 | lr 3.37e-04
+[2026-09-26T05:13:30] epoch 6 step 4200/7800 | loss 0.2361 | grad 2.137 | lr 3.22e-04
+[2026-09-26T05:13:46] epoch 6 step 4400/7800 | loss 0.2404 | grad 2.494 | lr 3.08e-04
+[2026-09-26T05:14:03] epoch 6 step 4600/7800 | loss 0.2414 | grad 2.313 | lr 2.93e-04
+[2026-09-26T05:14:10] EPOCH  6 | train 0.0823 | val 2.1739 | ppl 8.79 | bpc 3.136 | val acc 63.70% | lr 2.87e-04 | elapsed 398s
+[2026-09-26T05:14:21] epoch 7 step 4800/7800 | loss 0.2129 | grad 2.114 | lr 2.79e-04
+[2026-09-26T05:14:37] epoch 7 step 5000/7800 | loss 0.2036 | grad 2.195 | lr 2.64e-04
+[2026-09-26T05:14:55] epoch 7 step 5200/7800 | loss 0.1925 | grad 1.949 | lr 2.49e-04
+[2026-09-26T05:15:11] epoch 7 step 5400/7800 | loss 0.1897 | grad 1.863 | lr 2.35e-04
+[2026-09-26T05:15:17] EPOCH  7 | train 0.0705 | val 2.3418 | ppl 10.40 | bpc 3.379 | val acc 64.00% | lr 2.31e-04 | elapsed 465s
+[2026-09-26T05:15:29] epoch 8 step 5600/7800 | loss 0.1780 | grad 2.264 | lr 2.20e-04
+[2026-09-26T05:15:46] epoch 8 step 5800/7800 | loss 0.1653 | grad 2.120 | lr 2.06e-04
+[2026-09-26T05:16:03] epoch 8 step 6000/7800 | loss 0.1659 | grad 2.309 | lr 1.91e-04
+[2026-09-26T05:16:20] epoch 8 step 6200/7800 | loss 0.1488 | grad 1.981 | lr 1.77e-04
+[2026-09-26T05:16:24] EPOCH  8 | train 0.0638 | val 2.4383 | ppl 11.45 | bpc 3.518 | val acc 63.95% | lr 1.74e-04 | elapsed 532s
+[2026-09-26T05:16:38] epoch 9 step 6400/7800 | loss 0.1481 | grad 1.716 | lr 1.62e-04
+[2026-09-26T05:16:55] epoch 9 step 6600/7800 | loss 0.1475 | grad 1.847 | lr 1.47e-04
+[2026-09-26T05:17:13] epoch 9 step 6800/7800 | loss 0.1280 | grad 1.634 | lr 1.33e-04
+[2026-09-26T05:17:30] epoch 9 step 7000/7800 | loss 0.1351 | grad 1.704 | lr 1.18e-04
+[2026-09-26T05:17:32] EPOCH  9 | train 0.0578 | val 2.5367 | ppl 12.64 | bpc 3.660 | val acc 63.89% | lr 1.17e-04 | elapsed 600s
+[2026-09-26T05:17:47] epoch 10 step 7200/7800 | loss 0.1255 | grad 1.406 | lr 1.04e-04
+[2026-09-26T05:18:05] epoch 10 step 7400/7800 | loss 0.1308 | grad 1.632 | lr 8.91e-05
+[2026-09-26T05:18:22] epoch 10 step 7600/7800 | loss 0.1150 | grad 1.371 | lr 7.46e-05
+[2026-09-26T05:18:40] epoch 10 step 7800/7800 | loss 0.1140 | grad 2.322 | lr 6.00e-05
+[2026-09-26T05:18:40] EPOCH 10 | train 0.0554 | val 2.6087 | ppl 13.58 | bpc 3.763 | val acc 64.20% | lr 6.00e-05 | elapsed 668s
+[2026-09-26T05:18:40] DONE 7800 steps in 668.0s | 95,654 tokens/sec | peak mem 1273.2 MB | NaNs 0 | spikes 0
+[2026-09-26T05:20:04] SAMPLE greedy: "Once upon a time, there was a little girl named Lily. She loved to eat blueberries. One day, Lily went to the park with her mom. There, she found a big blueberry bush with lots of sweet blueberries.\nLily was so happy to see the blueberries. But she was confused too. She didn't know if she could pick"
+[2026-09-26T05:20:04] SAMPLE temp0.8_seed0: 'They saw a little hut. The hut had an open door. The cat said, "Let\'s go in!" The dog said, "I don\'t know. It\'s not our hut."\nThey went in anyway. Inside the hut, they saw a big tree. On the tree, there was a swing. The swing was hanging from a branch. The cat said, "I want to play on the swing!" Th'
+[2026-09-26T05:20:04] SAMPLE temp0.8_seed1: '\nLily and Tom said bye-bye to the lady and went back to the park. They played some more, but they held their hats tight. They did not want to lose them again. They seemed happy and safe.\n<|endoftext|>\n\n\nSara and Tom were having lunch with their mom. They liked to eat pasta with cheese and tomato sau'
+[2026-09-26T05:20:04] SAMPLE temp0.8_seed2: 'They played together and had a lot of fun. But they never forgot their little frog friend who gave them the special day.\n<|endoftext|>\nOne day, a little boy named Tim found a soft, small board. He picked it up and saw a tiny ant on it. Tim said, "Hi, little ant! What are you doing on my bake it!" Ti'
+[2026-09-26T05:20:04] generation speed 59.7 tokens/sec
+[2026-09-26T05:20:04] Distinct-1/2/3 0.0767/0.3674/0.6299 | repeated 4-gram 22.94% (greedy 28.57%)
+[2026-09-26T05:20:22] METRICS {"Training Cross-Entropy Loss": 0.0553982596939955, "Validation Cross-Entropy Loss": 2.6086549758911133, "Best Validation Loss": 1.3140264749526978, "Perplexity": 13.580772096016522, "Bits-Per-Character (BPC)": 3.7634935971084276, "Generalization Gap (Val - Train)": 2.553256716197118, "Top-1 Next-Character Accuracy": 0.6420272435897436, "Distinct-1 (temp sampling)": 0.07666666666666666, "Distinct-2 (temp sampling)": 0.36740146960587844, "Distinct-3 (temp sampling)": 0.6298527443105756, "Repeated 4-gram Rate (temp sampling)": 0.2293762575452716, "Repeated 4-gram Rate (greedy)": 0.2857142857142857, "Gradient Norm Mean": 2.3091898074478676, "Gradient Norm Max": 6.027122497558594, "Gradient Norm Last": 2.321993350982666, "Loss Spikes": 0, "NaN/Inf Losses": 0, "Parameter Count": 2750299, "Training Throughput (tokens/sec)": 95654.1843507542, "Generation Speed (tokens/sec)": 59.73162349732671, "Peak Memory Usage (MB)": 1273.18994140625, "Total Training Time (sec)": 668.0063233375549, "Epochs": 10, "Optimizer Steps": 7800, "Device": "Tesla T4"}
+[2026-09-26T05:20:31] manifest -> reproducibility/manifests/task1_sadaf_20260926_050656.json
+[2026-09-26T05:20:31] files: {"src": [], "checkpoints": ["best_model.pt", "epochs", "final_model.pt"], "outputs": ["config.json", "generated_samples.txt", "loss_curves.png", "run_summary.json", "training_diagnostics.png"], "data_processed": ["split.pt"]}

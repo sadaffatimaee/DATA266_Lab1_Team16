@@ -1,0 +1,27 @@
+[2026-09-26T05:01:43] RUN_ID 20260926_050143
+[2026-09-26T05:01:43] python 3.13.15 | torch 2.11.0+cu128 | device cuda
+[2026-09-26T05:01:43] GPU: Tesla T4
+[2026-09-26T05:01:44] nvidia-smi:
+Sat Sep 26 05:01:43 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   45C    P8             14W /   70W |       3MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+[2026-09-26T05:01:44] CPU: x86_64 | 2 cores
+[2026-09-26T05:01:44] lscpu model: Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz
+[2026-09-26T05:01:44] CONFIG {"member": "Sadaf_Fatima_Syeda", "seed": 266, "n_train_chars": 100000, "n_val_chars": 10000, "stride": 2, "n_layer": 6, "n_embd": 192, "n_head": 6, "block_size": 256, "dropout": 0.2, "activation": "ReLU", "batch_size": 32, "epochs": 10, "lr": 0.0006, "warmup_frac": 0.05, "weight_decay": 0.1, "grad_clip": 1.0, "amp": true, "gen_tokens": 500, "temperature": 0.8}
