@@ -31,6 +31,18 @@ report/
 
 Inside each member folder: `src/` (code and the notebook with outputs), `data_processed/`, `checkpoints/`, `outputs/`, `metrics_report.csv`, `failure_analysis.md`, `results.md`. Task 3 folders also hold `outputs/pred_A2B/`, `outputs/pred_B2A/`, `evaluate_local.py`, `submission.csv`, and `full_metrics_report.csv`.
 
+## Datasets
+
+We did not push the datasets to GitHub. We zipped them, uploaded them to Google Drive and shared the links below so anyone with the link can view them.
+
+| Task | Dataset | Link |
+| --- | --- | --- |
+| Task 1 | TinyStories (TinyStoriesV2-GPT4-valid.txt) | https://huggingface.co/datasets/roneneldan/TinyStories |
+| Task 2 | Yelp polarity (fancyzhx/yelp_polarity) | https://drive.google.com/file/d/1v5QTeH2d_eDnleRc7VAI6QkBa6a-a8Qt/view?usp=drive_link |
+| Task 3 | Monet and photo images from the Kaggle competition | PASTE_DRIVE_LINK_HERE |
+
+For Task 2 we use Yelp, not IMDB, as the instructor corrected.
+
 ## Setup
 
 ```
@@ -56,6 +68,8 @@ The Task 2 equivalent trains the three sentiment models on 3,000 reviews and eva
 ```
 python task2_sentiment/Poushali_Purkayastha/src/run.py --config configs/smoke.yaml
 ```
+
+To smoke test my notebooks, set `SMOKE = True` in the first cell and click Run all. It runs a small version on CPU in about a minute.
 
 ## Task 1, Poushali Purkayastha
 
@@ -90,6 +104,23 @@ Where results live:
 
 Per-epoch checkpoints and last.pt are not committed. They are backed up to Drive after each run.
 
+## Task 1, Sadaf Fatima Syeda
+
+I built a character level GPT with 6 layers, 6 heads, an embedding size of 192 and a context length of 256. I used ReLU, dropout 0.2, AdamW, and a learning rate warm-up followed by linear decay. I trained it for 10 epochs on a Tesla T4 in Colab, and it took about 11 minutes.
+
+To run it, open `task1_llm/Sadaf_Fatima_Syeda/src/task1_sadaf.ipynb` in Colab, pick a T4 GPU and click Run all. The first cell holds all the settings and saves them to `outputs/config.json`. The last cell pushes the results to GitHub using a `GH_TOKEN` secret in Colab.
+
+| File | What's in it |
+| --- | --- |
+| metrics_report.csv | all Task 1 metrics |
+| outputs/ | loss curves, training diagnostics, generated samples, run summary, config |
+| checkpoints/best_model.pt, final_model.pt | best epoch (2) and last epoch (10) |
+| data_processed/split.pt | the 100K / 10K split and the vocab |
+| results.md | my model, training settings and results |
+| failure_analysis.md | 3 failure cases |
+
+I saved the checkpoints for every epoch to Google Drive instead of GitHub.
+
 ## Task 1 evaluation script
 
 `task1_llm/Poushali_Purkayastha/src/evaluate_task1.py` computes every Task 1 metric from two files. Each member's src folder carries the same script so both members' numbers are computed the same way.
@@ -102,9 +133,9 @@ python task1_llm/Poushali_Purkayastha/src/evaluate_task1.py --summary <run_summa
 
 ## Conventions
 
-- Every run is driven by a YAML config. No hard-coded paths, credentials, or API keys.
-- Every run writes one raw log to `reproducibility/raw_logs/` and one manifest to `reproducibility/manifests/`. Neither is edited after the run.
-- Raw datasets are not committed. Each task's `data/README.md` points to the shared copy.
+- We run everything from a config, either a YAML file or the first cell of the notebook. We don't put personal paths or keys in the code.
+- Every run writes a raw log to `reproducibility/raw_logs/` and a manifest to `reproducibility/manifests/`. We don't edit these after the run.
+- We keep datasets out of the repo. The Drive links are in the Datasets section.
 
 ## Task 2, Poushali Purkayastha
 
@@ -150,6 +181,29 @@ Where results live:
 | task2_sentiment/Poushali_Purkayastha/data_processed/full/ | tokenized splits, vocabulary, test slices, test texts, meta.json |
 | task2_sentiment/Poushali_Purkayastha/results.md | preprocessing, model and hyperparameter justification, results |
 | task2_sentiment/Poushali_Purkayastha/failure_analysis.md | the 20-error manual review and the proposed fix |
+
+## Task 2, Sadaf Fatima Syeda
+
+I trained 3 models on a random 100K sample of the Yelp training set (seed 266), kept 5K of those for validation, and tested on the full 38K Yelp test set:
+
+- Baseline: learned embedding, max pooling and a linear layer
+- BiGRU with attention pooling
+- Transformer encoder that reuses my attention code from Task 1
+
+I did not use any pretrained embeddings or pretrained models.
+
+To run it, open `task2_sentiment/Sadaf_Fatima_Syeda/src/task2_sadaf.ipynb` in Colab, pick a T4 GPU and click Run all. The first cell holds all the settings. The notebook uploads the dataset zip to Google Drive and pushes the results to GitHub.
+
+| File | What's in it |
+| --- | --- |
+| metrics_report.csv | all Task 2 metrics for the 3 models |
+| outputs/slice_metrics.csv | macro-F1 and error rate for short, medium, long, negation and truncated reviews |
+| outputs/ | EDA plots, confusion matrices, calibration / ROC / PR curves, training curves, test probabilities |
+| outputs/error_review_*.csv | the 20 errors I reviewed |
+| checkpoints/ | the best epoch for each model |
+| data_processed/ | vocab, preprocessing settings and the Drive link |
+| results.md | my preprocessing, why I picked each model, and the comparison |
+| failure_analysis.md | my error review and fixes |
 
 ## Task 3, Poushali Purkayastha
 
