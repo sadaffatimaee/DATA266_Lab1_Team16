@@ -49,19 +49,31 @@ Hardware: Tesla T4 GPU on Google Colab.
 
 ## Confusion Matrices
 
-   ![Confusion matrices](outputs/confusion_matrices.png)
-   ![Calibration, ROC, PR](outputs/calibration_roc_pr.png)
-
 - **Baseline:** TN / FP / FN / TP = 17,164 / 1,836 / 1,812 / 17,188
 - **BiGRU:** TN / FP / FN / TP = 17,416 / 1,584 / 924 / 18,076
 - **Transformer:** TN / FP / FN / TP = 17,842 / 1,158 / 1,820 / 17,180
 
+![Confusion matrices](outputs/confusion_matrices.png)
+
+![Calibration, ROC, PR](outputs/calibration_roc_pr.png)
+
+## Per-Slice Results (Macro F1 / Error Rate)
+
+| Slice | N | Baseline | BiGRU | Transformer |
+|---|---:|---:|---:|---:|
+| Short (≤ 50 words) | 9,362 | 0.900 / 9.6% | **0.932 / 6.5%** | 0.918 / 7.9% |
+| Medium (51–149) | 16,853 | 0.906 / 9.4% | **0.937 / 6.3%** | 0.923 / 7.7% |
+| Long (≥ 150 words) | 11,785 | 0.897 / 9.9% | **0.927 / 7.1%** | 0.917 / 8.0% |
+| Contains negation | 28,514 | 0.896 / 10.1% | **0.930 / 6.9%** | 0.914 / 8.3% |
+| Truncated (> 256 tokens) | 782 | 0.856 / 11.8% | 0.881 / 10.2% | **0.900 / 8.2%** |
+
 ## What I Found
 
-The **BiGRU with attention performed best**, achieving 93.4% accuracy and macro F1, compared with 92.2% for the Transformer and 90.4% for the baseline. Its improvement over the baseline is statistically significant because the McNemar test has an extremely small p-value, and the confidence intervals are clearly separated. The BiGRU was slower and used more memory than the baseline, but it was faster and much more memory-efficient than the Transformer. The baseline had the best calibration according to ECE, while the BiGRU had the best Brier score. Per-slice patterns should be checked in `outputs/slice_metrics.csv`.
+The **BiGRU with attention performed best**, achieving 93.4% accuracy and macro F1, compared with 92.2% for the Transformer and 90.4% for the baseline. Its improvement over the baseline is statistically significant because the McNemar test has an extremely small p-value, and the confidence intervals are clearly separated. The BiGRU was slower and used more memory than the baseline, but it was faster and much more memory-efficient than the Transformer. The baseline had the best calibration according to ECE, while the BiGRU had the best Brier score. Across most slices, the BiGRU performed best, especially on medium-length reviews and reviews containing negation. However, the Transformer performed best on truncated reviews, suggesting that it handled the longest inputs more effectively, while all models showed higher error rates on truncated or long reviews.
 
 ## Files
 
 - Checkpoints: `checkpoints/Baseline.pt`, `checkpoints/BiGRU_Attention.pt`, `checkpoints/Transformer_Encoder.pt`
 - Log: `reproducibility/raw_logs/task2_sadaf_20260926_061012.log`
 - Data: `data_processed/DATA_LINK.md`
+- Slice metrics: `outputs/slice_metrics.csv`
