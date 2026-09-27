@@ -1,0 +1,62 @@
+group,metric,value
+distribution,FID Monet->Photo,143.4771526184474
+distribution,MiFID Monet->Photo,0.44303756952285767
+distribution,KID Monet->Photo,0.061372172087430954
+distribution,KID std Monet->Photo,0.0056803347542881966
+distribution,precision Monet->Photo,0.5333333333333333
+distribution,recall Monet->Photo,0.2633333333333333
+distribution,density Monet->Photo,0.5166666666666667
+distribution,coverage Monet->Photo,0.36333333333333334
+cycle,cycle-reconstruction L1 Monet->Photo (0-1 scale),0.04651225718980034
+cycle,"identity L1 Monet->Photo (0-1 scale, not trained)",0.3301510486006737
+perceptual,LPIPS input vs translation Monet->Photo,0.5410790501038233
+perceptual,LPIPS input vs reconstruction Monet->Photo,0.35002858355641364
+perceptual,content-preservation cosine Monet->Photo,0.6772955611348153
+distribution,FID Photo->Monet,123.28287783934931
+distribution,MiFID Photo->Monet,0.4046364724636078
+distribution,KID Photo->Monet,0.028788013383746147
+distribution,KID std Photo->Monet,0.0035157722886651754
+distribution,precision Photo->Monet,0.26666666666666666
+distribution,recall Photo->Monet,0.6133333333333333
+distribution,density Photo->Monet,0.16777777777777778
+distribution,coverage Photo->Monet,0.25666666666666665
+cycle,cycle-reconstruction L1 Photo->Monet (0-1 scale),0.044227734530965485
+cycle,"identity L1 Photo->Monet (0-1 scale, not trained)",0.43281859015425045
+perceptual,LPIPS input vs translation Photo->Monet,0.5625769702593485
+perceptual,LPIPS input vs reconstruction Photo->Monet,0.3164458890259266
+perceptual,content-preservation cosine Photo->Monet,0.6552383094032606
+kaggle,submission FID (mean of both directions),133.38001522889834
+kaggle,submission MiFID (mean of both directions),0.4238370209932327
+kaggle,leaderboard score estimate (FID + MiFID) / 2,66.90192612494579
+kaggle,Kaggle public score,to fill
+kaggle,Kaggle private score,to fill
+kaggle,Kaggle leaderboard rank,to fill
+training (final logged),G_total loss,3.617306423187256
+training (final logged),G_gan_AB loss,1.1815571796894073
+training (final logged),G_gan_BA loss,1.0575878751277923
+training (final logged),D_A loss,0.5092431354522705
+training (final logged),D_B loss,0.4873743072152138
+training (final logged),cycle loss,0.17227017343044282
+training (final logged),identity loss,1.347883701324463
+stability,D_A_loss_last20pct,0.4992312916230272
+stability,D_B_loss_last20pct,0.506545327320511
+stability,G_adv_std_last20pct,0.051243817306219644
+stability,cycle_first_log,0.6600481295585632
+stability,cycle_last20pct,0.17068847650547084
+stability,gnorm_G_max,inf
+stability,gnorm_D_max,inf
+stability,non-finite (NaN/Inf) steps,0
+human audit,status,to fill: both rater sheets in outputs/audit/
+efficiency,parameters G_AB,30604035
+efficiency,parameters G_BA,30604035
+efficiency,parameters D_A,662593
+efficiency,parameters D_B,662593
+efficiency,parameters total,62533256
+efficiency,training steps,20000
+efficiency,training time (min),32.73973763386409
+efficiency,training images/sec,20.362614817569746
+efficiency,inference images/sec Monet->Photo,65.75253817650523
+efficiency,inference images/sec Photo->Monet,118.43562230142757
+efficiency,peak memory training (MB),1246.470703125
+efficiency,peak memory inference (MB),1282.60205078125
+efficiency,device,Tesla T4
