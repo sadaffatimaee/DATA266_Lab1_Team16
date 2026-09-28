@@ -65,5 +65,8 @@
   "Human audit percent agreement (mean over criteria)": "to fill: run audit.py",
   "Kaggle public score": "to fill: outputs/<run>/kaggle/kaggle_results.json",
   "Kaggle private score": "to fill",
-  "Kaggle leaderboard rank": "to fill"
+  "Kaggle leaderboard rank": "to fill",
+  "Submission FID": 330.53456153335327,
+  "Submission MiFID": 330.53456153335327,
+  "Submission score source": "local metrics.py, replace with the official script's values"
 }

@@ -1,0 +1,80 @@
+2026-09-28 14:30:20,619 INFO run_id smoke_metrics_20260928_143020 member Poushali_Purkayastha task task3_gan stage metrics
+2026-09-28 14:30:20,621 INFO config task3_gan/Poushali_Purkayastha/src/configs/smoke.yaml {"run_name": "smoke", "is_final": false, "seed": 20, "data": {"photo_dir": "task3_gan/data/photo_jpg", "monet_dir": "task3_gan/data/monet_jpg", "max_photos": 80, "max_monet": 40, "image_size": 64, "infer_size": 64, "holdout_photo": 20, "holdout_monet": 8}, "model": {"ngf": 16, "ndf": 16, "n_res_blocks": 2, "n_d_layers": 3, "dropout": 0.0}, "train": {"epochs": 2, "steps_per_epoch": 6, "batch_size": 2, "lr": 0.0002, "beta1": 0.5, "decay_start_epoch": 1, "gan_mode": "lsgan", "lambda_cycle": 10.0, "lambda_identity": 5.0, "pool_size": 8, "grad_clip": 10.0, "amp": true, "amp_nan_limit": 5, "log_interval": 3, "sample_every": 1}, "translate": {"batch_size": 8, "preview_images": 10}, "metrics": {"fid_max_images": 40, "kid_subsets": 5, "kid_subset_size": 20, "knn_k": 3, "mifid_epsilon": 0.1, "lpips_net": "alex", "batch_size": 20}, "audit": {"n_samples": 6, "raters": ["Poushali", "Sadaf"]}, "kaggle": {"competition": "data-266-fall-2026-gan-image-style-transfer", "zip_name": "images.zip"}}
+2026-09-28 14:30:20,621 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.14.0+cpu", "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel", "cpu_cores": 8, "ram_gb": 16.9, "cuda_available": false, "cuda_version": null, "gpus": [], "nvidia_smi": "no gpu"}
+2026-09-28 14:30:20,621 INFO git {"commit": "c16e2bdf09780a966614ddfe5d87c465a22ca76a", "branch": "main", "dirty": true}
+2026-09-28 14:30:21,417 INFO data photos 80 (train 60 holdout 20) monets 40 (train 32 holdout 8) size 64
+2026-09-28 14:30:25,684 INFO inception feature extraction on cpu
+2026-09-28 14:30:56,543 INFO features {"real_monet": [40, 2048], "real_photo": [40, 2048], "fake_monet": [40, 2048], "fake_photo": [40, 2048]}
+2026-09-28 14:31:43,301 INFO submission.csv written with FID 330.5346 MiFID 330.5346 from local metrics.py, replace with the official script's values
+2026-09-28 14:31:43,301 INFO metric FID photo->monet = 330.53456153335327
+2026-09-28 14:31:43,301 INFO metric KID mean photo->monet = 0.3435613214969635
+2026-09-28 14:31:43,301 INFO metric KID std photo->monet = 0.019393419846892357
+2026-09-28 14:31:43,301 INFO metric Precision photo->monet = 0.375
+2026-09-28 14:31:43,301 INFO metric Recall photo->monet = 0.0
+2026-09-28 14:31:43,301 INFO metric Density photo->monet = 0.125
+2026-09-28 14:31:43,301 INFO metric Coverage photo->monet = 0.02500000037252903
+2026-09-28 14:31:43,301 INFO metric Images compared photo->monet (real, fake) = 40, 40
+2026-09-28 14:31:43,301 INFO metric FID monet->photo = 331.0407844657929
+2026-09-28 14:31:43,301 INFO metric KID mean monet->photo = 0.3057263493537903
+2026-09-28 14:31:43,301 INFO metric KID std monet->photo = 0.011814350262284279
+2026-09-28 14:31:43,301 INFO metric Precision monet->photo = 0.02500000037252903
+2026-09-28 14:31:43,301 INFO metric Recall monet->photo = 0.0
+2026-09-28 14:31:43,305 INFO metric Density monet->photo = 0.01666666753590107
+2026-09-28 14:31:43,305 INFO metric Coverage monet->photo = 0.05000000074505806
+2026-09-28 14:31:43,305 INFO metric Images compared monet->photo (real, fake) = 40, 40
+2026-09-28 14:31:43,305 INFO metric Memorization distance photo->monet = 0.3813557028770447
+2026-09-28 14:31:43,305 INFO metric MiFID-like photo->monet (epsilon 0.1) = 330.53456153335327
+2026-09-28 14:31:43,305 INFO metric Cycle-reconstruction L1 photo->monet->photo = 0.21373403072357178
+2026-09-28 14:31:43,305 INFO metric Cycle-reconstruction L1 monet->photo->monet = 0.2038899064064026
+2026-09-28 14:31:43,305 INFO metric Identity L1 G_BA(photo) vs photo = 0.21418824791908264
+2026-09-28 14:31:43,305 INFO metric Identity L1 G_AB(monet) vs monet = 0.19948932528495789
+2026-09-28 14:31:43,305 INFO metric LPIPS input vs translation photo->monet = 0.8544210195541382
+2026-09-28 14:31:43,305 INFO metric LPIPS input vs translation monet->photo = 0.7199088931083679
+2026-09-28 14:31:43,305 INFO metric LPIPS input vs reconstruction photo->monet->photo = 0.968319296836853
+2026-09-28 14:31:43,307 INFO metric LPIPS input vs reconstruction monet->photo->monet = 0.7453082203865051
+2026-09-28 14:31:43,307 INFO metric Content cosine similarity photo->monet = 0.48748579621315
+2026-09-28 14:31:43,307 INFO metric Content cosine similarity monet->photo = 0.5168834924697876
+2026-09-28 14:31:43,307 INFO metric Holdout images (photo, monet) = 20, 8
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_g = 14.076165358225504
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_d_a = 0.3676719268163045
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_d_b = 0.36920441935459775
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_gan_ab = 0.5433411101500193
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_gan_ba = 0.4773043592770894
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_cycle = 0.8715444405873617
+2026-09-28 14:31:43,307 INFO metric Final epoch mean loss_identity = 0.8680150906244913
+2026-09-28 14:31:43,307 INFO metric Gradient norm G mean = 71.88675053914388
+2026-09-28 14:31:43,307 INFO metric Gradient norm G max = 93.13325500488281
+2026-09-28 14:31:43,307 INFO metric Gradient norm D mean = 13.2610445022583
+2026-09-28 14:31:43,307 INFO metric Gradient norm D max = 21.023792266845703
+2026-09-28 14:31:43,307 INFO metric NaN or Inf losses = 0
+2026-09-28 14:31:43,307 INFO metric Mixed precision disabled at step = None
+2026-09-28 14:31:43,307 INFO metric Parameter count g_ab = 198659
+2026-09-28 14:31:43,307 INFO metric Parameter count g_ba = 198659
+2026-09-28 14:31:43,307 INFO metric Parameter count d_a = 175089
+2026-09-28 14:31:43,307 INFO metric Parameter count d_b = 175089
+2026-09-28 14:31:43,307 INFO metric Parameter count total = 747496
+2026-09-28 14:31:43,309 INFO metric Training time (sec) = 4.11349081993103
+2026-09-28 14:31:43,309 INFO metric Training images/sec = 11.668921142944182
+2026-09-28 14:31:43,309 INFO metric Training image size = 64
+2026-09-28 14:31:43,309 INFO metric Epochs = 2
+2026-09-28 14:31:43,309 INFO metric Optimizer steps = 12
+2026-09-28 14:31:43,309 INFO metric Peak memory (MB) = 459.1
+2026-09-28 14:31:43,309 INFO metric Peak memory source = process_rss
+2026-09-28 14:31:43,309 INFO metric Device = cpu
+2026-09-28 14:31:43,309 INFO metric Inference images/sec photo->monet = 131.035504564549
+2026-09-28 14:31:43,309 INFO metric Inference images/sec monet->photo = 164.4441395047038
+2026-09-28 14:31:43,309 INFO metric Inference image size = 64
+2026-09-28 14:31:43,309 INFO metric Submission images = 80
+2026-09-28 14:31:43,309 INFO metric Human audit style mean = to fill: run audit.py
+2026-09-28 14:31:43,309 INFO metric Human audit content mean = to fill: run audit.py
+2026-09-28 14:31:43,309 INFO metric Human audit artifacts mean = to fill: run audit.py
+2026-09-28 14:31:43,309 INFO metric Human audit Cohen's kappa (mean over criteria) = to fill: run audit.py
+2026-09-28 14:31:43,309 INFO metric Human audit percent agreement (mean over criteria) = to fill: run audit.py
+2026-09-28 14:31:43,309 INFO metric Kaggle public score = to fill: outputs/<run>/kaggle/kaggle_results.json
+2026-09-28 14:31:43,309 INFO metric Kaggle private score = to fill
+2026-09-28 14:31:43,309 INFO metric Kaggle leaderboard rank = to fill
+2026-09-28 14:31:43,309 INFO metric Submission FID = 330.53456153335327
+2026-09-28 14:31:43,311 INFO metric Submission MiFID = 330.53456153335327
+2026-09-28 14:31:43,311 INFO metric Submission score source = local metrics.py, replace with the official script's values
+2026-09-28 14:31:46,556 INFO manifest reproducibility/manifests/Poushali_Purkayastha_task3_gan_smoke_metrics_20260928_143020.json
+2026-09-28 14:31:46,556 INFO run finished in 86.3 sec
