@@ -54,16 +54,23 @@ def write_preview(pred_dir, preview_dir, n):
     return len(files)
 
 
-def write_submission(pred_dir, zip_path, csv_path):
+def write_image_archive(pred_dir, zip_path, index_path):
     files = sorted(Path(pred_dir).glob("*.jpg"))
     zip_path = Path(zip_path)
     zip_path.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_STORED) as z:
         for f in files:
             z.write(f, arcname=f.name)
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    with open(index_path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "filename"])
         for i, p in enumerate(files):
             w.writerow([i, p.name])
     return len(files)
+
+
+def write_submission_csv(csv_path, fid, mifid, submission_id=1):
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["ID", "FID", "MiFID"])
+        w.writerow([submission_id, f"{fid:.6f}", f"{mifid:.6f}"])

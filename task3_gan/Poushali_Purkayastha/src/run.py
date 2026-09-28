@@ -28,7 +28,7 @@ from runlog import (
     write_manifest,
 )
 from train import train
-from translate import load_generators, translate_paths, write_preview, write_submission
+from translate import load_generators, translate_paths, write_image_archive, write_preview, write_submission_csv
 
 
 def resolve_config(arg):
@@ -137,9 +137,7 @@ def main():
         n_prev = write_preview(out_dir / "pred_A2B", out_dir / "pred_A2B_preview", tcfg["preview_images"])
         write_preview(out_dir / "pred_B2A", out_dir / "pred_B2A_preview", tcfg["preview_images"])
         kaggle_dir = out_dir / "kaggle"
-        n_sub = write_submission(out_dir / "pred_A2B", kaggle_dir / cfg["kaggle"]["zip_name"], kaggle_dir / "submission.csv")
-        if cfg.get("is_final"):
-            shutil.copy(kaggle_dir / "submission.csv", MEMBER_DIR / "submission.csv")
+        n_sub = write_image_archive(out_dir / "pred_A2B", kaggle_dir / cfg["kaggle"]["zip_name"], kaggle_dir / "image_index.csv")
         translate_summary = {
             "run_id": run_id,
             "infer_size": infer_size,
@@ -157,8 +155,23 @@ def main():
         paths = {"photo": photo_paths, "monet": monet_paths}
         metrics = compute_metrics(cfg, paths, holdout, gens, out_dir, train_summary, translate_summary, logger)
         write_report(metrics, out_dir / "full_metrics_report.csv", out_dir / "metrics.json")
+        kaggle_dir = out_dir / "kaggle"
+        kaggle_dir.mkdir(parents=True, exist_ok=True)
+        official = read_json(kaggle_dir / "official_scores.json")
+        if official:
+            fid, mifid, source = float(official["FID"]), float(official["MiFID"]), "official evaluation script"
+        else:
+            eps = float(cfg["metrics"]["mifid_epsilon"])
+            fid, mifid, source = metrics["FID photo->monet"], metrics[f"MiFID-like photo->monet (epsilon {eps})"], "local metrics.py, replace with the official script's values"
+        write_submission_csv(kaggle_dir / "submission.csv", fid, mifid)
+        metrics["Submission FID"] = fid
+        metrics["Submission MiFID"] = mifid
+        metrics["Submission score source"] = source
+        write_report(metrics, out_dir / "full_metrics_report.csv", out_dir / "metrics.json")
+        logger.info("submission.csv written with FID %.4f MiFID %.4f from %s", fid, mifid, source)
         if cfg.get("is_final"):
             shutil.copy(out_dir / "full_metrics_report.csv", MEMBER_DIR / "full_metrics_report.csv")
+            shutil.copy(kaggle_dir / "submission.csv", MEMBER_DIR / "submission.csv")
         for k, v in metrics.items():
             logger.info("metric %s = %s", k, v)
 

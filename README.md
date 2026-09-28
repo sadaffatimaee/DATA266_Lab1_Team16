@@ -247,8 +247,8 @@ Where results live:
 | File | Content |
 | --- | --- |
 | task3_gan/Poushali_Purkayastha/full_metrics_report.csv | every required Task 3 metric, both directions |
-| task3_gan/Poushali_Purkayastha/submission.csv | index of the images in the Kaggle zip |
-| task3_gan/Poushali_Purkayastha/outputs/full/kaggle/images.zip | the Kaggle submission, not committed, backed up to Drive |
+| task3_gan/Poushali_Purkayastha/submission.csv | the Kaggle leaderboard file: columns ID, FID, MiFID and one result row, as the class competition requires |
+| task3_gan/Poushali_Purkayastha/outputs/full/kaggle/images.zip, image_index.csv | every generated Monet-style image, the direct output of generators.pt; the zip is not committed and is backed up to Drive |
 | task3_gan/Poushali_Purkayastha/outputs/full/pred_A2B_preview, pred_B2A_preview | the first 60 translated images of each direction; the full sets are not committed |
 | task3_gan/Poushali_Purkayastha/outputs/full/samples | one grid per epoch: real photo, fake Monet, reconstruction, real Monet, fake photo, reconstruction |
 | task3_gan/Poushali_Purkayastha/outputs/full/loss_curves.png, lr_schedule.png | generator, discriminator, cycle, identity losses, gradient norms, learning rate |
@@ -257,4 +257,14 @@ Where results live:
 | task3_gan/Poushali_Purkayastha/data_processed/full/holdout.json | the holdout file names and split sizes |
 | task3_gan/Poushali_Purkayastha/results.md, failure_analysis.md | justification, results, artifact analysis |
 
-Kaggle scores are pulled into the metrics report from outputs/full/kaggle/kaggle_results.json once it is filled with public_score, private_score, and rank.
+The FID and MiFID in submission.csv must come from the evaluation script the course provides. Run that script on outputs/full/pred_A2B against the real Monet images, save its two numbers as outputs/full/kaggle/official_scores.json in the form `{"FID": 43.456, "MiFID": 0.389}`, and rerun evaluate_local.py: submission.csv is then rewritten from the official numbers and the metrics report records the source. Without that file the local FID and MiFID-like values are used as placeholders. Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
+
+## Datasets on Google Drive
+
+Raw datasets are not committed. Zipped copies with read access:
+
+| Task | Dataset | Link |
+| --- | --- | --- |
+| 1 | TinyStories archive | https://drive.google.com/file/d/1uqVRUej1XNxDCxLaXkqyVURgLkKECd8a/view?usp=drive_link |
+| 2 | Yelp polarity, official train and test parquet files | to add |
+| 3 | monet_jpg and photo_jpg from the class competition | to add |
