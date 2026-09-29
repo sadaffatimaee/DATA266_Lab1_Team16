@@ -17,12 +17,12 @@ model:
   n_d_layers: 3
   dropout: 0.0
 train:
-  epochs: 60
+  epochs: 24
   steps_per_epoch: 300
   batch_size: 4
   lr: 2.0e-4
   beta1: 0.5
-  decay_start_epoch: 30
+  decay_start_epoch: 12
   gan_mode: lsgan
   lambda_cycle: 10.0
   lambda_identity: 5.0

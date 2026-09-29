@@ -170,6 +170,7 @@ def main():
         logger.info("submission.csv written with FID %.4f MiFID %.4f from %s", fid, mifid, source)
         if cfg.get("is_final"):
             shutil.copy(out_dir / "full_metrics_report.csv", MEMBER_DIR / "full_metrics_report.csv")
+            shutil.copy(out_dir / "full_metrics_report.csv", MEMBER_DIR / "metrics_report.csv")
             shutil.copy(kaggle_dir / "submission.csv", MEMBER_DIR / "submission.csv")
         for k, v in metrics.items():
             logger.info("metric %s = %s", k, v)
