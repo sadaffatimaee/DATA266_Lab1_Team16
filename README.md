@@ -257,7 +257,14 @@ Where results live:
 | task3_gan/Poushali_Purkayastha/data_processed/full/holdout.json | the holdout file names and split sizes |
 | task3_gan/Poushali_Purkayastha/results.md, failure_analysis.md | justification, results, artifact analysis |
 
-The FID and MiFID in submission.csv must come from the evaluation script the course provides. Run that script on outputs/full/pred_A2B against the real Monet images, save its two numbers as outputs/full/kaggle/official_scores.json in the form `{"FID": 43.456, "MiFID": 0.389}`, and rerun evaluate_local.py: submission.csv is then rewritten from the official numbers and the metrics report records the source. Without that file the local FID and MiFID-like values are used as placeholders. Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
+The competition scores FID and MiFID as defined on its Overview page: FID from Inception-v3 features against the real Monet statistics, MiFID as the mean cosine distance between generated and real Inception features after subsampling to equal sizes, and the leaderboard score is their average. `src/kaggle_eval.py` implements exactly that, reading the competition's real_stats.npz from task3_gan/data when present and the real Monet images otherwise, and writes outputs/full/kaggle/official_scores.json:
+
+```
+python task3_gan/Poushali_Purkayastha/src/kaggle_eval.py
+python task3_gan/Poushali_Purkayastha/evaluate_local.py --config configs/full.yaml
+```
+
+evaluate_local.py then rewrites submission.csv from official_scores.json and records the source in the metrics report. If the course publishes its own evaluation script, its two numbers go into the same JSON file instead. Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
 
 ## Datasets on Google Drive
 

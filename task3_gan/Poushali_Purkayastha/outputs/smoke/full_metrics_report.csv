@@ -17,6 +17,8 @@ Coverage monet->photo,0.05000000074505806
 "Images compared monet->photo (real, fake)","40, 40"
 Memorization distance photo->monet,0.3813557028770447
 MiFID-like photo->monet (epsilon 0.1),330.53456153335327
+MiFID course definition photo->monet (mean cosine distance),0.5154236555099487
+Course leaderboard score (FID + MiFID) / 2,165.5249925944316
 Cycle-reconstruction L1 photo->monet->photo,0.21373403072357178
 Cycle-reconstruction L1 monet->photo->monet,0.2038899064064026
 Identity L1 G_BA(photo) vs photo,0.21418824791908264
@@ -67,5 +69,5 @@ Kaggle public score,to fill: outputs/<run>/kaggle/kaggle_results.json
 Kaggle private score,to fill
 Kaggle leaderboard rank,to fill
 Submission FID,330.53456153335327
-Submission MiFID,330.53456153335327
-Submission score source,"local metrics.py, replace with the official script's values"
+Submission MiFID,0.5154236555099487
+Submission score source,"local metrics.py on a subsample, replace with kaggle_eval.py values"

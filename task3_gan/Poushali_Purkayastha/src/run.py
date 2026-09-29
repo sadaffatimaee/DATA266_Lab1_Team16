@@ -161,8 +161,7 @@ def main():
         if official:
             fid, mifid, source = float(official["FID"]), float(official["MiFID"]), "official evaluation script"
         else:
-            eps = float(cfg["metrics"]["mifid_epsilon"])
-            fid, mifid, source = metrics["FID photo->monet"], metrics[f"MiFID-like photo->monet (epsilon {eps})"], "local metrics.py, replace with the official script's values"
+            fid, mifid, source = metrics["FID photo->monet"], metrics["MiFID course definition photo->monet (mean cosine distance)"], "local metrics.py on a subsample, replace with kaggle_eval.py values"
         write_submission_csv(kaggle_dir / "submission.csv", fid, mifid)
         metrics["Submission FID"] = fid
         metrics["Submission MiFID"] = mifid

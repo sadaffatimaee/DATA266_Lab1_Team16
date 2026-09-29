@@ -188,6 +188,10 @@ def compute_metrics(cfg, paths, holdout, gens, out_dir, train_summary, translate
     eps = float(mc["mifid_epsilon"])
     m["Memorization distance photo->monet"] = d
     m[f"MiFID-like photo->monet (epsilon {eps})"] = m["FID photo->monet"] / d if d < eps else m["FID photo->monet"]
+    fake_n = feats["fake_monet"] / np.maximum(np.linalg.norm(feats["fake_monet"], axis=1, keepdims=True), 1e-8)
+    real_n = feats["real_monet"] / np.maximum(np.linalg.norm(feats["real_monet"], axis=1, keepdims=True), 1e-8)
+    m["MiFID course definition photo->monet (mean cosine distance)"] = float(np.mean(1.0 - fake_n @ real_n.T))
+    m["Course leaderboard score (FID + MiFID) / 2"] = (m["FID photo->monet"] + m["MiFID course definition photo->monet (mean cosine distance)"]) / 2
 
     try:
         lpips_fn = LPIPSMetric(mc["lpips_net"], device)
