@@ -1,0 +1,90 @@
+=== sample 1 | prompt: 'Once upon a time' | mode: greedy ===
+Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine. One day, she went to the park with her mommy. They saw a big box with a big smile on her face. She was so happy to have a new friend.
+
+Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine and explore the world around her. One day, she went to the park with her mommy. She saw 
+
+=== sample 2 | prompt: 'Once upon a time' | mode: temperature_0.7 ===
+Once upon a time, there was a little girl named Lily. She loved to go to the store with her mom and dad. One day, she went to the park with her mom and dad. They played together every day and they lived happily ever after.
+
+One day, Lily and her mom went to the park to play. They saw a star that flew on the ground. Lily had a deep breath and a big stage. She was scared and ran away.
+
+"Don't worry, Lily. I will gi
+
+=== sample 3 | prompt: 'Once upon a time' | mode: temperature_0.7 ===
+Once upon a time, there was a big hill who wanted to fly it. She had a rock and a red ball. She loved to make sure everything was happy. She thanked her mom for helping her son.
+
+Tom and Lily were playing in the park. They liked to go on the swings and slide. Lily said, "We love you, Lily. We love you, Mommy. We love you. We love you. Can we have to swing on your swings?"
+
+Mommy said, "Yes, Mommy, we can find som
+
+=== sample 4 | prompt: 'Once upon a time' | mode: temperature_1.0 ===
+Once upon a time, there was a little girl named Lily. She loved to play in the park outside. One day, Lily's friend, the little girl asked her mom, "What are you doing with those?" Her mom said, "I bring some red red shirt!"
+
+So, Lily asked her mom why it was fun, but her mom said, "Okay, it's not so good. I just want to sail. But that they are inside there. They are only clean and behind them."
+
+Tim laughs. He s
+
+=== sample 5 | prompt: 'Once upon a time' | mode: temperature_1.0 ===
+Once upon a time, there was a happy and lived in a cupboard with his friends. One day, Timmy's mommy took him to a restaurant where his name. It was the rest of his home and enjoyed his special sound. From that day on, Timmy always remembered to be his friend and smile was no longer scared anymore. He learned that it's important to be good and promise to always buy something new to be okay.
+
+Once upon a time, the
+
+=== sample 6 | prompt: 'One day, a little girl' | mode: greedy ===
+One day, a little girl named Lily went to the park with her mom. She saw a big box of cards and a big box. She wanted to play with the cardboard too. She said, "Lily, you can have a ball too. It is my ball. It is my ball. It is my ball. It is my ball. It is my ball. It is my ball. It has a ball. It can make a ball. It can make a ball. It is a ball. It can make a ball. It can make a ball. It is a ball. It can make a bal
+
+=== sample 7 | prompt: 'One day, a little girl' | mode: temperature_0.7 ===
+One day, a little girl went to the park. She saw a big box with lots of other kids. She had a big sock where she had an original monkey with a red shiny box. She saw a towel and threw it away. She was so happy and thanked the people.
+
+The monkey was kind and grateful. He cried and cried. He got off. He thought it was very cute, but he was too far away.
+
+The monster said, "That looks so nice to you. You're so kind and h
+
+=== sample 8 | prompt: 'One day, a little girl' | mode: temperature_0.7 ===
+One day, a little girl named Lily went outside and saw a little girl named Lily. She loved to play with her toys and dress up in her hands. One day, she went to the park with her mom and dad. They had many ducks and tasted on the road. Lily was amazed by her friend.
+
+Mom said they lost their mom and dad. She said they would bring out something very fake and take turns their toys.
+
+Lily and Ben were sad and angry. They 
+
+=== sample 9 | prompt: 'One day, a little girl' | mode: temperature_1.0 ===
+One day, a little girl named Lily went to the park with her mommy and asked her to build together and get a candy bowl around. Lily saw them tidy and picked it up. They found a ball, and Tommy flew out of the shadow.
+
+"That's ok, my book," Max said. "It's okay, Sammy. I think went back to your home. We did not responsible."
+
+They both laughed and clapped again. They went inside, hoping that they shared the reindeer aga
+
+=== sample 10 | prompt: 'One day, a little girl' | mode: temperature_1.0 ===
+One day, a little girl named Lily wanted to play with her. The little girl believed that she was safe and thanked the little girl and started to worry. At the park, she'd never be able to be friends now. The boy pulled the car back home, and said he loved how much fun more adventures. So, Lily and her friends took her to the screen to clean it.
+
+Once upon a time there was a bird. They wanted to fly around the sunshine.
+
+=== sample 11 | prompt: 'The cat' | mode: greedy ===
+The cat was so happy that he had found a special special place to his friends. He was so happy that he had found a special place to play with.
+
+Once upon a time, there was a little girl named Lily. She loved to play outside in the sunshine and explore the world around her. One day, she went to the park with her mommy. She saw a big box of candy and she wanted to play with it. She wanted to play with it t
+
+=== sample 12 | prompt: 'The cat' | mode: temperature_0.7 ===
+The cat didn't want to play with his toy car at the swing. The cat said, "Hi, this is a good idea. I do not know it can have some sweet different things. Then you should not enjoy the field. You can make it float and catch it in the unknown. It is brown and strong. It is yummy. It can make me happy."
+
+Lily and Tom smile. They want to share the card with the card and the cart is happy. They take the card 
+
+=== sample 13 | prompt: 'The cat' | mode: temperature_0.7 ===
+The cat was so happy that it had to be safe and sound. The cat made him feel better and he had never seen anything special. 
+
+The cat had an idea and asked him to come to help him. The cat said he was confused, but she told him the caterpillar that he was so brave and thanked his mom for coming off the cat. He learned that it's important to listen to his mom.
+
+Once upon a time, there was a boy named Timm
+
+=== sample 14 | prompt: 'The cat' | mode: temperature_1.0 ===
+The cat got angry and angry. He was not happy. He scratched out. He did not see his fabric. He wanted to unlect his ordinary too.
+
+"Hi, Kitty!" he shouted. She cried.
+
+"I wanted to play with him," she said. "Maybe he wanted to do it, so his mom roared and his car cra. We could say fast! We are sorry for some others. We can see him feeling happy." 
+
+His mom hugged him and said, "No, you know. It sounds fu
+
+=== sample 15 | prompt: 'The cat' | mode: temperature_1.0 ===
+The cat didn't like the truck at Johnny. He wanted to fly again, but he noticed that he was yellow and he wanted to be her best friend.
+
+He worked hard, and finally, he would feel it trained. He got scared and cried and cried. He was so scared for the bird to make him feel better. He continued to enjoy himself from the tree and the branches he decided to find himself. He swam around and played and laughe

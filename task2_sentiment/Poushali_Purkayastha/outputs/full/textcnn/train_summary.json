@@ -1,0 +1,38 @@
+{
+  "model": "textcnn",
+  "type": "textcnn",
+  "model_config": {
+    "type": "textcnn",
+    "embed_dim": 128,
+    "n_filters": 100,
+    "kernel_sizes": [
+      3,
+      4,
+      5
+    ],
+    "dropout": 0.5,
+    "lr": 0.001,
+    "epochs": 4,
+    "batch_size": 256
+  },
+  "device": "NVIDIA GeForce RTX 5090",
+  "amp_dtype": "torch.bfloat16",
+  "param_count": 2714201,
+  "epochs": 4,
+  "steps_per_epoch": 391,
+  "optimizer_steps": 1564,
+  "best_epoch": 4,
+  "best_val_macro_f1": 0.9252871785327079,
+  "final_train_loss": 0.19177670891175186,
+  "train_examples": 400000,
+  "train_time_sec": 10.701339483261108,
+  "train_examples_per_sec": 37378.49832964131,
+  "test_inference_time_sec": 0.18575024604797363,
+  "test_inference_examples_per_sec": 204575.7720836922,
+  "grad_norm_mean": 1.0045359931562259,
+  "grad_norm_max": 3.1635005474090576,
+  "nan_losses": 0,
+  "checkpoint": "best.pt",
+  "peak_memory_mb": 532.6,
+  "peak_memory_source": "cuda_max_memory_allocated"
+}

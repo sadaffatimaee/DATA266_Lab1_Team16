@@ -1,63 +1,195 @@
 Model,Metric,Value
-baseline,Accuracy,0.9235526315789474
-baseline,Precision (macro),0.9235698102093941
-baseline,Recall (macro),0.9235526315789474
-baseline,F1 (macro),0.9235518564561844
-baseline,Precision (micro),0.9235526315789474
-baseline,Recall (micro),0.9235526315789474
-baseline,F1 (micro),0.9235526315789474
-baseline,Precision (weighted),0.9235698102093941
-baseline,Recall (weighted),0.9235526315789474
-baseline,F1 (weighted),0.9235518564561843
-baseline,Confusion TN,17487
-baseline,Confusion FP,1513
-baseline,Confusion FN,1392
-baseline,Confusion TP,17608
-baseline,ROC-AUC,0.9746419044321329
-baseline,PR-AUC,0.9748786408883722
-baseline,MCC,0.8471224416141604
-baseline,Brier Score,0.058380895752031293
-baseline,ECE,0.006412744920933812
-baseline,Accuracy 95% CI low,0.9209203947368422
-baseline,Accuracy 95% CI high,0.9262105263157895
-baseline,Macro-F1 95% CI low,0.9209199428869272
-baseline,Macro-F1 95% CI high,0.9262022304364878
-baseline,MCC 95% CI low,0.8418668746068497
-baseline,MCC 95% CI high,0.852416315716794
-baseline,Macro-F1 [length_bucket=long],0.91999471999472
-baseline,Error Rate [length_bucket=long],0.0772684910615945
+baseline,Accuracy,0.9232105263157895
+baseline,Precision (macro),0.9232297346148808
+baseline,Recall (macro),0.9232105263157895
+baseline,F1 (macro),0.9232096550325402
+baseline,Precision (micro),0.9232105263157895
+baseline,Recall (micro),0.9232105263157895
+baseline,F1 (micro),0.9232105263157895
+baseline,Precision (weighted),0.9232297346148808
+baseline,Recall (weighted),0.9232105263157895
+baseline,F1 (weighted),0.9232096550325403
+baseline,Confusion TN,17477
+baseline,Confusion FP,1523
+baseline,Confusion FN,1395
+baseline,Confusion TP,17605
+baseline,ROC-AUC,0.9745729861495844
+baseline,PR-AUC,0.9747896933587442
+baseline,MCC,0.8464402607127229
+baseline,Brier Score,0.05850982785106716
+baseline,ECE,0.006406550969163444
+baseline,Accuracy 95% CI low,0.9204730263157895
+baseline,Accuracy 95% CI high,0.9257901315789473
+baseline,Macro-F1 95% CI low,0.9204726330152736
+baseline,Macro-F1 95% CI high,0.9257901053148475
+baseline,MCC 95% CI low,0.8409489894319166
+baseline,MCC 95% CI high,0.8515989641577817
+baseline,Macro-F1 [length_bucket=long],0.9188726923949264
+baseline,Error Rate [length_bucket=long],0.07836990595611282
 baseline,Support [length_bucket=long],11803
-baseline,Macro-F1 [length_bucket=medium],0.9238357891945352
-baseline,Error Rate [length_bucket=medium],0.07611104630817689
+baseline,Macro-F1 [length_bucket=medium],0.9241859694741006
+baseline,Error Rate [length_bucket=medium],0.07576111046308176
 baseline,Support [length_bucket=medium],17146
-baseline,Macro-F1 [length_bucket=short],0.9206683788907235
-baseline,Error Rate [length_bucket=short],0.07601370014363051
+baseline,Macro-F1 [length_bucket=short],0.9199765333577936
+baseline,Error Rate [length_bucket=short],0.07667661031930173
 baseline,Support [length_bucket=short],9051
-baseline,Macro-F1 [has_negation=0],0.9109281097366564
-baseline,Error Rate [has_negation=0],0.06346233874323759
+baseline,Macro-F1 [has_negation=0],0.9111436667434092
+baseline,Error Rate [has_negation=0],0.06335830212234705
 baseline,Support [has_negation=0],9612
-baseline,Macro-F1 [has_negation=1],0.9165323522834368
-baseline,Error Rate [has_negation=1],0.08084401859940815
+baseline,Macro-F1 [has_negation=1],0.9160361596072537
+baseline,Error Rate [has_negation=1],0.08133718472594054
 baseline,Support [has_negation=1],28388
-baseline,Macro-F1 [has_but=0],0.9333288533395165
-baseline,Error Rate [has_but=0],0.06573782274561835
+baseline,Macro-F1 [has_but=0],0.9329372299189214
+baseline,Error Rate [has_but=0],0.0661248410460552
 baseline,Support [has_but=0],18087
-baseline,Macro-F1 [has_but=1],0.9129300475997006
-baseline,Error Rate [has_but=1],0.08617486064380053
+baseline,Macro-F1 [has_but=1],0.9126327844531166
+baseline,Error Rate [has_but=1],0.08647617134535224
 baseline,Support [has_but=1],19913
-baseline,Macro-F1 [has_exclamation=0],0.910587685467108
-baseline,Error Rate [has_exclamation=0],0.08721272834413674
+baseline,Macro-F1 [has_exclamation=0],0.9101905970703843
+baseline,Error Rate [has_exclamation=0],0.08760557847181305
 baseline,Support [has_exclamation=0],20364
-baseline,Macro-F1 [has_exclamation=1],0.9336385402696169
-baseline,Error Rate [has_exclamation=1],0.06401678385121345
+baseline,Macro-F1 [has_exclamation=1],0.9333402244439069
+baseline,Error Rate [has_exclamation=1],0.06430029485144029
 baseline,Support [has_exclamation=1],17636
 baseline,Parameter Count,2576641
-baseline,Training Time (sec),71.05578970909119
-baseline,Training Examples/sec,5629.379416338008
-baseline,Inference Examples/sec,21677.569859573607
-baseline,Peak Memory (MB),903.0
-baseline,Peak Memory Source,process_rss
-baseline,Device,cpu
+baseline,Training Time (sec),6.813399791717529
+baseline,Training Examples/sec,58707.84222676115
+baseline,Inference Examples/sec,503211.070523122
+baseline,Peak Memory (MB),316.5
+baseline,Peak Memory Source,cuda_max_memory_allocated
+baseline,Device,NVIDIA GeForce RTX 5090
 baseline,Epochs,4
 baseline,Best Epoch,3
 baseline,Optimizer Steps,1564
+textcnn,Accuracy,0.925078947368421
+textcnn,Precision (macro),0.925181444363423
+textcnn,Recall (macro),0.9250789473684211
+textcnn,F1 (macro),0.9250744318576403
+textcnn,Precision (micro),0.925078947368421
+textcnn,Recall (micro),0.925078947368421
+textcnn,F1 (micro),0.925078947368421
+textcnn,Precision (weighted),0.9251814443634231
+textcnn,Recall (weighted),0.925078947368421
+textcnn,F1 (weighted),0.9250744318576403
+textcnn,Confusion TN,17724
+textcnn,Confusion FP,1276
+textcnn,Confusion FN,1571
+textcnn,Confusion TP,17429
+textcnn,ROC-AUC,0.9787326911357341
+textcnn,PR-AUC,0.9790655662714817
+textcnn,MCC,0.8502603855539519
+textcnn,Brier Score,0.05509076481372608
+textcnn,ECE,0.0033215267399065774
+textcnn,Accuracy 95% CI low,0.9225
+textcnn,Accuracy 95% CI high,0.9278947368421052
+textcnn,Macro-F1 95% CI low,0.9224938298325526
+textcnn,Macro-F1 95% CI high,0.9278763772896635
+textcnn,MCC 95% CI low,0.8451311373106384
+textcnn,MCC 95% CI high,0.85585545766539
+textcnn,Macro-F1 [length_bucket=long],0.9218199401213469
+textcnn,Error Rate [length_bucket=long],0.07489621282724734
+textcnn,Support [length_bucket=long],11803
+textcnn,Macro-F1 [length_bucket=medium],0.9279532737939284
+textcnn,Error Rate [length_bucket=medium],0.07202846144873443
+textcnn,Support [length_bucket=medium],17146
+textcnn,Macro-F1 [length_bucket=short],0.9160560753378585
+textcnn,Error Rate [length_bucket=short],0.08043310131477188
+textcnn,Support [length_bucket=short],9051
+textcnn,Macro-F1 [has_negation=0],0.9082531956849463
+textcnn,Error Rate [has_negation=0],0.0662713275072826
+textcnn,Support [has_negation=0],9612
+textcnn,Macro-F1 [has_negation=1],0.9192722572881731
+textcnn,Error Rate [has_negation=1],0.07784979568831896
+textcnn,Support [has_negation=1],28388
+textcnn,Macro-F1 [has_but=0],0.9328352306267684
+textcnn,Error Rate [has_but=0],0.06634599436059052
+textcnn,Support [has_but=0],18087
+textcnn,Macro-F1 [has_but=1],0.916179747606989
+textcnn,Error Rate [has_but=1],0.08270978757595537
+textcnn,Support [has_but=1],19913
+textcnn,Macro-F1 [has_exclamation=0],0.9138975602662112
+textcnn,Error Rate [has_exclamation=0],0.08372618346100957
+textcnn,Support [has_exclamation=0],20364
+textcnn,Macro-F1 [has_exclamation=1],0.933198022617804
+textcnn,Error Rate [has_exclamation=1],0.06475391245180318
+textcnn,Support [has_exclamation=1],17636
+textcnn,Parameter Count,2714201
+textcnn,Training Time (sec),10.701339483261108
+textcnn,Training Examples/sec,37378.49832964131
+textcnn,Inference Examples/sec,204575.7720836922
+textcnn,Peak Memory (MB),532.6
+textcnn,Peak Memory Source,cuda_max_memory_allocated
+textcnn,Device,NVIDIA GeForce RTX 5090
+textcnn,Epochs,4
+textcnn,Best Epoch,4
+textcnn,Optimizer Steps,1564
+textcnn,"McNemar b (baseline right, model wrong)",980
+textcnn,"McNemar c (baseline wrong, model right)",1051
+textcnn,McNemar Statistic,2.4126046282619398
+textcnn,McNemar p-value,0.12036195468358898
+bilstm,Accuracy,0.9305526315789474
+bilstm,Precision (macro),0.9307186300617226
+bilstm,Recall (macro),0.9305526315789474
+bilstm,F1 (macro),0.9305459396994769
+bilstm,Precision (micro),0.9305526315789474
+bilstm,Recall (micro),0.9305526315789474
+bilstm,F1 (micro),0.9305526315789474
+bilstm,Precision (weighted),0.9307186300617227
+bilstm,Recall (weighted),0.9305526315789474
+bilstm,F1 (weighted),0.9305459396994767
+bilstm,Confusion TN,17494
+bilstm,Confusion FP,1506
+bilstm,Confusion FN,1133
+bilstm,Confusion TP,17867
+bilstm,ROC-AUC,0.9812108933518006
+bilstm,PR-AUC,0.9809701102301547
+bilstm,MCC,0.8612712456436794
+bilstm,Brier Score,0.05284576164297669
+bilstm,ECE,0.0241105525687053
+bilstm,Accuracy 95% CI low,0.9280526315789474
+bilstm,Accuracy 95% CI high,0.9329736842105263
+bilstm,Macro-F1 95% CI low,0.9280475636534855
+bilstm,Macro-F1 95% CI high,0.9329709816590631
+bilstm,MCC 95% CI low,0.856292788752842
+bilstm,MCC 95% CI high,0.866059876913038
+bilstm,Macro-F1 [length_bucket=long],0.9232090460173191
+bilstm,Error Rate [length_bucket=long],0.07455731593662629
+bilstm,Support [length_bucket=long],11803
+bilstm,Macro-F1 [length_bucket=medium],0.9340876324732733
+bilstm,Error Rate [length_bucket=medium],0.06584626151872153
+bilstm,Support [length_bucket=medium],17146
+bilstm,Macro-F1 [length_bucket=short],0.927383558076649
+bilstm,Error Rate [length_bucket=short],0.06960556844547561
+bilstm,Support [length_bucket=short],9051
+bilstm,Macro-F1 [has_negation=0],0.911770647065619
+bilstm,Error Rate [has_negation=0],0.06325426550145652
+bilstm,Support [has_negation=0],9612
+bilstm,Macro-F1 [has_negation=1],0.926402961031999
+bilstm,Error Rate [has_negation=1],0.07154431449908416
+bilstm,Support [has_negation=1],28388
+bilstm,Macro-F1 [has_but=0],0.9386221054318753
+bilstm,Error Rate [has_but=0],0.060485431525404976
+bilstm,Support [has_but=0],18087
+bilstm,Macro-F1 [has_but=1],0.921767567738901
+bilstm,Error Rate [has_but=1],0.07758750564957562
+bilstm,Support [has_but=1],19913
+bilstm,Macro-F1 [has_exclamation=0],0.9177147835743988
+bilstm,Error Rate [has_exclamation=0],0.08038695737576118
+bilstm,Support [has_exclamation=0],20364
+bilstm,Macro-F1 [has_exclamation=1],0.940901787848075
+bilstm,Error Rate [has_exclamation=1],0.05681560444545253
+bilstm,Support [has_exclamation=1],17636
+bilstm,Parameter Count,2824449
+bilstm,Training Time (sec),93.94336295127869
+bilstm,Training Examples/sec,4257.884617218246
+bilstm,Inference Examples/sec,46287.05582783388
+bilstm,Peak Memory (MB),567.9
+bilstm,Peak Memory Source,cuda_max_memory_allocated
+bilstm,Device,NVIDIA GeForce RTX 5090
+bilstm,Epochs,4
+bilstm,Best Epoch,4
+bilstm,Optimizer Steps,1564
+bilstm,"McNemar b (baseline right, model wrong)",906
+bilstm,"McNemar c (baseline wrong, model right)",1185
+bilstm,McNemar Statistic,36.96030607364897
+bilstm,McNemar p-value,1.2055875875657088e-09

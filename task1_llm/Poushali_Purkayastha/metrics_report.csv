@@ -1,0 +1,26 @@
+Metric,Value
+Training Cross-Entropy Loss,0.7687228218368862
+Validation Cross-Entropy Loss,0.7475277804374695
+Best Validation Cross-Entropy Loss,0.7475277804374695
+Perplexity,2.1117727918437357
+Bits-Per-Character,1.078454621763871
+Generalization Gap,-0.021195041399416747
+Top-1 Next-Character Accuracy,0.76295546875
+Distinct-1,0.33145161290322583
+Distinct-2,0.686530612244898
+Distinct-3,0.8099173553719008
+Repeated 4-gram Rate,0.051085331516083195
+Gradient Norm Mean,0.4891425988062873
+Gradient Norm Max,10.449631690979004
+Gradient Norm Last,0.7673089504241943
+Loss Spikes,0
+NaN or Inf Losses,0
+Parameter Count,3239936
+Training Tokens/sec,921855.8430941004
+Generation Tokens/sec,460.66769018861567
+Peak Memory (MB),1285.1
+Peak Memory Source,cuda_max_memory_allocated
+Total Training Time (sec),138.8503429889679
+Epochs,10
+Optimizer Steps,7820
+Device,NVIDIA GeForce RTX 5090

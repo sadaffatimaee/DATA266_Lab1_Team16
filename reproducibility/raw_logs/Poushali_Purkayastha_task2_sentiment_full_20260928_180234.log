@@ -1,0 +1,128 @@
+2026-09-28 18:02:34,555 INFO run_id full_20260928_180234 member Poushali_Purkayastha task task2_sentiment models baseline,textcnn,bilstm
+2026-09-28 18:02:34,557 INFO config task2_sentiment/Poushali_Purkayastha/src/configs/full.yaml {"run_name": "full", "is_final": true, "seed": 20, "data": {"hf_dataset": "fancyzhx/yelp_polarity", "eda_rows": null, "n_train": 100000, "n_val": 10000, "n_test": null, "max_len": 256, "vocab_size": 20000, "min_freq": 2, "remove_stopwords": true, "keep_negations": true, "stem": true}, "models": {"baseline": {"type": "mean_mlp", "embed_dim": 128, "hidden_dim": 128, "dropout": 0.3, "lr": 0.001, "epochs": 4, "batch_size": 256}, "textcnn": {"type": "textcnn", "embed_dim": 128, "n_filters": 100, "kernel_sizes": [3, 4, 5], "dropout": 0.5, "lr": 0.001, "epochs": 4, "batch_size": 256}, "bilstm": {"type": "bilstm", "embed_dim": 128, "hidden_dim": 128, "n_layers": 1, "dropout": 0.3, "lr": 0.001, "epochs": 4, "batch_size": 256}}, "train": {"weight_decay": 0.0, "grad_clip": 1.0, "amp": true, "log_interval": 50, "eval_batch_size": 1024}, "evaluation": {"baseline": "baseline", "bootstrap_samples": 1000, "ece_bins": 10, "error_review_model": "bilstm", "n_review_per_group": 5, "slice_min_support": 200}}
+2026-09-28 18:02:34,571 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.11.0+cu128", "cpu": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel", "cpu_cores": 24, "ram_gb": 68.1, "cuda_available": true, "cuda_version": "12.8", "gpus": ["NVIDIA GeForce RTX 5090"], "nvidia_smi": "Mon Sep 28 18:02:34 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.60                 KMD Version: 610.60        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5090      WDDM  |   00000000:01:00.0  On |                  N/A |\n| 31%   60C    P1            365W /  575W |    5398MiB /  32607MiB |     62%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            4440    C+G   ...8bbwe\\PhoneExperienceHost.exe      N/A      |\n|    0   N/A  N/A            5928    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           21940    C+G   ...yb3d8bbwe\\Notepad\\Notepad.exe      N/A      |\n|    0   N/A  N/A           29372      C   ...s\\Python\\Python312\\python.exe      N/A      |\n|    0   N/A  N/A           35204    C+G   ...xyewy\\ShellExperienceHost.exe      N/A      |\n|    0   N/A  N/A           37976    C+G   C:\\Windows\\explorer.exe               N/A      |\n|    0   N/A  N/A           38560    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           39272    C+G   ...indows\\System32\\ShellHost.exe      N/A      |\n|    0   N/A  N/A           42664    C+G   ...erControlCenter_v2\\Killer.exe      N/A      |\n|    0   N/A  N/A           48032    C+G   ...SnippingTool\\SnippingTool.exe      N/A      |\n|    0   N/A  N/A           48148    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           49320    C+G   ...2txyewy\\CrossDeviceResume.exe      N/A      |\n|    0   N/A  N/A           50472    C+G   ...yb3d8bbwe\\WindowsTerminal.exe      N/A      |\n|    0   N/A  N/A           50808    C+G   ...\\SubAgent\\AlienFXSubAgent.exe      N/A      |\n|    0   N/A  N/A           51328    C+G   ..._cw5n1h2txyewy\\SearchHost.exe      N/A      |\n|    0   N/A  N/A           51424    C+G   ...y\\StartMenuExperienceHost.exe      N/A      |\n|    0   N/A  N/A           53500    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           53548    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           59892    C+G   ...5n1h2txyewy\\TextInputHost.exe      N/A      |\n+-----------------------------------------------------------------------------------------+"}
+2026-09-28 18:02:34,572 INFO git {"commit": "ec1788f5c0a6925b4484c9fe76054ce340b81987", "branch": "main", "dirty": true}
+2026-09-28 18:02:34,575 INFO using cached data in task2_sentiment/Poushali_Purkayastha/data_processed/full
+2026-09-28 18:02:34,950 INFO data meta {"source": "fancyzhx/yelp_polarity", "seed": 20, "official_train_rows": 560000, "official_test_rows": 38000, "n_train": 100000, "n_val": 10000, "n_test": 38000, "train_class_counts": {"negative": 49555, "positive": 50445}, "val_class_counts": {"negative": 5046, "positive": 4954}, "test_class_counts": {"negative": 19000, "positive": 19000}, "preprocessing": {"lowercase": true, "literal_newlines_replaced": true, "punctuation_and_special_characters_removed": true, "apostrophes_kept_inside_words": true, "remove_stopwords": true, "keep_negations": true, "stemmer": "snowball_english"}, "max_len": 256, "vocab_size": 20000, "min_freq": 2, "train_encoding": {"unk_rate": 0.010102977907756253, "truncated_fraction": 0.0217, "mean_tokens": 68.88662}, "val_encoding": {"unk_rate": 0.011432581094550734, "truncated_fraction": 0.0209, "mean_tokens": 68.1211}, "test_encoding": {"unk_rate": 0.011426799678738777, "truncated_fraction": 0.021026315789473685, "mean_tokens": 68.5783947368421}}
+2026-09-28 18:02:36,448 INFO baseline device NVIDIA GeForce RTX 5090 amp True params 2576641 config {"type": "mean_mlp", "embed_dim": 128, "hidden_dim": 128, "dropout": 0.3, "lr": 0.001, "epochs": 4, "batch_size": 256}
+2026-09-28 18:02:36,449 INFO baseline train 100000 val 10000 test 38000 steps/epoch 391 total steps 1564
+2026-09-28 18:02:36,932 INFO baseline epoch 1 step 1/1564 loss 0.6982 grad_norm 0.063
+2026-09-28 18:02:37,099 INFO baseline epoch 1 step 50/1564 loss 0.5857 grad_norm 0.143
+2026-09-28 18:02:37,290 INFO baseline epoch 1 step 100/1564 loss 0.3864 grad_norm 0.100
+2026-09-28 18:02:37,501 INFO baseline epoch 1 step 150/1564 loss 0.3179 grad_norm 0.084
+2026-09-28 18:02:37,715 INFO baseline epoch 1 step 200/1564 loss 0.2813 grad_norm 0.083
+2026-09-28 18:02:37,912 INFO baseline epoch 1 step 250/1564 loss 0.2744 grad_norm 0.090
+2026-09-28 18:02:38,114 INFO baseline epoch 1 step 300/1564 loss 0.2764 grad_norm 0.090
+2026-09-28 18:02:38,329 INFO baseline epoch 1 step 350/1564 loss 0.2282 grad_norm 0.101
+2026-09-28 18:02:38,523 INFO baseline epoch 1 done train_loss 0.3594 val_loss 0.2367 val_acc 0.9074 val_macro_f1 0.9074 time 2.0s examples/sec 49042
+2026-09-28 18:02:38,753 INFO baseline epoch 2 step 400/1564 loss 0.2225 grad_norm 0.096
+2026-09-28 18:02:38,972 INFO baseline epoch 2 step 450/1564 loss 0.2955 grad_norm 0.124
+2026-09-28 18:02:39,170 INFO baseline epoch 2 step 500/1564 loss 0.1948 grad_norm 0.093
+2026-09-28 18:02:39,373 INFO baseline epoch 2 step 550/1564 loss 0.2680 grad_norm 0.106
+2026-09-28 18:02:39,568 INFO baseline epoch 2 step 600/1564 loss 0.2072 grad_norm 0.102
+2026-09-28 18:02:39,777 INFO baseline epoch 2 step 650/1564 loss 0.2233 grad_norm 0.082
+2026-09-28 18:02:39,991 INFO baseline epoch 2 step 700/1564 loss 0.1977 grad_norm 0.082
+2026-09-28 18:02:40,197 INFO baseline epoch 2 step 750/1564 loss 0.1399 grad_norm 0.079
+2026-09-28 18:02:40,348 INFO baseline epoch 2 done train_loss 0.2167 val_loss 0.2069 val_acc 0.9189 val_macro_f1 0.9189 time 1.6s examples/sec 61963
+2026-09-28 18:02:40,631 INFO baseline epoch 3 step 800/1564 loss 0.1999 grad_norm 0.077
+2026-09-28 18:02:40,839 INFO baseline epoch 3 step 850/1564 loss 0.1785 grad_norm 0.086
+2026-09-28 18:02:41,065 INFO baseline epoch 3 step 900/1564 loss 0.2184 grad_norm 0.107
+2026-09-28 18:02:41,287 INFO baseline epoch 3 step 950/1564 loss 0.1278 grad_norm 0.087
+2026-09-28 18:02:41,517 INFO baseline epoch 3 step 1000/1564 loss 0.2141 grad_norm 0.149
+2026-09-28 18:02:41,712 INFO baseline epoch 3 step 1050/1564 loss 0.1518 grad_norm 0.073
+2026-09-28 18:02:41,917 INFO baseline epoch 3 step 1100/1564 loss 0.1850 grad_norm 0.110
+2026-09-28 18:02:42,120 INFO baseline epoch 3 step 1150/1564 loss 0.1228 grad_norm 0.083
+2026-09-28 18:02:42,248 INFO baseline epoch 3 done train_loss 0.1858 val_loss 0.2004 val_acc 0.9196 val_macro_f1 0.9196 time 1.7s examples/sec 60195
+2026-09-28 18:02:42,535 INFO baseline epoch 4 step 1200/1564 loss 0.1748 grad_norm 0.095
+2026-09-28 18:02:42,736 INFO baseline epoch 4 step 1250/1564 loss 0.2270 grad_norm 0.122
+2026-09-28 18:02:42,918 INFO baseline epoch 4 step 1300/1564 loss 0.1414 grad_norm 0.083
+2026-09-28 18:02:43,111 INFO baseline epoch 4 step 1350/1564 loss 0.1328 grad_norm 0.098
+2026-09-28 18:02:43,311 INFO baseline epoch 4 step 1400/1564 loss 0.1713 grad_norm 0.087
+2026-09-28 18:02:43,489 INFO baseline epoch 4 step 1450/1564 loss 0.1556 grad_norm 0.111
+2026-09-28 18:02:43,685 INFO baseline epoch 4 step 1500/1564 loss 0.1593 grad_norm 0.082
+2026-09-28 18:02:43,877 INFO baseline epoch 4 step 1550/1564 loss 0.1691 grad_norm 0.071
+2026-09-28 18:02:43,951 INFO baseline epoch 4 done train_loss 0.1681 val_loss 0.1998 val_acc 0.9192 val_macro_f1 0.9192 time 1.5s examples/sec 66703
+2026-09-28 18:02:44,275 INFO textcnn device NVIDIA GeForce RTX 5090 amp True params 2714201 config {"type": "textcnn", "embed_dim": 128, "n_filters": 100, "kernel_sizes": [3, 4, 5], "dropout": 0.5, "lr": 0.001, "epochs": 4, "batch_size": 256}
+2026-09-28 18:02:44,276 INFO textcnn train 100000 val 10000 test 38000 steps/epoch 391 total steps 1564
+2026-09-28 18:02:44,589 INFO textcnn epoch 1 step 1/1564 loss 0.7151 grad_norm 1.436
+2026-09-28 18:02:44,914 INFO textcnn epoch 1 step 50/1564 loss 0.5538 grad_norm 2.384
+2026-09-28 18:02:45,230 INFO textcnn epoch 1 step 100/1564 loss 0.4166 grad_norm 1.141
+2026-09-28 18:02:45,559 INFO textcnn epoch 1 step 150/1564 loss 0.4125 grad_norm 1.105
+2026-09-28 18:02:45,883 INFO textcnn epoch 1 step 200/1564 loss 0.3666 grad_norm 1.297
+2026-09-28 18:02:46,193 INFO textcnn epoch 1 step 250/1564 loss 0.3695 grad_norm 1.114
+2026-09-28 18:02:46,505 INFO textcnn epoch 1 step 300/1564 loss 0.3875 grad_norm 0.888
+2026-09-28 18:02:46,818 INFO textcnn epoch 1 step 350/1564 loss 0.3183 grad_norm 0.924
+2026-09-28 18:02:47,149 INFO textcnn epoch 1 done train_loss 0.4051 val_loss 0.2461 val_acc 0.8973 val_macro_f1 0.8973 time 2.8s examples/sec 35505
+2026-09-28 18:02:47,389 INFO textcnn epoch 2 step 400/1564 loss 0.2810 grad_norm 1.080
+2026-09-28 18:02:47,735 INFO textcnn epoch 2 step 450/1564 loss 0.2940 grad_norm 1.334
+2026-09-28 18:02:48,073 INFO textcnn epoch 2 step 500/1564 loss 0.2868 grad_norm 1.180
+2026-09-28 18:02:48,401 INFO textcnn epoch 2 step 550/1564 loss 0.2864 grad_norm 0.758
+2026-09-28 18:02:48,720 INFO textcnn epoch 2 step 600/1564 loss 0.2560 grad_norm 0.731
+2026-09-28 18:02:49,062 INFO textcnn epoch 2 step 650/1564 loss 0.2753 grad_norm 0.815
+2026-09-28 18:02:49,388 INFO textcnn epoch 2 step 700/1564 loss 0.2631 grad_norm 0.908
+2026-09-28 18:02:49,738 INFO textcnn epoch 2 step 750/1564 loss 0.2175 grad_norm 1.573
+2026-09-28 18:02:49,996 INFO textcnn epoch 2 done train_loss 0.2641 val_loss 0.2082 val_acc 0.9143 val_macro_f1 0.9143 time 2.6s examples/sec 38156
+2026-09-28 18:02:50,438 INFO textcnn epoch 3 step 800/1564 loss 0.2097 grad_norm 0.673
+2026-09-28 18:02:50,779 INFO textcnn epoch 3 step 850/1564 loss 0.2227 grad_norm 0.654
+2026-09-28 18:02:51,126 INFO textcnn epoch 3 step 900/1564 loss 0.2376 grad_norm 0.718
+2026-09-28 18:02:51,460 INFO textcnn epoch 3 step 950/1564 loss 0.1797 grad_norm 0.663
+2026-09-28 18:02:51,953 INFO textcnn epoch 3 step 1000/1564 loss 0.2060 grad_norm 0.959
+2026-09-28 18:02:52,183 INFO textcnn epoch 3 step 1050/1564 loss 0.1877 grad_norm 1.002
+2026-09-28 18:02:52,398 INFO textcnn epoch 3 step 1100/1564 loss 0.1872 grad_norm 0.919
+2026-09-28 18:02:52,752 INFO textcnn epoch 3 step 1150/1564 loss 0.1631 grad_norm 1.153
+2026-09-28 18:02:52,967 INFO textcnn epoch 3 done train_loss 0.2213 val_loss 0.1924 val_acc 0.9228 val_macro_f1 0.9228 time 2.6s examples/sec 38475
+2026-09-28 18:02:53,372 INFO textcnn epoch 4 step 1200/1564 loss 0.2135 grad_norm 0.888
+2026-09-28 18:02:53,721 INFO textcnn epoch 4 step 1250/1564 loss 0.2489 grad_norm 0.769
+2026-09-28 18:02:54,075 INFO textcnn epoch 4 step 1300/1564 loss 0.1501 grad_norm 0.914
+2026-09-28 18:02:54,415 INFO textcnn epoch 4 step 1350/1564 loss 0.1634 grad_norm 1.031
+2026-09-28 18:02:54,753 INFO textcnn epoch 4 step 1400/1564 loss 0.2340 grad_norm 0.794
+2026-09-28 18:02:55,097 INFO textcnn epoch 4 step 1450/1564 loss 0.1824 grad_norm 1.546
+2026-09-28 18:02:55,427 INFO textcnn epoch 4 step 1500/1564 loss 0.1904 grad_norm 0.895
+2026-09-28 18:02:55,766 INFO textcnn epoch 4 step 1550/1564 loss 0.1998 grad_norm 1.146
+2026-09-28 18:02:55,902 INFO textcnn epoch 4 done train_loss 0.1918 val_loss 0.1858 val_acc 0.9253 val_macro_f1 0.9253 time 2.7s examples/sec 37524
+2026-09-28 18:02:56,418 INFO bilstm device NVIDIA GeForce RTX 5090 amp True params 2824449 config {"type": "bilstm", "embed_dim": 128, "hidden_dim": 128, "n_layers": 1, "dropout": 0.3, "lr": 0.001, "epochs": 4, "batch_size": 256}
+2026-09-28 18:02:56,420 INFO bilstm train 100000 val 10000 test 38000 steps/epoch 391 total steps 1564
+2026-09-28 18:02:56,730 INFO bilstm epoch 1 step 1/1564 loss 0.6989 grad_norm 0.127
+2026-09-28 18:03:00,918 INFO bilstm epoch 1 step 50/1564 loss 0.4975 grad_norm 0.422
+2026-09-28 18:03:05,029 INFO bilstm epoch 1 step 100/1564 loss 0.3514 grad_norm 0.347
+2026-09-28 18:03:08,999 INFO bilstm epoch 1 step 150/1564 loss 0.2694 grad_norm 0.408
+2026-09-28 18:03:12,898 INFO bilstm epoch 1 step 200/1564 loss 0.3127 grad_norm 0.944
+2026-09-28 18:03:16,847 INFO bilstm epoch 1 step 250/1564 loss 0.2370 grad_norm 0.606
+2026-09-28 18:03:20,875 INFO bilstm epoch 1 step 300/1564 loss 0.2376 grad_norm 0.453
+2026-09-28 18:03:24,823 INFO bilstm epoch 1 step 350/1564 loss 0.1951 grad_norm 0.382
+2026-09-28 18:03:28,549 INFO bilstm epoch 1 done train_loss 0.3159 val_loss 0.2142 val_acc 0.9139 val_macro_f1 0.9139 time 31.8s examples/sec 3145
+2026-09-28 18:03:29,508 INFO bilstm epoch 2 step 400/1564 loss 0.1657 grad_norm 0.643
+2026-09-28 18:03:33,461 INFO bilstm epoch 2 step 450/1564 loss 0.2047 grad_norm 0.337
+2026-09-28 18:03:36,573 INFO bilstm epoch 2 step 500/1564 loss 0.1549 grad_norm 0.392
+2026-09-28 18:03:39,400 INFO bilstm epoch 2 step 550/1564 loss 0.2069 grad_norm 0.533
+2026-09-28 18:03:42,345 INFO bilstm epoch 2 step 600/1564 loss 0.1725 grad_norm 0.415
+2026-09-28 18:03:45,236 INFO bilstm epoch 2 step 650/1564 loss 0.2060 grad_norm 0.466
+2026-09-28 18:03:48,241 INFO bilstm epoch 2 step 700/1564 loss 0.1757 grad_norm 0.577
+2026-09-28 18:03:51,253 INFO bilstm epoch 2 step 750/1564 loss 0.1226 grad_norm 0.335
+2026-09-28 18:03:53,769 INFO bilstm epoch 2 done train_loss 0.1858 val_loss 0.1930 val_acc 0.9168 val_macro_f1 0.9167 time 24.6s examples/sec 4064
+2026-09-28 18:03:55,456 INFO bilstm epoch 3 step 800/1564 loss 0.1477 grad_norm 0.484
+2026-09-28 18:03:58,120 INFO bilstm epoch 3 step 850/1564 loss 0.1115 grad_norm 0.294
+2026-09-28 18:04:00,707 INFO bilstm epoch 3 step 900/1564 loss 0.1359 grad_norm 0.288
+2026-09-28 18:04:03,210 INFO bilstm epoch 3 step 950/1564 loss 0.1147 grad_norm 0.397
+2026-09-28 18:04:05,788 INFO bilstm epoch 3 step 1000/1564 loss 0.1209 grad_norm 0.439
+2026-09-28 18:04:08,330 INFO bilstm epoch 3 step 1050/1564 loss 0.1192 grad_norm 0.378
+2026-09-28 18:04:10,681 INFO bilstm epoch 3 step 1100/1564 loss 0.0995 grad_norm 0.288
+2026-09-28 18:04:12,880 INFO bilstm epoch 3 step 1150/1564 loss 0.1122 grad_norm 0.564
+2026-09-28 18:04:14,014 INFO bilstm epoch 3 done train_loss 0.1456 val_loss 0.1872 val_acc 0.9259 val_macro_f1 0.9259 time 19.9s examples/sec 5023
+2026-09-28 18:04:15,437 INFO bilstm epoch 4 step 1200/1564 loss 0.1342 grad_norm 0.396
+2026-09-28 18:04:17,896 INFO bilstm epoch 4 step 1250/1564 loss 0.1406 grad_norm 0.448
+2026-09-28 18:04:20,065 INFO bilstm epoch 4 step 1300/1564 loss 0.0876 grad_norm 0.360
+2026-09-28 18:04:22,386 INFO bilstm epoch 4 step 1350/1564 loss 0.1132 grad_norm 0.468
+2026-09-28 18:04:24,561 INFO bilstm epoch 4 step 1400/1564 loss 0.1408 grad_norm 0.456
+2026-09-28 18:04:26,736 INFO bilstm epoch 4 step 1450/1564 loss 0.0949 grad_norm 0.402
+2026-09-28 18:04:28,987 INFO bilstm epoch 4 step 1500/1564 loss 0.1250 grad_norm 0.441
+2026-09-28 18:04:31,178 INFO bilstm epoch 4 step 1550/1564 loss 0.1419 grad_norm 0.349
+2026-09-28 18:04:32,023 INFO bilstm epoch 4 done train_loss 0.1161 val_loss 0.1974 val_acc 0.9277 val_macro_f1 0.9277 time 17.6s examples/sec 5671
+2026-09-28 18:04:34,014 INFO baseline accuracy 0.9232 macro-F1 0.9232 MCC 0.8464 ROC-AUC 0.9746 ECE 0.0064
+2026-09-28 18:04:34,612 INFO textcnn accuracy 0.9251 macro-F1 0.9251 MCC 0.8503 ROC-AUC 0.9787 ECE 0.0033
+2026-09-28 18:04:35,182 INFO bilstm accuracy 0.9306 macro-F1 0.9305 MCC 0.8613 ROC-AUC 0.9812 ECE 0.0241
+2026-09-28 18:04:35,183 INFO McNemar textcnn vs baseline: b 980 c 1051 statistic 2.413 p 0.1204
+2026-09-28 18:04:35,184 INFO McNemar bilstm vs baseline: b 906 c 1185 statistic 36.960 p 1.206e-09
+2026-09-28 18:04:35,204 INFO error review candidates for bilstm: 20 rows, worst slice {"slice": "has_exclamation=0", "support": 20364, "macro_f1": 0.9177147835743988, "error_rate": 0.08038695737576118}
+2026-09-28 18:04:35,742 INFO manifest reproducibility/manifests/Poushali_Purkayastha_task2_sentiment_full_20260928_180234.json
+2026-09-28 18:04:35,743 INFO run finished in 121.6 sec
