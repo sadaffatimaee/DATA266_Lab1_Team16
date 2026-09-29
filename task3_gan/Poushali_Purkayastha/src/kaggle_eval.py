@@ -18,7 +18,10 @@ from metrics import InceptionExtractor
 
 MU_KEYS = ["mu", "mean", "mu_real", "real_mu", "mu1"]
 SIGMA_KEYS = ["sigma", "cov", "covariance", "sigma_real", "real_sigma", "sigma1"]
-FEATURE_KEYS = ["features", "feats", "real_features", "real_feats", "activations", "acts", "embeddings", "real"]
+FEATURE_KEYS = [
+    "feats_real", "features_real", "real_features", "real_feats", "features", "feats",
+    "acts_real", "real_activations", "activations", "acts", "embeddings", "real",
+]
 
 
 def pick(stats, names):
@@ -81,11 +84,18 @@ def main():
     sigma = pick(stats, SIGMA_KEYS)
     real_feats = pick(stats, FEATURE_KEYS)
     real_source = "real_stats.npz"
+    inception_match = None
     if real_feats is None or real_feats.ndim != 2:
         real_paths = list_images(args.real_dir)
         print(f"extracting features for {len(real_paths)} real images from {args.real_dir}")
         real_feats = inception.from_paths(real_paths, 256, args.batch)
         real_source = str(args.real_dir)
+    elif Path(args.real_dir).exists():
+        real_paths = list_images(args.real_dir)
+        own = normalize(inception.from_paths(real_paths, 256, args.batch).astype(np.float64))
+        theirs = normalize(np.asarray(real_feats, dtype=np.float64))
+        inception_match = float(np.mean((own @ theirs.T).max(axis=1)))
+        print(f"cosine match between our Inception features and the course's feats_real: {inception_match:.4f} (1.0 means identical network and preprocessing)")
     if mu is None or sigma is None:
         mu = real_feats.mean(axis=0)
         sigma = np.cov(real_feats, rowvar=False)
@@ -119,6 +129,7 @@ def main():
         "seed": args.seed,
         "fid_stats_source": stats_source,
         "real_feature_source": real_source,
+        "inception_match_cosine": inception_match,
         "real_stats_keys": {k: list(getattr(v, "shape", [])) for k, v in stats.items()},
         "inception": "torchvision inception_v3 IMAGENET1K_V1 pool features, 299 px bilinear",
     }
