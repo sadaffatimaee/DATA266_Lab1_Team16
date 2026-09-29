@@ -35,11 +35,12 @@ Inside each member folder: `src/` (code and the notebook with outputs), `data_pr
 
 We did not push the datasets to GitHub. We zipped them, uploaded them to Google Drive and shared the links below so anyone with the link can view them.
 
-| Task | Dataset | Link |
-| --- | --- | --- |
-| Task 1 | TinyStories (TinyStoriesV2-GPT4-valid.txt) | https://huggingface.co/datasets/roneneldan/TinyStories |
-| Task 2 | Yelp polarity (fancyzhx/yelp_polarity) | https://drive.google.com/file/d/1v5QTeH2d_eDnleRc7VAI6QkBa6a-a8Qt/view?usp=drive_link |
-| Task 3 | Monet and photo images from the Kaggle competition | PASTE_DRIVE_LINK_HERE |
+| Task | Dataset | Google Drive link | Original source |
+| --- | --- | --- | --- |
+| Task 1 | TinyStories archive | https://drive.google.com/file/d/1uqVRUej1XNxDCxLaXkqyVURgLkKECd8a/view?usp=drive_link | https://huggingface.co/datasets/roneneldan/TinyStories |
+| Task 2 | Yelp polarity, Sadaf's copy | https://drive.google.com/file/d/1v5QTeH2d_eDnleRc7VAI6QkBa6a-a8Qt/view?usp=drive_link | https://huggingface.co/datasets/fancyzhx/yelp_polarity |
+| Task 2 | Yelp polarity, official train and test parquet files, Poushali's copy | https://drive.google.com/file/d/1YVAViROaFKkmK8XWJdg3f_nxLuIUrGNi/view?usp=drive_link | https://huggingface.co/datasets/fancyzhx/yelp_polarity |
+| Task 3 | monet_jpg and photo_jpg from the Kaggle competition | https://drive.google.com/file/d/13lZ9iqetIWUWEklGvMHdHIrB0LxHW5RC/view?usp=sharing | https://www.kaggle.com/competitions/data-266-fall-2026-gan-image-style-transfer |
 
 For Task 2 we use Yelp, not IMDB, as the instructor corrected.
 
@@ -271,13 +272,3 @@ After the human audit or a leaderboard update, `src/update_report_rows.py` merge
 ```
 python task3_gan/Poushali_Purkayastha/src/update_report_rows.py --config configs/full.yaml
 ``` Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
-
-## Datasets on Google Drive
-
-Raw datasets are not committed. Zipped copies with read access:
-
-| Task | Dataset | Link |
-| --- | --- | --- |
-| 1 | TinyStories archive | https://drive.google.com/file/d/1uqVRUej1XNxDCxLaXkqyVURgLkKECd8a/view?usp=drive_link |
-| 2 | Yelp polarity, official train and test parquet files | to add |
-| 3 | monet_jpg and photo_jpg from the class competition | https://drive.google.com/file/d/13lZ9iqetIWUWEklGvMHdHIrB0LxHW5RC/view?usp=sharing |
