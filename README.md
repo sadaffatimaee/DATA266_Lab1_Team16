@@ -264,7 +264,13 @@ python task3_gan/Poushali_Purkayastha/src/kaggle_eval.py
 python task3_gan/Poushali_Purkayastha/evaluate_local.py --config configs/full.yaml
 ```
 
-evaluate_local.py then rewrites submission.csv from official_scores.json and records the source in the metrics report. If the course publishes its own evaluation script, its two numbers go into the same JSON file instead. Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
+evaluate_local.py then rewrites submission.csv from official_scores.json and records the source in the metrics report. If the course publishes its own evaluation script, its two numbers go into the same JSON file instead.
+
+After the human audit or a leaderboard update, `src/update_report_rows.py` merges outputs/full/audit/audit_results.json, outputs/full/kaggle/kaggle_results.json, and official_scores.json into full_metrics_report.csv without recomputing anything:
+
+```
+python task3_gan/Poushali_Purkayastha/src/update_report_rows.py --config configs/full.yaml
+``` Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
 
 ## Datasets on Google Drive
 

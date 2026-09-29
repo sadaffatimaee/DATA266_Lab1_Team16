@@ -159,7 +159,7 @@ def main():
         kaggle_dir.mkdir(parents=True, exist_ok=True)
         official = read_json(kaggle_dir / "official_scores.json")
         if official:
-            fid, mifid, source = float(official["FID"]), float(official["MiFID"]), "official evaluation script"
+            fid, mifid, source = float(official["FID"]), float(official["MiFID"]), "official_scores.json from kaggle_eval.py, course definitions with the course real_stats.npz"
         else:
             fid, mifid, source = metrics["FID photo->monet"], metrics["MiFID course definition photo->monet (mean cosine distance)"], "local metrics.py on a subsample, replace with kaggle_eval.py values"
         write_submission_csv(kaggle_dir / "submission.csv", fid, mifid)
