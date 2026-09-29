@@ -1,0 +1,297 @@
+2026-09-28 18:44:55,608 INFO run_id full_20260928_184455 member Poushali_Purkayastha task task3_gan stage all
+2026-09-28 18:44:55,609 INFO config task3_gan/Poushali_Purkayastha/src/configs/full.yaml {"run_name": "full", "is_final": true, "seed": 20, "data": {"photo_dir": "task3_gan/data/photo_jpg", "monet_dir": "task3_gan/data/monet_jpg", "max_photos": null, "max_monet": null, "image_size": 128, "infer_size": 256, "holdout_photo": 300, "holdout_monet": 30}, "model": {"ngf": 64, "ndf": 64, "n_res_blocks": 6, "n_d_layers": 3, "dropout": 0.0}, "train": {"epochs": 60, "steps_per_epoch": 300, "batch_size": 4, "lr": 0.0002, "beta1": 0.5, "decay_start_epoch": 30, "gan_mode": "lsgan", "lambda_cycle": 10.0, "lambda_identity": 5.0, "pool_size": 50, "grad_clip": 10.0, "amp": true, "amp_nan_limit": 5, "log_interval": 25, "sample_every": 1}, "translate": {"batch_size": 16, "preview_images": 60}, "metrics": {"fid_max_images": 2000, "kid_subsets": 100, "kid_subset_size": 1000, "knn_k": 3, "mifid_epsilon": 0.1, "lpips_net": "alex", "batch_size": 50}, "audit": {"n_samples": 30, "raters": ["Poushali", "Sadaf"]}, "kaggle": {"competition": "data-266-fall-2026-gan-image-style-transfer", "zip_name": "images.zip"}}
+2026-09-28 18:44:55,623 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.11.0+cu128", "cpu": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel", "cpu_cores": 24, "ram_gb": 68.1, "cuda_available": true, "cuda_version": "12.8", "gpus": ["NVIDIA GeForce RTX 5090"], "nvidia_smi": "Mon Sep 28 18:44:55 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.60                 KMD Version: 610.60        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5090      WDDM  |   00000000:01:00.0  On |                  N/A |\n|  0%   40C    P8              8W /  575W |    2853MiB /  32607MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            4440    C+G   ...8bbwe\\PhoneExperienceHost.exe      N/A      |\n|    0   N/A  N/A            5928    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           21940    C+G   ...yb3d8bbwe\\Notepad\\Notepad.exe      N/A      |\n|    0   N/A  N/A           35204    C+G   ...xyewy\\ShellExperienceHost.exe      N/A      |\n|    0   N/A  N/A           37976    C+G   C:\\Windows\\explorer.exe               N/A      |\n|    0   N/A  N/A           38560    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           39272    C+G   ...indows\\System32\\ShellHost.exe      N/A      |\n|    0   N/A  N/A           42664    C+G   ...erControlCenter_v2\\Killer.exe      N/A      |\n|    0   N/A  N/A           48032    C+G   ...SnippingTool\\SnippingTool.exe      N/A      |\n|    0   N/A  N/A           48148    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           49320    C+G   ...2txyewy\\CrossDeviceResume.exe      N/A      |\n|    0   N/A  N/A           50472    C+G   ...yb3d8bbwe\\WindowsTerminal.exe      N/A      |\n|    0   N/A  N/A           50808    C+G   ...\\SubAgent\\AlienFXSubAgent.exe      N/A      |\n|    0   N/A  N/A           51328    C+G   ..._cw5n1h2txyewy\\SearchHost.exe      N/A      |\n|    0   N/A  N/A           51424    C+G   ...y\\StartMenuExperienceHost.exe      N/A      |\n|    0   N/A  N/A           53500    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           53548    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           59892    C+G   ...5n1h2txyewy\\TextInputHost.exe      N/A      |\n+-----------------------------------------------------------------------------------------+"}
+2026-09-28 18:44:55,624 INFO git {"commit": "bcea7505bd01ef9b00c35a9911fd295e20e31c46", "branch": "main", "dirty": true}
+2026-09-28 18:44:55,811 INFO data photos 7038 (train 6738 holdout 300) monets 300 (train 270 holdout 30) size 128
+2026-09-28 18:44:57,572 INFO device NVIDIA GeForce RTX 5090 amp True dtype torch.bfloat16
+2026-09-28 18:44:57,573 INFO model {"ngf": 64, "ndf": 64, "n_res_blocks": 6, "n_d_layers": 3, "dropout": 0.0} params {"g_ab": 7837699, "g_ba": 7837699, "d_a": 2764737, "d_b": 2764737, "total": 21204872}
+2026-09-28 18:44:57,573 INFO train photos 6738 monets 270 batch 4 steps/epoch 300 epochs 60 total steps 18000
+2026-09-28 18:44:58,322 INFO epoch 1 step 1/18000 loss_g 25.225 loss_d_a 1.743 loss_d_b 1.925 gan_ab 2.355 gan_ba 2.382 cycle 1.368 idt 1.361 grad_g 129.82 grad_d 46.47 lr 2.0e-04
+2026-09-28 18:45:00,007 INFO epoch 1 step 25/18000 loss_g 11.759 loss_d_a 0.745 loss_d_b 0.758 gan_ab 1.133 gan_ba 0.780 cycle 0.663 idt 0.644 grad_g 49.35 grad_d 25.22 lr 2.0e-04
+2026-09-28 18:45:01,559 INFO epoch 1 step 50/18000 loss_g 10.851 loss_d_a 0.378 loss_d_b 0.486 gan_ab 0.615 gan_ba 0.372 cycle 0.658 idt 0.656 grad_g 29.54 grad_d 21.78 lr 2.0e-04
+2026-09-28 18:45:03,096 INFO epoch 1 step 75/18000 loss_g 11.370 loss_d_a 0.388 loss_d_b 0.535 gan_ab 0.532 gan_ba 0.567 cycle 0.684 idt 0.686 grad_g 74.23 grad_d 34.85 lr 2.0e-04
+2026-09-28 18:45:04,810 INFO epoch 1 step 100/18000 loss_g 8.045 loss_d_a 0.369 loss_d_b 0.228 gan_ab 0.384 gan_ba 0.388 cycle 0.499 idt 0.457 grad_g 16.52 grad_d 26.80 lr 2.0e-04
+2026-09-28 18:45:06,650 INFO epoch 1 step 125/18000 loss_g 9.357 loss_d_a 0.286 loss_d_b 0.391 gan_ab 0.542 gan_ba 0.411 cycle 0.585 idt 0.510 grad_g 32.14 grad_d 27.38 lr 2.0e-04
+2026-09-28 18:45:08,582 INFO epoch 1 step 150/18000 loss_g 8.488 loss_d_a 0.276 loss_d_b 0.520 gan_ab 0.540 gan_ba 0.544 cycle 0.500 idt 0.480 grad_g 23.67 grad_d 39.76 lr 2.0e-04
+2026-09-28 18:45:10,290 INFO epoch 1 step 175/18000 loss_g 9.247 loss_d_a 0.315 loss_d_b 0.279 gan_ab 0.545 gan_ba 0.399 cycle 0.576 idt 0.509 grad_g 40.64 grad_d 22.73 lr 2.0e-04
+2026-09-28 18:45:12,052 INFO epoch 1 step 200/18000 loss_g 8.199 loss_d_a 0.274 loss_d_b 0.247 gan_ab 0.374 gan_ba 0.263 cycle 0.511 idt 0.490 grad_g 32.59 grad_d 12.47 lr 2.0e-04
+2026-09-28 18:45:13,986 INFO epoch 1 step 225/18000 loss_g 8.881 loss_d_a 0.302 loss_d_b 0.250 gan_ab 0.415 gan_ba 0.386 cycle 0.557 idt 0.503 grad_g 60.07 grad_d 13.72 lr 2.0e-04
+2026-09-28 18:45:15,679 INFO epoch 1 step 250/18000 loss_g 7.424 loss_d_a 0.283 loss_d_b 0.322 gan_ab 0.692 gan_ba 0.254 cycle 0.435 idt 0.425 grad_g 25.10 grad_d 28.89 lr 2.0e-04
+2026-09-28 18:45:17,442 INFO epoch 1 step 275/18000 loss_g 8.055 loss_d_a 0.210 loss_d_b 0.328 gan_ab 0.204 gan_ba 0.421 cycle 0.508 idt 0.470 grad_g 38.69 grad_d 14.08 lr 2.0e-04
+2026-09-28 18:45:19,136 INFO epoch 1 step 300/18000 loss_g 7.143 loss_d_a 0.264 loss_d_b 0.236 gan_ab 0.442 gan_ba 0.350 cycle 0.439 idt 0.393 grad_g 30.76 grad_d 14.36 lr 2.0e-04
+2026-09-28 18:45:19,138 INFO epoch 1 done loss_g 9.539 loss_d_a 0.408 loss_d_b 0.462 cycle 0.571 idt 0.537 time 21.5s images/sec 111.5
+2026-09-28 18:45:21,794 INFO epoch 2 step 325/18000 loss_g 6.970 loss_d_a 0.215 loss_d_b 0.220 gan_ab 0.573 gan_ba 0.595 cycle 0.377 idt 0.406 grad_g 28.39 grad_d 24.38 lr 2.0e-04
+2026-09-28 18:45:23,682 INFO epoch 2 step 350/18000 loss_g 8.382 loss_d_a 0.349 loss_d_b 0.145 gan_ab 0.512 gan_ba 0.670 cycle 0.486 idt 0.469 grad_g 20.90 grad_d 29.79 lr 2.0e-04
+2026-09-28 18:45:25,611 INFO epoch 2 step 375/18000 loss_g 8.901 loss_d_a 0.241 loss_d_b 0.137 gan_ab 0.513 gan_ba 0.344 cycle 0.551 idt 0.506 grad_g 23.89 grad_d 21.87 lr 2.0e-04
+2026-09-28 18:45:27,568 INFO epoch 2 step 400/18000 loss_g 7.333 loss_d_a 0.214 loss_d_b 0.337 gan_ab 0.576 gan_ba 0.292 cycle 0.460 idt 0.373 grad_g 41.99 grad_d 25.95 lr 2.0e-04
+2026-09-28 18:45:29,365 INFO epoch 2 step 425/18000 loss_g 7.838 loss_d_a 0.296 loss_d_b 0.218 gan_ab 0.333 gan_ba 0.457 cycle 0.479 idt 0.452 grad_g 55.64 grad_d 19.45 lr 2.0e-04
+2026-09-28 18:45:31,204 INFO epoch 2 step 450/18000 loss_g 8.956 loss_d_a 0.183 loss_d_b 0.196 gan_ab 0.505 gan_ba 0.512 cycle 0.535 idt 0.517 grad_g 29.26 grad_d 10.94 lr 2.0e-04
+2026-09-28 18:45:33,018 INFO epoch 2 step 475/18000 loss_g 8.212 loss_d_a 0.179 loss_d_b 0.115 gan_ab 0.566 gan_ba 0.545 cycle 0.469 idt 0.482 grad_g 40.01 grad_d 17.62 lr 2.0e-04
+2026-09-28 18:45:34,837 INFO epoch 2 step 500/18000 loss_g 8.767 loss_d_a 0.126 loss_d_b 0.105 gan_ab 0.778 gan_ba 0.502 cycle 0.509 idt 0.479 grad_g 40.38 grad_d 9.65 lr 2.0e-04
+2026-09-28 18:45:36,681 INFO epoch 2 step 525/18000 loss_g 8.278 loss_d_a 0.256 loss_d_b 0.253 gan_ab 0.214 gan_ba 0.507 cycle 0.535 idt 0.441 grad_g 51.20 grad_d 17.11 lr 2.0e-04
+2026-09-28 18:45:38,517 INFO epoch 2 step 550/18000 loss_g 8.134 loss_d_a 0.190 loss_d_b 0.170 gan_ab 0.617 gan_ba 0.400 cycle 0.488 idt 0.448 grad_g 56.76 grad_d 17.68 lr 2.0e-04
+2026-09-28 18:45:40,272 INFO epoch 2 step 575/18000 loss_g 7.459 loss_d_a 0.231 loss_d_b 0.191 gan_ab 0.199 gan_ba 0.529 cycle 0.471 idt 0.403 grad_g 25.71 grad_d 23.86 lr 2.0e-04
+2026-09-28 18:45:42,052 INFO epoch 2 step 600/18000 loss_g 7.470 loss_d_a 0.302 loss_d_b 0.202 gan_ab 0.379 gan_ba 0.591 cycle 0.430 idt 0.441 grad_g 32.23 grad_d 25.80 lr 2.0e-04
+2026-09-28 18:45:42,053 INFO epoch 2 done loss_g 7.985 loss_d_a 0.242 loss_d_b 0.230 cycle 0.485 idt 0.442 time 22.3s images/sec 107.7
+2026-09-28 18:45:44,471 INFO epoch 3 step 625/18000 loss_g 8.051 loss_d_a 0.299 loss_d_b 0.215 gan_ab 0.788 gan_ba 0.456 cycle 0.469 idt 0.424 grad_g 37.90 grad_d 24.41 lr 2.0e-04
+2026-09-28 18:45:46,274 INFO epoch 3 step 650/18000 loss_g 7.583 loss_d_a 0.233 loss_d_b 0.166 gan_ab 0.324 gan_ba 0.655 cycle 0.456 idt 0.408 grad_g 39.43 grad_d 20.03 lr 2.0e-04
+2026-09-28 18:45:48,161 INFO epoch 3 step 675/18000 loss_g 6.226 loss_d_a 0.140 loss_d_b 0.162 gan_ab 0.590 gan_ba 0.304 cycle 0.367 idt 0.333 grad_g 40.17 grad_d 16.68 lr 2.0e-04
+2026-09-28 18:45:49,803 INFO epoch 3 step 700/18000 loss_g 7.245 loss_d_a 0.284 loss_d_b 0.269 gan_ab 0.697 gan_ba 0.209 cycle 0.427 idt 0.414 grad_g 33.90 grad_d 32.90 lr 2.0e-04
+2026-09-28 18:45:51,517 INFO epoch 3 step 725/18000 loss_g 7.006 loss_d_a 0.225 loss_d_b 0.383 gan_ab 0.986 gan_ba 0.279 cycle 0.392 idt 0.364 grad_g 33.32 grad_d 25.71 lr 2.0e-04
+2026-09-28 18:45:53,189 INFO epoch 3 step 750/18000 loss_g 8.156 loss_d_a 0.305 loss_d_b 0.181 gan_ab 0.788 gan_ba 0.247 cycle 0.485 idt 0.454 grad_g 44.39 grad_d 18.62 lr 2.0e-04
+2026-09-28 18:45:54,847 INFO epoch 3 step 775/18000 loss_g 8.343 loss_d_a 0.197 loss_d_b 0.112 gan_ab 0.756 gan_ba 0.481 cycle 0.482 idt 0.457 grad_g 39.27 grad_d 10.75 lr 2.0e-04
+2026-09-28 18:45:56,622 INFO epoch 3 step 800/18000 loss_g 9.410 loss_d_a 0.260 loss_d_b 0.241 gan_ab 0.756 gan_ba 0.548 cycle 0.563 idt 0.494 grad_g 64.53 grad_d 20.40 lr 2.0e-04
+2026-09-28 18:45:58,385 INFO epoch 3 step 825/18000 loss_g 6.814 loss_d_a 0.180 loss_d_b 0.239 gan_ab 0.408 gan_ba 0.385 cycle 0.406 idt 0.392 grad_g 21.93 grad_d 23.79 lr 2.0e-04
+2026-09-28 18:46:00,211 INFO epoch 3 step 850/18000 loss_g 6.963 loss_d_a 0.197 loss_d_b 0.192 gan_ab 0.448 gan_ba 0.464 cycle 0.409 idt 0.392 grad_g 32.28 grad_d 9.44 lr 2.0e-04
+2026-09-28 18:46:01,955 INFO epoch 3 step 875/18000 loss_g 7.120 loss_d_a 0.210 loss_d_b 0.166 gan_ab 0.449 gan_ba 0.328 cycle 0.439 idt 0.390 grad_g 34.66 grad_d 14.39 lr 2.0e-04
+2026-09-28 18:46:03,740 INFO epoch 3 step 900/18000 loss_g 7.029 loss_d_a 0.154 loss_d_b 0.195 gan_ab 0.291 gan_ba 0.549 cycle 0.419 idt 0.399 grad_g 23.18 grad_d 16.41 lr 2.0e-04
+2026-09-28 18:46:03,741 INFO epoch 3 done loss_g 7.527 loss_d_a 0.221 loss_d_b 0.202 cycle 0.451 idt 0.412 time 21.1s images/sec 113.8
+2026-09-28 18:46:06,013 INFO epoch 4 step 925/18000 loss_g 5.245 loss_d_a 0.232 loss_d_b 0.103 gan_ab 0.325 gan_ba 0.464 cycle 0.292 idt 0.306 grad_g 20.83 grad_d 20.26 lr 2.0e-04
+2026-09-28 18:46:07,726 INFO epoch 4 step 950/18000 loss_g 7.992 loss_d_a 0.153 loss_d_b 0.237 gan_ab 0.868 gan_ba 0.231 cycle 0.471 idt 0.436 grad_g 42.83 grad_d 23.10 lr 2.0e-04
+2026-09-28 18:46:09,410 INFO epoch 4 step 975/18000 loss_g 7.250 loss_d_a 0.253 loss_d_b 0.216 gan_ab 0.658 gan_ba 0.630 cycle 0.404 idt 0.384 grad_g 34.72 grad_d 27.16 lr 2.0e-04
+2026-09-28 18:46:11,027 INFO epoch 4 step 1000/18000 loss_g 10.557 loss_d_a 0.195 loss_d_b 0.288 gan_ab 0.642 gan_ba 0.622 cycle 0.640 idt 0.579 grad_g 47.92 grad_d 28.39 lr 2.0e-04
+2026-09-28 18:46:12,725 INFO epoch 4 step 1025/18000 loss_g 9.395 loss_d_a 0.176 loss_d_b 0.192 gan_ab 0.506 gan_ba 0.300 cycle 0.587 idt 0.544 grad_g 49.43 grad_d 10.31 lr 2.0e-04
+2026-09-28 18:46:14,452 INFO epoch 4 step 1050/18000 loss_g 6.413 loss_d_a 0.224 loss_d_b 0.197 gan_ab 0.334 gan_ba 0.519 cycle 0.387 idt 0.337 grad_g 38.74 grad_d 14.97 lr 2.0e-04
+2026-09-28 18:46:16,229 INFO epoch 4 step 1075/18000 loss_g 7.168 loss_d_a 0.593 loss_d_b 0.239 gan_ab 0.315 gan_ba 0.863 cycle 0.406 idt 0.387 grad_g 42.32 grad_d 55.00 lr 2.0e-04
+2026-09-28 18:46:17,950 INFO epoch 4 step 1100/18000 loss_g 7.799 loss_d_a 0.258 loss_d_b 0.061 gan_ab 1.004 gan_ba 0.509 cycle 0.433 idt 0.391 grad_g 56.77 grad_d 26.86 lr 2.0e-04
+2026-09-28 18:46:19,623 INFO epoch 4 step 1125/18000 loss_g 7.987 loss_d_a 0.190 loss_d_b 0.143 gan_ab 0.549 gan_ba 0.501 cycle 0.472 idt 0.444 grad_g 56.09 grad_d 11.90 lr 2.0e-04
+2026-09-28 18:46:21,489 INFO epoch 4 step 1150/18000 loss_g 8.157 loss_d_a 0.229 loss_d_b 0.153 gan_ab 0.304 gan_ba 0.519 cycle 0.503 idt 0.461 grad_g 43.43 grad_d 23.31 lr 2.0e-04
+2026-09-28 18:46:23,412 INFO epoch 4 step 1175/18000 loss_g 6.668 loss_d_a 0.195 loss_d_b 0.165 gan_ab 0.391 gan_ba 0.610 cycle 0.384 idt 0.365 grad_g 35.83 grad_d 9.81 lr 2.0e-04
+2026-09-28 18:46:25,166 INFO epoch 4 step 1200/18000 loss_g 6.846 loss_d_a 0.178 loss_d_b 0.225 gan_ab 0.173 gan_ba 0.733 cycle 0.416 idt 0.356 grad_g 48.60 grad_d 21.19 lr 2.0e-04
+2026-09-28 18:46:25,167 INFO epoch 4 done loss_g 7.280 loss_d_a 0.212 loss_d_b 0.199 cycle 0.433 idt 0.402 time 20.9s images/sec 114.8
+2026-09-28 18:46:27,466 INFO epoch 5 step 1225/18000 loss_g 7.985 loss_d_a 0.336 loss_d_b 0.272 gan_ab 0.213 gan_ba 0.809 cycle 0.465 idt 0.463 grad_g 29.43 grad_d 28.82 lr 2.0e-04
+2026-09-28 18:46:29,212 INFO epoch 5 step 1250/18000 loss_g 6.870 loss_d_a 0.140 loss_d_b 0.240 gan_ab 0.150 gan_ba 0.812 cycle 0.400 idt 0.381 grad_g 28.92 grad_d 22.21 lr 2.0e-04
+2026-09-28 18:46:30,977 INFO epoch 5 step 1275/18000 loss_g 6.819 loss_d_a 0.429 loss_d_b 0.112 gan_ab 0.523 gan_ba 0.778 cycle 0.357 idt 0.390 grad_g 29.02 grad_d 22.91 lr 2.0e-04
+2026-09-28 18:46:32,723 INFO epoch 5 step 1300/18000 loss_g 7.834 loss_d_a 0.206 loss_d_b 0.102 gan_ab 0.384 gan_ba 0.360 cycle 0.480 idt 0.457 grad_g 28.10 grad_d 5.83 lr 2.0e-04
+2026-09-28 18:46:34,461 INFO epoch 5 step 1325/18000 loss_g 5.959 loss_d_a 0.159 loss_d_b 0.210 gan_ab 0.212 gan_ba 0.303 cycle 0.362 idt 0.365 grad_g 46.27 grad_d 21.64 lr 2.0e-04
+2026-09-28 18:46:36,008 INFO epoch 5 step 1350/18000 loss_g 6.233 loss_d_a 0.253 loss_d_b 0.241 gan_ab 0.491 gan_ba 0.614 cycle 0.342 idt 0.341 grad_g 14.90 grad_d 16.22 lr 2.0e-04
+2026-09-28 18:46:37,728 INFO epoch 5 step 1375/18000 loss_g 6.270 loss_d_a 0.159 loss_d_b 0.159 gan_ab 0.410 gan_ba 0.613 cycle 0.360 idt 0.330 grad_g 23.81 grad_d 15.75 lr 2.0e-04
+2026-09-28 18:46:39,509 INFO epoch 5 step 1400/18000 loss_g 8.375 loss_d_a 0.310 loss_d_b 0.219 gan_ab 0.531 gan_ba 1.116 cycle 0.451 idt 0.444 grad_g 25.99 grad_d 25.58 lr 2.0e-04
+2026-09-28 18:46:41,247 INFO epoch 5 step 1425/18000 loss_g 6.559 loss_d_a 0.277 loss_d_b 0.181 gan_ab 0.200 gan_ba 0.192 cycle 0.419 idt 0.395 grad_g 27.21 grad_d 22.37 lr 2.0e-04
+2026-09-28 18:46:43,007 INFO epoch 5 step 1450/18000 loss_g 8.487 loss_d_a 0.151 loss_d_b 0.297 gan_ab 0.802 gan_ba 0.182 cycle 0.508 idt 0.484 grad_g 36.74 grad_d 25.25 lr 2.0e-04
+2026-09-28 18:46:44,675 INFO epoch 5 step 1475/18000 loss_g 5.959 loss_d_a 0.232 loss_d_b 0.186 gan_ab 0.324 gan_ba 0.280 cycle 0.373 idt 0.326 grad_g 28.02 grad_d 11.24 lr 2.0e-04
+2026-09-28 18:46:46,369 INFO epoch 5 step 1500/18000 loss_g 6.794 loss_d_a 0.200 loss_d_b 0.203 gan_ab 0.536 gan_ba 0.348 cycle 0.394 idt 0.394 grad_g 27.79 grad_d 12.02 lr 2.0e-04
+2026-09-28 18:46:46,370 INFO epoch 5 done loss_g 6.972 loss_d_a 0.209 loss_d_b 0.199 cycle 0.412 idt 0.386 time 20.6s images/sec 116.5
+2026-09-28 18:46:48,708 INFO epoch 6 step 1525/18000 loss_g 7.141 loss_d_a 0.216 loss_d_b 0.163 gan_ab 0.591 gan_ba 0.266 cycle 0.442 idt 0.373 grad_g 48.38 grad_d 14.46 lr 2.0e-04
+2026-09-28 18:46:50,461 INFO epoch 6 step 1550/18000 loss_g 5.906 loss_d_a 0.244 loss_d_b 0.144 gan_ab 0.353 gan_ba 0.490 cycle 0.351 idt 0.312 grad_g 21.24 grad_d 15.66 lr 2.0e-04
+2026-09-28 18:46:52,298 INFO epoch 6 step 1575/18000 loss_g 6.792 loss_d_a 0.111 loss_d_b 0.189 gan_ab 0.277 gan_ba 0.549 cycle 0.414 idt 0.365 grad_g 33.72 grad_d 13.33 lr 2.0e-04
+2026-09-28 18:46:54,140 INFO epoch 6 step 1600/18000 loss_g 6.153 loss_d_a 0.187 loss_d_b 0.215 gan_ab 0.485 gan_ba 0.382 cycle 0.362 idt 0.332 grad_g 41.14 grad_d 23.02 lr 2.0e-04
+2026-09-28 18:46:55,851 INFO epoch 6 step 1625/18000 loss_g 7.132 loss_d_a 0.256 loss_d_b 0.328 gan_ab 0.664 gan_ba 0.099 cycle 0.427 idt 0.420 grad_g 72.37 grad_d 27.76 lr 2.0e-04
+2026-09-28 18:46:57,533 INFO epoch 6 step 1650/18000 loss_g 7.941 loss_d_a 0.155 loss_d_b 0.224 gan_ab 0.754 gan_ba 0.548 cycle 0.479 idt 0.369 grad_g 60.34 grad_d 26.89 lr 2.0e-04
+2026-09-28 18:46:59,251 INFO epoch 6 step 1675/18000 loss_g 7.405 loss_d_a 0.154 loss_d_b 0.078 gan_ab 0.272 gan_ba 0.487 cycle 0.451 idt 0.426 grad_g 21.76 grad_d 17.84 lr 2.0e-04
+2026-09-28 18:47:01,025 INFO epoch 6 step 1700/18000 loss_g 6.126 loss_d_a 0.221 loss_d_b 0.117 gan_ab 0.313 gan_ba 0.472 cycle 0.352 idt 0.365 grad_g 20.01 grad_d 25.99 lr 2.0e-04
+2026-09-28 18:47:02,766 INFO epoch 6 step 1725/18000 loss_g 5.712 loss_d_a 0.246 loss_d_b 0.183 gan_ab 0.658 gan_ba 0.417 cycle 0.318 idt 0.291 grad_g 33.59 grad_d 15.23 lr 2.0e-04
+2026-09-28 18:47:04,532 INFO epoch 6 step 1750/18000 loss_g 5.988 loss_d_a 0.160 loss_d_b 0.234 gan_ab 0.309 gan_ba 0.232 cycle 0.369 idt 0.352 grad_g 18.48 grad_d 19.63 lr 2.0e-04
+2026-09-28 18:47:06,262 INFO epoch 6 step 1775/18000 loss_g 7.784 loss_d_a 0.135 loss_d_b 0.202 gan_ab 0.367 gan_ba 0.457 cycle 0.484 idt 0.423 grad_g 57.91 grad_d 8.70 lr 2.0e-04
+2026-09-28 18:47:07,950 INFO epoch 6 step 1800/18000 loss_g 6.908 loss_d_a 0.148 loss_d_b 0.154 gan_ab 0.476 gan_ba 0.693 cycle 0.393 idt 0.361 grad_g 32.13 grad_d 12.76 lr 2.0e-04
+2026-09-28 18:47:07,951 INFO epoch 6 done loss_g 6.690 loss_d_a 0.207 loss_d_b 0.185 cycle 0.395 idt 0.369 time 21.0s images/sec 114.4
+2026-09-28 18:47:10,167 INFO epoch 7 step 1825/18000 loss_g 6.445 loss_d_a 0.227 loss_d_b 0.241 gan_ab 0.466 gan_ba 0.522 cycle 0.365 idt 0.361 grad_g 16.48 grad_d 14.21 lr 2.0e-04
+2026-09-28 18:47:11,938 INFO epoch 7 step 1850/18000 loss_g 6.373 loss_d_a 0.188 loss_d_b 0.168 gan_ab 0.358 gan_ba 0.352 cycle 0.398 idt 0.336 grad_g 39.78 grad_d 8.31 lr 2.0e-04
+2026-09-28 18:47:13,670 INFO epoch 7 step 1875/18000 loss_g 6.264 loss_d_a 0.246 loss_d_b 0.103 gan_ab 0.308 gan_ba 0.814 cycle 0.348 idt 0.332 grad_g 35.76 grad_d 26.66 lr 2.0e-04
+2026-09-28 18:47:15,380 INFO epoch 7 step 1900/18000 loss_g 6.600 loss_d_a 0.233 loss_d_b 0.171 gan_ab 0.352 gan_ba 0.351 cycle 0.387 idt 0.405 grad_g 30.53 grad_d 8.29 lr 2.0e-04
+2026-09-28 18:47:17,102 INFO epoch 7 step 1925/18000 loss_g 6.076 loss_d_a 0.099 loss_d_b 0.175 gan_ab 0.639 gan_ba 0.276 cycle 0.348 idt 0.335 grad_g 28.86 grad_d 12.10 lr 2.0e-04
+2026-09-28 18:47:18,776 INFO epoch 7 step 1950/18000 loss_g 7.107 loss_d_a 0.197 loss_d_b 0.149 gan_ab 0.431 gan_ba 0.808 cycle 0.399 idt 0.375 grad_g 31.65 grad_d 18.15 lr 2.0e-04
+2026-09-28 18:47:20,433 INFO epoch 7 step 1975/18000 loss_g 7.228 loss_d_a 0.266 loss_d_b 0.091 gan_ab 0.468 gan_ba 0.787 cycle 0.393 idt 0.409 grad_g 34.74 grad_d 17.30 lr 2.0e-04
+2026-09-28 18:47:22,213 INFO epoch 7 step 2000/18000 loss_g 6.280 loss_d_a 0.145 loss_d_b 0.332 gan_ab 0.103 gan_ba 0.273 cycle 0.416 idt 0.349 grad_g 43.01 grad_d 27.23 lr 2.0e-04
+2026-09-28 18:47:23,939 INFO epoch 7 step 2025/18000 loss_g 6.551 loss_d_a 0.201 loss_d_b 0.141 gan_ab 0.672 gan_ba 0.853 cycle 0.350 idt 0.305 grad_g 37.53 grad_d 19.70 lr 2.0e-04
+2026-09-28 18:47:25,681 INFO epoch 7 step 2050/18000 loss_g 6.211 loss_d_a 0.119 loss_d_b 0.122 gan_ab 0.486 gan_ba 0.400 cycle 0.368 idt 0.330 grad_g 28.91 grad_d 19.93 lr 2.0e-04
+2026-09-28 18:47:27,368 INFO epoch 7 step 2075/18000 loss_g 7.123 loss_d_a 0.250 loss_d_b 0.159 gan_ab 0.677 gan_ba 0.653 cycle 0.397 idt 0.366 grad_g 26.06 grad_d 25.41 lr 2.0e-04
+2026-09-28 18:47:29,094 INFO epoch 7 step 2100/18000 loss_g 7.357 loss_d_a 0.368 loss_d_b 0.254 gan_ab 0.414 gan_ba 0.114 cycle 0.486 idt 0.393 grad_g 45.71 grad_d 27.38 lr 2.0e-04
+2026-09-28 18:47:29,095 INFO epoch 7 done loss_g 6.561 loss_d_a 0.209 loss_d_b 0.180 cycle 0.384 idt 0.362 time 20.7s images/sec 115.9
+2026-09-28 18:47:31,338 INFO epoch 8 step 2125/18000 loss_g 5.928 loss_d_a 0.167 loss_d_b 0.254 gan_ab 0.144 gan_ba 0.351 cycle 0.375 idt 0.337 grad_g 24.52 grad_d 14.32 lr 2.0e-04
+2026-09-28 18:47:33,125 INFO epoch 8 step 2150/18000 loss_g 6.457 loss_d_a 0.301 loss_d_b 0.200 gan_ab 0.653 gan_ba 0.438 cycle 0.362 idt 0.349 grad_g 22.48 grad_d 30.27 lr 2.0e-04
+2026-09-28 18:47:34,819 INFO epoch 8 step 2175/18000 loss_g 6.361 loss_d_a 0.254 loss_d_b 0.157 gan_ab 0.434 gan_ba 0.909 cycle 0.327 idt 0.349 grad_g 19.37 grad_d 23.28 lr 2.0e-04
+2026-09-28 18:47:36,568 INFO epoch 8 step 2200/18000 loss_g 5.306 loss_d_a 0.311 loss_d_b 0.144 gan_ab 0.486 gan_ba 0.129 cycle 0.329 idt 0.280 grad_g 45.13 grad_d 23.97 lr 2.0e-04
+2026-09-28 18:47:38,175 INFO epoch 8 step 2225/18000 loss_g 5.792 loss_d_a 0.308 loss_d_b 0.168 gan_ab 0.466 gan_ba 0.106 cycle 0.355 idt 0.334 grad_g 21.11 grad_d 27.78 lr 2.0e-04
+2026-09-28 18:47:39,834 INFO epoch 8 step 2250/18000 loss_g 6.044 loss_d_a 0.178 loss_d_b 0.160 gan_ab 0.763 gan_ba 0.185 cycle 0.350 idt 0.319 grad_g 22.80 grad_d 19.99 lr 2.0e-04
+2026-09-28 18:47:41,615 INFO epoch 8 step 2275/18000 loss_g 6.557 loss_d_a 0.157 loss_d_b 0.150 gan_ab 0.335 gan_ba 0.352 cycle 0.403 idt 0.367 grad_g 29.63 grad_d 20.50 lr 2.0e-04
+2026-09-28 18:47:43,286 INFO epoch 8 step 2300/18000 loss_g 7.213 loss_d_a 0.287 loss_d_b 0.207 gan_ab 0.210 gan_ba 0.728 cycle 0.425 idt 0.405 grad_g 29.93 grad_d 23.44 lr 2.0e-04
+2026-09-28 18:47:44,924 INFO epoch 8 step 2325/18000 loss_g 6.663 loss_d_a 0.110 loss_d_b 0.211 gan_ab 0.761 gan_ba 0.619 cycle 0.346 idt 0.364 grad_g 27.76 grad_d 15.24 lr 2.0e-04
+2026-09-28 18:47:46,651 INFO epoch 8 step 2350/18000 loss_g 6.053 loss_d_a 0.402 loss_d_b 0.186 gan_ab 0.732 gan_ba 0.479 cycle 0.330 idt 0.308 grad_g 32.72 grad_d 43.34 lr 2.0e-04
+2026-09-28 18:47:48,437 INFO epoch 8 step 2375/18000 loss_g 6.008 loss_d_a 0.330 loss_d_b 0.172 gan_ab 0.555 gan_ba 0.760 cycle 0.311 idt 0.316 grad_g 30.30 grad_d 25.59 lr 2.0e-04
+2026-09-28 18:47:50,261 INFO epoch 8 step 2400/18000 loss_g 6.440 loss_d_a 0.155 loss_d_b 0.059 gan_ab 0.355 gan_ba 0.775 cycle 0.360 idt 0.341 grad_g 41.15 grad_d 14.39 lr 2.0e-04
+2026-09-28 18:47:50,262 INFO epoch 8 done loss_g 6.377 loss_d_a 0.208 loss_d_b 0.176 cycle 0.371 idt 0.349 time 20.7s images/sec 115.8
+2026-09-28 18:47:52,374 INFO epoch 9 step 2425/18000 loss_g 7.636 loss_d_a 0.194 loss_d_b 0.128 gan_ab 0.626 gan_ba 0.354 cycle 0.469 idt 0.393 grad_g 36.43 grad_d 13.71 lr 2.0e-04
+2026-09-28 18:47:54,210 INFO epoch 9 step 2450/18000 loss_g 6.355 loss_d_a 0.265 loss_d_b 0.431 gan_ab 0.089 gan_ba 0.655 cycle 0.364 idt 0.394 grad_g 28.25 grad_d 30.18 lr 2.0e-04
+2026-09-28 18:47:55,951 INFO epoch 9 step 2475/18000 loss_g 5.828 loss_d_a 0.298 loss_d_b 0.215 gan_ab 0.826 gan_ba 0.670 cycle 0.288 idt 0.291 grad_g 29.45 grad_d 27.76 lr 2.0e-04
+2026-09-28 18:47:57,758 INFO epoch 9 step 2500/18000 loss_g 6.792 loss_d_a 0.147 loss_d_b 0.094 gan_ab 0.388 gan_ba 0.542 cycle 0.392 idt 0.389 grad_g 24.65 grad_d 9.35 lr 2.0e-04
+2026-09-28 18:47:59,485 INFO epoch 9 step 2525/18000 loss_g 5.524 loss_d_a 0.144 loss_d_b 0.187 gan_ab 0.580 gan_ba 0.420 cycle 0.300 idt 0.305 grad_g 29.23 grad_d 18.78 lr 2.0e-04
+2026-09-28 18:48:01,170 INFO epoch 9 step 2550/18000 loss_g 6.940 loss_d_a 0.143 loss_d_b 0.157 gan_ab 0.473 gan_ba 0.404 cycle 0.413 idt 0.386 grad_g 38.99 grad_d 8.73 lr 2.0e-04
+2026-09-28 18:48:02,876 INFO epoch 9 step 2575/18000 loss_g 6.676 loss_d_a 0.200 loss_d_b 0.189 gan_ab 0.405 gan_ba 0.255 cycle 0.404 idt 0.394 grad_g 42.56 grad_d 8.26 lr 2.0e-04
+2026-09-28 18:48:04,616 INFO epoch 9 step 2600/18000 loss_g 5.788 loss_d_a 0.213 loss_d_b 0.253 gan_ab 0.202 gan_ba 0.287 cycle 0.376 idt 0.307 grad_g 34.74 grad_d 27.97 lr 2.0e-04
+2026-09-28 18:48:06,373 INFO epoch 9 step 2625/18000 loss_g 6.005 loss_d_a 0.155 loss_d_b 0.191 gan_ab 0.486 gan_ba 0.312 cycle 0.355 idt 0.332 grad_g 28.28 grad_d 23.77 lr 2.0e-04
+2026-09-28 18:48:08,072 INFO epoch 9 step 2650/18000 loss_g 8.168 loss_d_a 0.200 loss_d_b 0.163 gan_ab 0.491 gan_ba 0.484 cycle 0.481 idt 0.477 grad_g 41.39 grad_d 23.40 lr 2.0e-04
+2026-09-28 18:48:09,836 INFO epoch 9 step 2675/18000 loss_g 7.213 loss_d_a 0.183 loss_d_b 0.313 gan_ab 1.145 gan_ba 0.283 cycle 0.402 idt 0.352 grad_g 41.66 grad_d 27.54 lr 2.0e-04
+2026-09-28 18:48:11,545 INFO epoch 9 step 2700/18000 loss_g 5.534 loss_d_a 0.312 loss_d_b 0.189 gan_ab 0.448 gan_ba 0.341 cycle 0.318 idt 0.312 grad_g 20.03 grad_d 11.12 lr 2.0e-04
+2026-09-28 18:48:11,546 INFO epoch 9 done loss_g 6.087 loss_d_a 0.208 loss_d_b 0.179 cycle 0.353 idt 0.334 time 20.9s images/sec 115.1
+2026-09-28 18:48:13,818 INFO epoch 10 step 2725/18000 loss_g 5.942 loss_d_a 0.216 loss_d_b 0.209 gan_ab 0.239 gan_ba 0.700 cycle 0.344 idt 0.312 grad_g 29.16 grad_d 18.81 lr 2.0e-04
+2026-09-28 18:48:15,572 INFO epoch 10 step 2750/18000 loss_g 6.891 loss_d_a 0.169 loss_d_b 0.180 gan_ab 0.794 gan_ba 0.250 cycle 0.402 idt 0.365 grad_g 29.93 grad_d 15.10 lr 2.0e-04
+2026-09-28 18:48:17,363 INFO epoch 10 step 2775/18000 loss_g 6.018 loss_d_a 0.104 loss_d_b 0.152 gan_ab 0.576 gan_ba 0.407 cycle 0.343 idt 0.322 grad_g 24.03 grad_d 22.18 lr 2.0e-04
+2026-09-28 18:48:19,050 INFO epoch 10 step 2800/18000 loss_g 7.759 loss_d_a 0.171 loss_d_b 0.117 gan_ab 0.519 gan_ba 0.371 cycle 0.486 idt 0.402 grad_g 46.17 grad_d 19.94 lr 2.0e-04
+2026-09-28 18:48:20,790 INFO epoch 10 step 2825/18000 loss_g 6.087 loss_d_a 0.269 loss_d_b 0.179 gan_ab 0.625 gan_ba 0.471 cycle 0.336 idt 0.326 grad_g 37.17 grad_d 13.99 lr 2.0e-04
+2026-09-28 18:48:22,502 INFO epoch 10 step 2850/18000 loss_g 5.547 loss_d_a 0.227 loss_d_b 0.160 gan_ab 0.676 gan_ba 0.407 cycle 0.308 idt 0.278 grad_g 18.95 grad_d 26.66 lr 2.0e-04
+2026-09-28 18:48:24,260 INFO epoch 10 step 2875/18000 loss_g 6.057 loss_d_a 0.247 loss_d_b 0.297 gan_ab 0.199 gan_ba 0.569 cycle 0.357 idt 0.343 grad_g 25.71 grad_d 14.88 lr 2.0e-04
+2026-09-28 18:48:25,901 INFO epoch 10 step 2900/18000 loss_g 5.543 loss_d_a 0.143 loss_d_b 0.268 gan_ab 0.075 gan_ba 0.247 cycle 0.339 idt 0.365 grad_g 24.00 grad_d 21.77 lr 2.0e-04
+2026-09-28 18:48:27,666 INFO epoch 10 step 2925/18000 loss_g 5.796 loss_d_a 0.239 loss_d_b 0.139 gan_ab 0.753 gan_ba 0.648 cycle 0.291 idt 0.298 grad_g 23.96 grad_d 23.46 lr 2.0e-04
+2026-09-28 18:48:29,332 INFO epoch 10 step 2950/18000 loss_g 7.059 loss_d_a 0.141 loss_d_b 0.200 gan_ab 0.790 gan_ba 0.506 cycle 0.383 idt 0.386 grad_g 23.28 grad_d 22.12 lr 2.0e-04
+2026-09-28 18:48:31,051 INFO epoch 10 step 2975/18000 loss_g 6.532 loss_d_a 0.297 loss_d_b 0.215 gan_ab 0.237 gan_ba 0.241 cycle 0.413 idt 0.384 grad_g 33.43 grad_d 10.76 lr 2.0e-04
+2026-09-28 18:48:32,798 INFO epoch 10 step 3000/18000 loss_g 4.685 loss_d_a 0.119 loss_d_b 0.130 gan_ab 0.629 gan_ba 0.329 cycle 0.252 idt 0.242 grad_g 18.06 grad_d 17.84 lr 2.0e-04
+2026-09-28 18:48:32,799 INFO epoch 10 done loss_g 6.034 loss_d_a 0.215 loss_d_b 0.165 cycle 0.348 idt 0.326 time 20.8s images/sec 115.4
+2026-09-28 18:48:35,140 INFO epoch 11 step 3025/18000 loss_g 5.948 loss_d_a 0.230 loss_d_b 0.171 gan_ab 0.557 gan_ba 0.547 cycle 0.326 idt 0.316 grad_g 26.95 grad_d 15.14 lr 2.0e-04
+2026-09-28 18:48:36,880 INFO epoch 11 step 3050/18000 loss_g 5.486 loss_d_a 0.316 loss_d_b 0.171 gan_ab 0.478 gan_ba 0.414 cycle 0.310 idt 0.298 grad_g 31.44 grad_d 20.67 lr 2.0e-04
+2026-09-28 18:48:38,605 INFO epoch 11 step 3075/18000 loss_g 5.021 loss_d_a 0.172 loss_d_b 0.195 gan_ab 0.318 gan_ba 0.555 cycle 0.276 idt 0.278 grad_g 20.20 grad_d 21.60 lr 2.0e-04
+2026-09-28 18:48:40,388 INFO epoch 11 step 3100/18000 loss_g 5.790 loss_d_a 0.138 loss_d_b 0.087 gan_ab 0.320 gan_ba 0.517 cycle 0.320 idt 0.351 grad_g 16.96 grad_d 10.33 lr 2.0e-04
+2026-09-28 18:48:42,180 INFO epoch 11 step 3125/18000 loss_g 5.894 loss_d_a 0.222 loss_d_b 0.154 gan_ab 0.488 gan_ba 0.463 cycle 0.334 idt 0.321 grad_g 25.51 grad_d 18.50 lr 2.0e-04
+2026-09-28 18:48:43,900 INFO epoch 11 step 3150/18000 loss_g 7.222 loss_d_a 0.094 loss_d_b 0.119 gan_ab 0.448 gan_ba 0.578 cycle 0.430 idt 0.379 grad_g 50.04 grad_d 13.53 lr 2.0e-04
+2026-09-28 18:48:45,699 INFO epoch 11 step 3175/18000 loss_g 5.162 loss_d_a 0.260 loss_d_b 0.146 gan_ab 0.249 gan_ba 0.138 cycle 0.325 idt 0.305 grad_g 34.76 grad_d 13.98 lr 2.0e-04
+2026-09-28 18:48:47,401 INFO epoch 11 step 3200/18000 loss_g 5.498 loss_d_a 0.194 loss_d_b 0.155 gan_ab 0.261 gan_ba 0.642 cycle 0.324 idt 0.272 grad_g 38.80 grad_d 30.19 lr 2.0e-04
+2026-09-28 18:48:49,207 INFO epoch 11 step 3225/18000 loss_g 5.619 loss_d_a 0.143 loss_d_b 0.233 gan_ab 0.198 gan_ba 0.423 cycle 0.345 idt 0.309 grad_g 40.61 grad_d 14.48 lr 2.0e-04
+2026-09-28 18:48:50,907 INFO epoch 11 step 3250/18000 loss_g 6.162 loss_d_a 0.219 loss_d_b 0.135 gan_ab 0.228 gan_ba 0.431 cycle 0.364 idt 0.372 grad_g 26.71 grad_d 16.45 lr 2.0e-04
+2026-09-28 18:48:52,597 INFO epoch 11 step 3275/18000 loss_g 6.162 loss_d_a 0.161 loss_d_b 0.154 gan_ab 0.447 gan_ba 0.219 cycle 0.375 idt 0.350 grad_g 37.23 grad_d 6.30 lr 2.0e-04
+2026-09-28 18:48:54,338 INFO epoch 11 step 3300/18000 loss_g 7.197 loss_d_a 0.189 loss_d_b 0.065 gan_ab 0.637 gan_ba 0.546 cycle 0.422 idt 0.358 grad_g 43.69 grad_d 9.56 lr 2.0e-04
+2026-09-28 18:48:54,339 INFO epoch 11 done loss_g 6.009 loss_d_a 0.206 loss_d_b 0.154 cycle 0.346 idt 0.330 time 21.0s images/sec 114.5
+2026-09-28 18:48:56,539 INFO epoch 12 step 3325/18000 loss_g 5.489 loss_d_a 0.198 loss_d_b 0.084 gan_ab 0.368 gan_ba 0.483 cycle 0.316 idt 0.296 grad_g 35.09 grad_d 10.46 lr 2.0e-04
+2026-09-28 18:48:58,307 INFO epoch 12 step 3350/18000 loss_g 5.570 loss_d_a 0.185 loss_d_b 0.165 gan_ab 0.413 gan_ba 0.395 cycle 0.320 idt 0.312 grad_g 23.86 grad_d 15.85 lr 2.0e-04
+2026-09-28 18:49:00,022 INFO epoch 12 step 3375/18000 loss_g 5.622 loss_d_a 0.136 loss_d_b 0.348 gan_ab 1.071 gan_ba 0.277 cycle 0.288 idt 0.278 grad_g 26.38 grad_d 27.58 lr 2.0e-04
+2026-09-28 18:49:01,746 INFO epoch 12 step 3400/18000 loss_g 5.284 loss_d_a 0.186 loss_d_b 0.173 gan_ab 0.313 gan_ba 0.303 cycle 0.316 idt 0.301 grad_g 32.34 grad_d 9.68 lr 2.0e-04
+2026-09-28 18:49:03,490 INFO epoch 12 step 3425/18000 loss_g 5.805 loss_d_a 0.226 loss_d_b 0.156 gan_ab 0.175 gan_ba 0.410 cycle 0.341 idt 0.363 grad_g 27.22 grad_d 11.10 lr 2.0e-04
+2026-09-28 18:49:05,302 INFO epoch 12 step 3450/18000 loss_g 6.554 loss_d_a 0.338 loss_d_b 0.179 gan_ab 0.282 gan_ba 0.745 cycle 0.390 idt 0.326 grad_g 52.03 grad_d 25.04 lr 2.0e-04
+2026-09-28 18:49:06,942 INFO epoch 12 step 3475/18000 loss_g 4.955 loss_d_a 0.164 loss_d_b 0.120 gan_ab 0.419 gan_ba 0.619 cycle 0.267 idt 0.249 grad_g 22.05 grad_d 12.65 lr 2.0e-04
+2026-09-28 18:49:08,649 INFO epoch 12 step 3500/18000 loss_g 6.036 loss_d_a 0.262 loss_d_b 0.080 gan_ab 0.415 gan_ba 0.566 cycle 0.344 idt 0.323 grad_g 31.08 grad_d 14.97 lr 2.0e-04
+2026-09-28 18:49:10,513 INFO epoch 12 step 3525/18000 loss_g 5.620 loss_d_a 0.274 loss_d_b 0.229 gan_ab 0.216 gan_ba 0.195 cycle 0.334 idt 0.375 grad_g 28.84 grad_d 19.54 lr 2.0e-04
+2026-09-28 18:49:12,238 INFO epoch 12 step 3550/18000 loss_g 5.461 loss_d_a 0.098 loss_d_b 0.105 gan_ab 0.763 gan_ba 0.598 cycle 0.276 idt 0.268 grad_g 19.83 grad_d 11.34 lr 2.0e-04
+2026-09-28 18:49:14,019 INFO epoch 12 step 3575/18000 loss_g 6.297 loss_d_a 0.188 loss_d_b 0.164 gan_ab 0.919 gan_ba 0.436 cycle 0.325 idt 0.339 grad_g 28.66 grad_d 14.90 lr 2.0e-04
+2026-09-28 18:49:15,796 INFO epoch 12 step 3600/18000 loss_g 5.550 loss_d_a 0.137 loss_d_b 0.073 gan_ab 0.455 gan_ba 0.518 cycle 0.312 idt 0.292 grad_g 27.06 grad_d 9.62 lr 2.0e-04
+2026-09-28 18:49:15,797 INFO epoch 12 done loss_g 5.780 loss_d_a 0.211 loss_d_b 0.168 cycle 0.332 idt 0.314 time 21.0s images/sec 114.3
+2026-09-28 18:49:17,876 INFO epoch 13 step 3625/18000 loss_g 5.540 loss_d_a 0.165 loss_d_b 0.144 gan_ab 0.361 gan_ba 0.459 cycle 0.314 idt 0.315 grad_g 25.31 grad_d 19.37 lr 2.0e-04
+2026-09-28 18:49:19,540 INFO epoch 13 step 3650/18000 loss_g 4.626 loss_d_a 0.210 loss_d_b 0.181 gan_ab 0.161 gan_ba 0.282 cycle 0.285 idt 0.266 grad_g 19.44 grad_d 15.38 lr 2.0e-04
+2026-09-28 18:49:21,123 INFO epoch 13 step 3675/18000 loss_g 6.444 loss_d_a 0.217 loss_d_b 0.119 gan_ab 0.564 gan_ba 0.278 cycle 0.386 idt 0.349 grad_g 41.78 grad_d 12.48 lr 2.0e-04
+2026-09-28 18:49:22,850 INFO epoch 13 step 3700/18000 loss_g 6.332 loss_d_a 0.162 loss_d_b 0.164 gan_ab 0.636 gan_ba 0.689 cycle 0.347 idt 0.307 grad_g 28.22 grad_d 18.83 lr 2.0e-04
+2026-09-28 18:49:24,505 INFO epoch 13 step 3725/18000 loss_g 6.725 loss_d_a 0.245 loss_d_b 0.145 gan_ab 0.230 gan_ba 0.755 cycle 0.385 idt 0.379 grad_g 25.67 grad_d 25.67 lr 2.0e-04
+2026-09-28 18:49:26,235 INFO epoch 13 step 3750/18000 loss_g 6.491 loss_d_a 0.260 loss_d_b 0.188 gan_ab 0.535 gan_ba 0.378 cycle 0.381 idt 0.354 grad_g 35.02 grad_d 22.96 lr 2.0e-04
+2026-09-28 18:49:27,944 INFO epoch 13 step 3775/18000 loss_g 6.251 loss_d_a 0.172 loss_d_b 0.112 gan_ab 0.314 gan_ba 0.401 cycle 0.375 idt 0.357 grad_g 33.80 grad_d 14.27 lr 2.0e-04
+2026-09-28 18:49:29,720 INFO epoch 13 step 3800/18000 loss_g 6.079 loss_d_a 0.325 loss_d_b 0.136 gan_ab 0.295 gan_ba 0.461 cycle 0.374 idt 0.316 grad_g 35.58 grad_d 11.56 lr 2.0e-04
+2026-09-28 18:49:31,450 INFO epoch 13 step 3825/18000 loss_g 5.695 loss_d_a 0.128 loss_d_b 0.110 gan_ab 0.573 gan_ba 0.342 cycle 0.337 idt 0.282 grad_g 42.58 grad_d 10.03 lr 2.0e-04
+2026-09-28 18:49:33,223 INFO epoch 13 step 3850/18000 loss_g 5.164 loss_d_a 0.225 loss_d_b 0.130 gan_ab 0.230 gan_ba 0.143 cycle 0.330 idt 0.297 grad_g 26.69 grad_d 13.76 lr 2.0e-04
+2026-09-28 18:49:35,031 INFO epoch 13 step 3875/18000 loss_g 5.585 loss_d_a 0.336 loss_d_b 0.073 gan_ab 0.647 gan_ba 0.475 cycle 0.307 idt 0.279 grad_g 23.72 grad_d 24.19 lr 2.0e-04
+2026-09-28 18:49:36,837 INFO epoch 13 step 3900/18000 loss_g 4.883 loss_d_a 0.206 loss_d_b 0.127 gan_ab 0.582 gan_ba 0.361 cycle 0.269 idt 0.251 grad_g 20.07 grad_d 14.62 lr 2.0e-04
+2026-09-28 18:49:36,838 INFO epoch 13 done loss_g 5.789 loss_d_a 0.207 loss_d_b 0.152 cycle 0.329 idt 0.314 time 20.6s images/sec 116.7
+2026-09-28 18:49:39,061 INFO epoch 14 step 3925/18000 loss_g 4.877 loss_d_a 0.107 loss_d_b 0.102 gan_ab 0.539 gan_ba 0.377 cycle 0.264 idt 0.264 grad_g 18.92 grad_d 9.83 lr 2.0e-04
+2026-09-28 18:49:40,896 INFO epoch 14 step 3950/18000 loss_g 5.477 loss_d_a 0.323 loss_d_b 0.173 gan_ab 0.517 gan_ba 0.662 cycle 0.284 idt 0.292 grad_g 24.25 grad_d 23.91 lr 2.0e-04
+2026-09-28 18:49:42,589 INFO epoch 14 step 3975/18000 loss_g 4.783 loss_d_a 0.159 loss_d_b 0.267 gan_ab 0.470 gan_ba 0.277 cycle 0.283 idt 0.242 grad_g 27.37 grad_d 33.74 lr 2.0e-04
+2026-09-28 18:49:44,248 INFO epoch 14 step 4000/18000 loss_g 6.588 loss_d_a 0.264 loss_d_b 0.110 gan_ab 0.456 gan_ba 0.735 cycle 0.362 idt 0.355 grad_g 39.78 grad_d 20.85 lr 2.0e-04
+2026-09-28 18:49:45,980 INFO epoch 14 step 4025/18000 loss_g 4.763 loss_d_a 0.136 loss_d_b 0.103 gan_ab 0.362 gan_ba 0.454 cycle 0.264 idt 0.261 grad_g 30.41 grad_d 12.30 lr 2.0e-04
+2026-09-28 18:49:47,709 INFO epoch 14 step 4050/18000 loss_g 5.797 loss_d_a 0.156 loss_d_b 0.211 gan_ab 0.253 gan_ba 0.559 cycle 0.318 idt 0.362 grad_g 24.40 grad_d 11.23 lr 2.0e-04
+2026-09-28 18:49:49,412 INFO epoch 14 step 4075/18000 loss_g 7.512 loss_d_a 0.228 loss_d_b 0.085 gan_ab 0.835 gan_ba 0.782 cycle 0.405 idt 0.370 grad_g 34.94 grad_d 19.00 lr 2.0e-04
+2026-09-28 18:49:51,168 INFO epoch 14 step 4100/18000 loss_g 5.820 loss_d_a 0.152 loss_d_b 0.125 gan_ab 0.971 gan_ba 0.269 cycle 0.308 idt 0.299 grad_g 36.70 grad_d 19.74 lr 2.0e-04
+2026-09-28 18:49:52,840 INFO epoch 14 step 4125/18000 loss_g 7.794 loss_d_a 0.185 loss_d_b 0.209 gan_ab 0.928 gan_ba 0.345 cycle 0.445 idt 0.414 grad_g 33.88 grad_d 26.83 lr 2.0e-04
+2026-09-28 18:49:54,673 INFO epoch 14 step 4150/18000 loss_g 5.459 loss_d_a 0.187 loss_d_b 0.130 gan_ab 0.393 gan_ba 0.453 cycle 0.315 idt 0.293 grad_g 23.36 grad_d 8.71 lr 2.0e-04
+2026-09-28 18:49:56,452 INFO epoch 14 step 4175/18000 loss_g 5.333 loss_d_a 0.261 loss_d_b 0.123 gan_ab 0.507 gan_ba 0.592 cycle 0.275 idt 0.297 grad_g 24.98 grad_d 16.89 lr 2.0e-04
+2026-09-28 18:49:58,203 INFO epoch 14 step 4200/18000 loss_g 5.808 loss_d_a 0.273 loss_d_b 0.117 gan_ab 0.549 gan_ba 0.899 cycle 0.305 idt 0.263 grad_g 25.58 grad_d 21.73 lr 2.0e-04
+2026-09-28 18:49:58,204 INFO epoch 14 done loss_g 5.702 loss_d_a 0.207 loss_d_b 0.150 cycle 0.323 idt 0.306 time 20.9s images/sec 114.9
+2026-09-28 18:50:00,471 INFO epoch 15 step 4225/18000 loss_g 5.444 loss_d_a 0.223 loss_d_b 0.184 gan_ab 0.293 gan_ba 0.466 cycle 0.321 idt 0.296 grad_g 34.47 grad_d 17.44 lr 2.0e-04
+2026-09-28 18:50:02,243 INFO epoch 15 step 4250/18000 loss_g 5.230 loss_d_a 0.142 loss_d_b 0.111 gan_ab 0.315 gan_ba 0.315 cycle 0.311 idt 0.297 grad_g 18.20 grad_d 9.18 lr 2.0e-04
+2026-09-28 18:50:03,951 INFO epoch 15 step 4275/18000 loss_g 5.034 loss_d_a 0.227 loss_d_b 0.129 gan_ab 0.400 gan_ba 0.365 cycle 0.277 idt 0.299 grad_g 21.93 grad_d 8.78 lr 2.0e-04
+2026-09-28 18:50:05,710 INFO epoch 15 step 4300/18000 loss_g 5.654 loss_d_a 0.401 loss_d_b 0.185 gan_ab 0.611 gan_ba 1.001 cycle 0.273 idt 0.263 grad_g 22.85 grad_d 25.81 lr 2.0e-04
+2026-09-28 18:50:07,447 INFO epoch 15 step 4325/18000 loss_g 5.889 loss_d_a 0.155 loss_d_b 0.177 gan_ab 0.590 gan_ba 0.331 cycle 0.352 idt 0.290 grad_g 40.52 grad_d 20.22 lr 2.0e-04
+2026-09-28 18:50:09,199 INFO epoch 15 step 4350/18000 loss_g 5.653 loss_d_a 0.129 loss_d_b 0.170 gan_ab 0.744 gan_ba 0.465 cycle 0.271 idt 0.347 grad_g 33.31 grad_d 16.35 lr 2.0e-04
+2026-09-28 18:50:10,899 INFO epoch 15 step 4375/18000 loss_g 4.892 loss_d_a 0.167 loss_d_b 0.173 gan_ab 0.899 gan_ba 0.263 cycle 0.256 idt 0.234 grad_g 33.33 grad_d 24.66 lr 2.0e-04
+2026-09-28 18:50:12,580 INFO epoch 15 step 4400/18000 loss_g 5.005 loss_d_a 0.247 loss_d_b 0.130 gan_ab 0.257 gan_ba 0.440 cycle 0.292 idt 0.277 grad_g 29.51 grad_d 17.19 lr 2.0e-04
+2026-09-28 18:50:14,297 INFO epoch 15 step 4425/18000 loss_g 5.392 loss_d_a 0.190 loss_d_b 0.108 gan_ab 0.858 gan_ba 0.390 cycle 0.277 idt 0.274 grad_g 28.07 grad_d 10.49 lr 2.0e-04
+2026-09-28 18:50:15,993 INFO epoch 15 step 4450/18000 loss_g 6.623 loss_d_a 0.256 loss_d_b 0.173 gan_ab 0.819 gan_ba 0.273 cycle 0.380 idt 0.345 grad_g 46.64 grad_d 12.99 lr 2.0e-04
+2026-09-28 18:50:17,738 INFO epoch 15 step 4475/18000 loss_g 6.035 loss_d_a 0.154 loss_d_b 0.064 gan_ab 0.850 gan_ba 0.425 cycle 0.300 idt 0.353 grad_g 32.89 grad_d 11.12 lr 2.0e-04
+2026-09-28 18:50:19,539 INFO epoch 15 step 4500/18000 loss_g 5.923 loss_d_a 0.232 loss_d_b 0.323 gan_ab 1.492 gan_ba 0.289 cycle 0.279 idt 0.271 grad_g 34.84 grad_d 30.00 lr 2.0e-04
+2026-09-28 18:50:19,540 INFO epoch 15 done loss_g 5.596 loss_d_a 0.203 loss_d_b 0.142 cycle 0.315 idt 0.298 time 20.9s images/sec 115.1
+2026-09-28 18:50:21,700 INFO epoch 16 step 4525/18000 loss_g 5.252 loss_d_a 0.186 loss_d_b 0.089 gan_ab 0.513 gan_ba 0.246 cycle 0.297 idt 0.305 grad_g 25.61 grad_d 11.20 lr 2.0e-04
+2026-09-28 18:50:23,518 INFO epoch 16 step 4550/18000 loss_g 4.925 loss_d_a 0.189 loss_d_b 0.189 gan_ab 0.689 gan_ba 0.335 cycle 0.270 idt 0.240 grad_g 21.00 grad_d 25.97 lr 2.0e-04
+2026-09-28 18:50:25,284 INFO epoch 16 step 4575/18000 loss_g 5.436 loss_d_a 0.127 loss_d_b 0.073 gan_ab 0.426 gan_ba 0.871 cycle 0.272 idt 0.283 grad_g 24.60 grad_d 11.99 lr 2.0e-04
+2026-09-28 18:50:27,147 INFO epoch 16 step 4600/18000 loss_g 5.081 loss_d_a 0.259 loss_d_b 0.214 gan_ab 0.404 gan_ba 0.276 cycle 0.303 idt 0.275 grad_g 24.57 grad_d 21.41 lr 2.0e-04
+2026-09-28 18:50:28,880 INFO epoch 16 step 4625/18000 loss_g 5.197 loss_d_a 0.191 loss_d_b 0.059 gan_ab 0.371 gan_ba 0.420 cycle 0.301 idt 0.279 grad_g 36.87 grad_d 8.65 lr 2.0e-04
+2026-09-28 18:50:30,759 INFO epoch 16 step 4650/18000 loss_g 5.675 loss_d_a 0.219 loss_d_b 0.102 gan_ab 0.318 gan_ba 0.281 cycle 0.335 idt 0.346 grad_g 31.58 grad_d 10.09 lr 2.0e-04
+2026-09-28 18:50:32,578 INFO epoch 16 step 4675/18000 loss_g 4.757 loss_d_a 0.234 loss_d_b 0.082 gan_ab 0.634 gan_ba 0.260 cycle 0.261 idt 0.251 grad_g 19.17 grad_d 13.88 lr 2.0e-04
+2026-09-28 18:50:34,326 INFO epoch 16 step 4700/18000 loss_g 5.871 loss_d_a 0.156 loss_d_b 0.124 gan_ab 0.274 gan_ba 0.485 cycle 0.349 idt 0.325 grad_g 27.22 grad_d 10.80 lr 2.0e-04
+2026-09-28 18:50:36,058 INFO epoch 16 step 4725/18000 loss_g 5.512 loss_d_a 0.134 loss_d_b 0.193 gan_ab 0.205 gan_ba 0.412 cycle 0.329 idt 0.321 grad_g 18.09 grad_d 22.74 lr 2.0e-04
+2026-09-28 18:50:37,794 INFO epoch 16 step 4750/18000 loss_g 6.294 loss_d_a 0.211 loss_d_b 0.176 gan_ab 0.965 gan_ba 0.285 cycle 0.363 idt 0.283 grad_g 39.00 grad_d 15.55 lr 2.0e-04
+2026-09-28 18:50:39,486 INFO epoch 16 step 4775/18000 loss_g 5.765 loss_d_a 0.187 loss_d_b 0.073 gan_ab 0.651 gan_ba 0.255 cycle 0.328 idt 0.316 grad_g 47.44 grad_d 7.30 lr 2.0e-04
+2026-09-28 18:50:41,243 INFO epoch 16 step 4800/18000 loss_g 6.507 loss_d_a 0.244 loss_d_b 0.207 gan_ab 0.166 gan_ba 0.406 cycle 0.414 idt 0.358 grad_g 54.75 grad_d 19.69 lr 2.0e-04
+2026-09-28 18:50:41,244 INFO epoch 16 done loss_g 5.535 loss_d_a 0.199 loss_d_b 0.143 cycle 0.309 idt 0.297 time 21.2s images/sec 113.1
+2026-09-28 18:50:43,541 INFO epoch 17 step 4825/18000 loss_g 6.228 loss_d_a 0.197 loss_d_b 0.127 gan_ab 0.763 gan_ba 0.503 cycle 0.347 idt 0.299 grad_g 34.56 grad_d 16.51 lr 2.0e-04
+2026-09-28 18:50:45,314 INFO epoch 17 step 4850/18000 loss_g 6.049 loss_d_a 0.234 loss_d_b 0.113 gan_ab 0.740 gan_ba 0.604 cycle 0.321 idt 0.299 grad_g 34.82 grad_d 14.96 lr 2.0e-04
+2026-09-28 18:50:47,163 INFO epoch 17 step 4875/18000 loss_g 5.501 loss_d_a 0.284 loss_d_b 0.317 gan_ab 1.015 gan_ba 0.203 cycle 0.284 idt 0.288 grad_g 23.02 grad_d 25.52 lr 2.0e-04
+2026-09-28 18:50:49,043 INFO epoch 17 step 4900/18000 loss_g 4.706 loss_d_a 0.255 loss_d_b 0.127 gan_ab 0.473 gan_ba 0.161 cycle 0.255 idt 0.304 grad_g 18.64 grad_d 11.72 lr 2.0e-04
+2026-09-28 18:50:50,850 INFO epoch 17 step 4925/18000 loss_g 6.119 loss_d_a 0.129 loss_d_b 0.221 gan_ab 1.091 gan_ba 0.611 cycle 0.302 idt 0.279 grad_g 35.36 grad_d 22.99 lr 2.0e-04
+2026-09-28 18:50:52,660 INFO epoch 17 step 4950/18000 loss_g 5.059 loss_d_a 0.243 loss_d_b 0.177 gan_ab 0.215 gan_ba 0.324 cycle 0.311 idt 0.282 grad_g 33.40 grad_d 19.65 lr 2.0e-04
+2026-09-28 18:50:54,410 INFO epoch 17 step 4975/18000 loss_g 5.269 loss_d_a 0.183 loss_d_b 0.123 gan_ab 0.640 gan_ba 0.542 cycle 0.284 idt 0.249 grad_g 27.31 grad_d 16.77 lr 2.0e-04
+2026-09-28 18:50:56,113 INFO epoch 17 step 5000/18000 loss_g 5.637 loss_d_a 0.260 loss_d_b 0.075 gan_ab 0.600 gan_ba 0.523 cycle 0.291 idt 0.321 grad_g 27.07 grad_d 15.27 lr 2.0e-04
+2026-09-28 18:50:57,821 INFO epoch 17 step 5025/18000 loss_g 4.904 loss_d_a 0.168 loss_d_b 0.154 gan_ab 0.318 gan_ba 0.429 cycle 0.290 idt 0.252 grad_g 33.33 grad_d 11.92 lr 2.0e-04
+2026-09-28 18:50:59,523 INFO epoch 17 step 5050/18000 loss_g 5.168 loss_d_a 0.272 loss_d_b 0.065 gan_ab 0.593 gan_ba 0.381 cycle 0.277 idt 0.285 grad_g 34.11 grad_d 11.63 lr 2.0e-04
+2026-09-28 18:51:01,203 INFO epoch 17 step 5075/18000 loss_g 5.254 loss_d_a 0.237 loss_d_b 0.091 gan_ab 0.455 gan_ba 0.354 cycle 0.293 idt 0.302 grad_g 30.98 grad_d 15.10 lr 2.0e-04
+2026-09-28 18:51:02,895 INFO epoch 17 step 5100/18000 loss_g 6.115 loss_d_a 0.191 loss_d_b 0.093 gan_ab 0.904 gan_ba 0.476 cycle 0.307 idt 0.334 grad_g 40.23 grad_d 12.52 lr 2.0e-04
+2026-09-28 18:51:02,896 INFO epoch 17 done loss_g 5.492 loss_d_a 0.206 loss_d_b 0.142 cycle 0.307 idt 0.290 time 21.2s images/sec 113.5
+2026-09-28 18:51:05,107 INFO epoch 18 step 5125/18000 loss_g 5.558 loss_d_a 0.188 loss_d_b 0.123 gan_ab 0.568 gan_ba 0.221 cycle 0.317 idt 0.319 grad_g 35.55 grad_d 14.32 lr 2.0e-04
+2026-09-28 18:51:06,829 INFO epoch 18 step 5150/18000 loss_g 5.670 loss_d_a 0.248 loss_d_b 0.045 gan_ab 0.786 gan_ba 0.491 cycle 0.293 idt 0.292 grad_g 28.13 grad_d 9.38 lr 2.0e-04
+2026-09-28 18:51:08,580 INFO epoch 18 step 5175/18000 loss_g 5.387 loss_d_a 0.168 loss_d_b 0.096 gan_ab 0.376 gan_ba 0.674 cycle 0.295 idt 0.278 grad_g 29.32 grad_d 11.93 lr 2.0e-04
+2026-09-28 18:51:10,285 INFO epoch 18 step 5200/18000 loss_g 4.762 loss_d_a 0.229 loss_d_b 0.109 gan_ab 0.737 gan_ba 0.314 cycle 0.260 idt 0.222 grad_g 38.96 grad_d 15.79 lr 2.0e-04
+2026-09-28 18:51:12,000 INFO epoch 18 step 5225/18000 loss_g 5.066 loss_d_a 0.228 loss_d_b 0.092 gan_ab 0.562 gan_ba 0.251 cycle 0.285 idt 0.281 grad_g 24.48 grad_d 21.36 lr 2.0e-04
+2026-09-28 18:51:13,788 INFO epoch 18 step 5250/18000 loss_g 6.693 loss_d_a 0.323 loss_d_b 0.287 gan_ab 1.381 gan_ba 0.234 cycle 0.378 idt 0.260 grad_g 53.99 grad_d 28.23 lr 2.0e-04
+2026-09-28 18:51:15,549 INFO epoch 18 step 5275/18000 loss_g 5.035 loss_d_a 0.121 loss_d_b 0.104 gan_ab 0.380 gan_ba 0.505 cycle 0.273 idt 0.284 grad_g 18.71 grad_d 11.50 lr 2.0e-04
+2026-09-28 18:51:17,334 INFO epoch 18 step 5300/18000 loss_g 4.697 loss_d_a 0.336 loss_d_b 0.089 gan_ab 0.420 gan_ba 0.204 cycle 0.292 idt 0.232 grad_g 37.80 grad_d 24.09 lr 2.0e-04
+2026-09-28 18:51:19,090 INFO epoch 18 step 5325/18000 loss_g 5.034 loss_d_a 0.337 loss_d_b 0.435 gan_ab 0.091 gan_ba 0.508 cycle 0.271 idt 0.345 grad_g 22.55 grad_d 35.17 lr 2.0e-04
+2026-09-28 18:51:20,821 INFO epoch 18 step 5350/18000 loss_g 5.083 loss_d_a 0.097 loss_d_b 0.106 gan_ab 0.710 gan_ba 0.424 cycle 0.271 idt 0.247 grad_g 36.36 grad_d 9.45 lr 2.0e-04
+2026-09-28 18:51:22,613 INFO epoch 18 step 5375/18000 loss_g 5.147 loss_d_a 0.258 loss_d_b 0.059 gan_ab 0.798 gan_ba 0.281 cycle 0.271 idt 0.272 grad_g 28.11 grad_d 15.50 lr 2.0e-04
+2026-09-28 18:51:24,327 INFO epoch 18 step 5400/18000 loss_g 4.422 loss_d_a 0.222 loss_d_b 0.088 gan_ab 0.474 gan_ba 0.401 cycle 0.241 idt 0.227 grad_g 24.16 grad_d 20.91 lr 2.0e-04
+2026-09-28 18:51:24,328 INFO epoch 18 done loss_g 5.322 loss_d_a 0.204 loss_d_b 0.127 cycle 0.294 idt 0.279 time 20.9s images/sec 115.1
+2026-09-28 18:51:26,526 INFO epoch 19 step 5425/18000 loss_g 4.928 loss_d_a 0.232 loss_d_b 0.073 gan_ab 0.545 gan_ba 0.316 cycle 0.274 idt 0.266 grad_g 25.11 grad_d 20.74 lr 2.0e-04
+2026-09-28 18:51:28,134 INFO epoch 19 step 5450/18000 loss_g 4.453 loss_d_a 0.187 loss_d_b 0.198 gan_ab 0.464 gan_ba 0.368 cycle 0.250 idt 0.225 grad_g 17.07 grad_d 17.43 lr 2.0e-04
+2026-09-28 18:51:29,828 INFO epoch 19 step 5475/18000 loss_g 5.619 loss_d_a 0.131 loss_d_b 0.126 gan_ab 0.613 gan_ba 0.672 cycle 0.302 idt 0.263 grad_g 32.62 grad_d 7.45 lr 2.0e-04
+2026-09-28 18:51:31,470 INFO epoch 19 step 5500/18000 loss_g 4.909 loss_d_a 0.206 loss_d_b 0.141 gan_ab 0.379 gan_ba 0.392 cycle 0.281 idt 0.266 grad_g 30.45 grad_d 22.58 lr 2.0e-04
+2026-09-28 18:51:33,156 INFO epoch 19 step 5525/18000 loss_g 4.689 loss_d_a 0.235 loss_d_b 0.105 gan_ab 1.136 gan_ba 0.246 cycle 0.225 idt 0.211 grad_g 38.51 grad_d 14.92 lr 2.0e-04
+2026-09-28 18:51:34,827 INFO epoch 19 step 5550/18000 loss_g 5.211 loss_d_a 0.231 loss_d_b 0.148 gan_ab 0.979 gan_ba 0.262 cycle 0.254 idt 0.286 grad_g 26.27 grad_d 17.11 lr 2.0e-04
+2026-09-28 18:51:36,537 INFO epoch 19 step 5575/18000 loss_g 5.260 loss_d_a 0.165 loss_d_b 0.236 gan_ab 0.170 gan_ba 0.355 cycle 0.320 idt 0.307 grad_g 37.19 grad_d 15.39 lr 2.0e-04
+2026-09-28 18:51:38,268 INFO epoch 19 step 5600/18000 loss_g 6.601 loss_d_a 0.273 loss_d_b 0.123 gan_ab 0.453 gan_ba 0.686 cycle 0.369 idt 0.354 grad_g 41.39 grad_d 13.79 lr 2.0e-04
+2026-09-28 18:51:40,065 INFO epoch 19 step 5625/18000 loss_g 4.918 loss_d_a 0.378 loss_d_b 0.086 gan_ab 0.581 gan_ba 0.396 cycle 0.261 idt 0.267 grad_g 30.01 grad_d 18.49 lr 2.0e-04
+2026-09-28 18:51:41,892 INFO epoch 19 step 5650/18000 loss_g 4.898 loss_d_a 0.190 loss_d_b 0.278 gan_ab 0.458 gan_ba 0.205 cycle 0.282 idt 0.282 grad_g 30.71 grad_d 29.42 lr 2.0e-04
+2026-09-28 18:51:43,659 INFO epoch 19 step 5675/18000 loss_g 4.772 loss_d_a 0.162 loss_d_b 0.058 gan_ab 0.451 gan_ba 0.338 cycle 0.262 idt 0.272 grad_g 29.45 grad_d 12.78 lr 2.0e-04
+2026-09-28 18:51:45,443 INFO epoch 19 step 5700/18000 loss_g 6.002 loss_d_a 0.133 loss_d_b 0.089 gan_ab 0.799 gan_ba 0.540 cycle 0.317 idt 0.298 grad_g 39.02 grad_d 15.47 lr 2.0e-04
+2026-09-28 18:51:45,444 INFO epoch 19 done loss_g 5.269 loss_d_a 0.200 loss_d_b 0.116 cycle 0.289 idt 0.274 time 20.6s images/sec 116.3
+2026-09-28 18:51:47,673 INFO epoch 20 step 5725/18000 loss_g 4.670 loss_d_a 0.242 loss_d_b 0.061 gan_ab 0.525 gan_ba 0.426 cycle 0.254 idt 0.237 grad_g 36.89 grad_d 6.41 lr 2.0e-04
+2026-09-28 18:51:49,437 INFO epoch 20 step 5750/18000 loss_g 4.842 loss_d_a 0.130 loss_d_b 0.151 gan_ab 0.365 gan_ba 0.437 cycle 0.262 idt 0.284 grad_g 26.31 grad_d 17.39 lr 2.0e-04
+2026-09-28 18:51:51,145 INFO epoch 20 step 5775/18000 loss_g 4.339 loss_d_a 0.234 loss_d_b 0.110 gan_ab 0.418 gan_ba 0.206 cycle 0.255 idt 0.234 grad_g 24.34 grad_d 25.65 lr 2.0e-04
+2026-09-28 18:51:52,795 INFO epoch 20 step 5800/18000 loss_g 6.754 loss_d_a 0.115 loss_d_b 0.041 gan_ab 0.672 gan_ba 0.404 cycle 0.375 idt 0.385 grad_g 26.61 grad_d 7.94 lr 2.0e-04
+2026-09-28 18:51:54,405 INFO epoch 20 step 5825/18000 loss_g 5.868 loss_d_a 0.326 loss_d_b 0.120 gan_ab 0.673 gan_ba 0.662 cycle 0.300 idt 0.307 grad_g 49.05 grad_d 31.44 lr 2.0e-04
+2026-09-28 18:51:56,184 INFO epoch 20 step 5850/18000 loss_g 5.022 loss_d_a 0.221 loss_d_b 0.128 gan_ab 0.455 gan_ba 0.420 cycle 0.275 idt 0.279 grad_g 29.59 grad_d 11.92 lr 2.0e-04
+2026-09-28 18:51:57,855 INFO epoch 20 step 5875/18000 loss_g 5.077 loss_d_a 0.240 loss_d_b 0.178 gan_ab 0.463 gan_ba 0.453 cycle 0.287 idt 0.259 grad_g 26.49 grad_d 7.96 lr 2.0e-04
+2026-09-28 18:51:59,496 INFO epoch 20 step 5900/18000 loss_g 5.491 loss_d_a 0.289 loss_d_b 0.081 gan_ab 0.344 gan_ba 0.184 cycle 0.326 idt 0.340 grad_g 30.96 grad_d 16.20 lr 2.0e-04
+2026-09-28 18:52:01,219 INFO epoch 20 step 5925/18000 loss_g 5.073 loss_d_a 0.179 loss_d_b 0.081 gan_ab 0.477 gan_ba 0.411 cycle 0.293 idt 0.250 grad_g 24.26 grad_d 8.44 lr 2.0e-04
+2026-09-28 18:52:03,030 INFO epoch 20 step 5950/18000 loss_g 4.939 loss_d_a 0.327 loss_d_b 0.122 gan_ab 0.710 gan_ba 0.775 cycle 0.235 idt 0.221 grad_g 33.94 grad_d 22.02 lr 2.0e-04
+2026-09-28 18:52:04,754 INFO epoch 20 step 5975/18000 loss_g 5.613 loss_d_a 0.228 loss_d_b 0.210 gan_ab 0.674 gan_ba 0.457 cycle 0.289 idt 0.318 grad_g 37.31 grad_d 17.89 lr 2.0e-04
+2026-09-28 18:52:06,534 INFO epoch 20 step 6000/18000 loss_g 4.809 loss_d_a 0.096 loss_d_b 0.055 gan_ab 0.406 gan_ba 0.348 cycle 0.267 idt 0.278 grad_g 25.27 grad_d 11.77 lr 2.0e-04
+2026-09-28 18:52:06,534 INFO epoch 20 done loss_g 5.354 loss_d_a 0.205 loss_d_b 0.119 cycle 0.292 idt 0.277 time 20.6s images/sec 116.5
+2026-09-28 18:52:08,898 INFO epoch 21 step 6025/18000 loss_g 4.876 loss_d_a 0.286 loss_d_b 0.185 gan_ab 0.995 gan_ba 0.352 cycle 0.236 idt 0.233 grad_g 34.24 grad_d 20.23 lr 2.0e-04
+2026-09-28 18:52:10,722 INFO epoch 21 step 6050/18000 loss_g 5.066 loss_d_a 0.147 loss_d_b 0.125 gan_ab 0.203 gan_ba 0.445 cycle 0.296 idt 0.291 grad_g 29.77 grad_d 15.55 lr 2.0e-04
+2026-09-28 18:52:12,495 INFO epoch 21 step 6075/18000 loss_g 5.354 loss_d_a 0.118 loss_d_b 0.090 gan_ab 0.887 gan_ba 0.461 cycle 0.272 idt 0.257 grad_g 40.07 grad_d 13.69 lr 2.0e-04
+2026-09-28 18:52:14,373 INFO epoch 21 step 6100/18000 loss_g 5.405 loss_d_a 0.235 loss_d_b 0.120 gan_ab 0.327 gan_ba 0.182 cycle 0.336 idt 0.308 grad_g 33.92 grad_d 17.49 lr 2.0e-04
+2026-09-28 18:52:16,076 INFO epoch 21 step 6125/18000 loss_g 4.793 loss_d_a 0.245 loss_d_b 0.136 gan_ab 1.105 gan_ba 0.196 cycle 0.244 idt 0.210 grad_g 33.15 grad_d 22.60 lr 2.0e-04
+2026-09-28 18:52:17,732 INFO epoch 21 step 6150/18000 loss_g 7.086 loss_d_a 0.165 loss_d_b 0.211 gan_ab 0.954 gan_ba 0.213 cycle 0.414 idt 0.357 grad_g 76.93 grad_d 21.23 lr 2.0e-04
+2026-09-28 18:52:19,418 INFO epoch 21 step 6175/18000 loss_g 6.551 loss_d_a 0.166 loss_d_b 0.072 gan_ab 0.436 gan_ba 0.378 cycle 0.419 idt 0.309 grad_g 53.04 grad_d 6.61 lr 2.0e-04
+2026-09-28 18:52:21,245 INFO epoch 21 step 6200/18000 loss_g 5.292 loss_d_a 0.183 loss_d_b 0.072 gan_ab 0.787 gan_ba 0.462 cycle 0.275 idt 0.258 grad_g 37.04 grad_d 7.79 lr 2.0e-04
+2026-09-28 18:52:23,160 INFO epoch 21 step 6225/18000 loss_g 7.086 loss_d_a 0.123 loss_d_b 0.112 gan_ab 1.271 gan_ba 0.548 cycle 0.340 idt 0.373 grad_g 39.56 grad_d 14.08 lr 2.0e-04
+2026-09-28 18:52:24,958 INFO epoch 21 step 6250/18000 loss_g 5.273 loss_d_a 0.127 loss_d_b 0.091 gan_ab 0.738 gan_ba 0.240 cycle 0.290 idt 0.280 grad_g 21.76 grad_d 13.13 lr 2.0e-04
+2026-09-28 18:52:26,796 INFO epoch 21 step 6275/18000 loss_g 4.769 loss_d_a 0.196 loss_d_b 0.086 gan_ab 0.468 gan_ba 0.390 cycle 0.266 idt 0.251 grad_g 22.08 grad_d 9.27 lr 2.0e-04
+2026-09-28 18:52:28,535 INFO epoch 21 step 6300/18000 loss_g 5.380 loss_d_a 0.229 loss_d_b 0.259 gan_ab 0.243 gan_ba 0.500 cycle 0.321 idt 0.286 grad_g 33.99 grad_d 25.73 lr 2.0e-04
+2026-09-28 18:52:28,536 INFO epoch 21 done loss_g 5.293 loss_d_a 0.203 loss_d_b 0.117 cycle 0.288 idt 0.271 time 21.5s images/sec 111.6
+2026-09-28 18:52:30,857 INFO epoch 22 step 6325/18000 loss_g 5.377 loss_d_a 0.186 loss_d_b 0.066 gan_ab 0.769 gan_ba 0.407 cycle 0.282 idt 0.277 grad_g 28.61 grad_d 7.05 lr 2.0e-04
+2026-09-28 18:52:32,673 INFO epoch 22 step 6350/18000 loss_g 4.827 loss_d_a 0.229 loss_d_b 0.077 gan_ab 0.590 gan_ba 0.229 cycle 0.274 idt 0.253 grad_g 25.80 grad_d 9.74 lr 2.0e-04
+2026-09-28 18:52:34,417 INFO epoch 22 step 6375/18000 loss_g 4.597 loss_d_a 0.189 loss_d_b 0.074 gan_ab 0.907 gan_ba 0.469 cycle 0.218 idt 0.207 grad_g 41.24 grad_d 9.60 lr 2.0e-04
+2026-09-28 18:52:36,236 INFO epoch 22 step 6400/18000 loss_g 4.990 loss_d_a 0.181 loss_d_b 0.100 gan_ab 0.482 gan_ba 0.451 cycle 0.276 idt 0.259 grad_g 20.74 grad_d 9.51 lr 2.0e-04
+2026-09-28 18:52:38,006 INFO epoch 22 step 6425/18000 loss_g 5.227 loss_d_a 0.152 loss_d_b 0.052 gan_ab 0.457 gan_ba 0.419 cycle 0.300 idt 0.271 grad_g 35.95 grad_d 6.46 lr 2.0e-04
+2026-09-28 18:52:39,712 INFO epoch 22 step 6450/18000 loss_g 5.147 loss_d_a 0.255 loss_d_b 0.063 gan_ab 0.806 gan_ba 0.388 cycle 0.265 idt 0.261 grad_g 22.24 grad_d 10.97 lr 2.0e-04
+2026-09-28 18:52:41,391 INFO epoch 22 step 6475/18000 loss_g 4.663 loss_d_a 0.100 loss_d_b 0.147 gan_ab 0.292 gan_ba 0.576 cycle 0.249 idt 0.260 grad_g 23.41 grad_d 13.38 lr 2.0e-04
+2026-09-28 18:52:43,120 INFO epoch 22 step 6500/18000 loss_g 5.056 loss_d_a 0.181 loss_d_b 0.083 gan_ab 0.821 gan_ba 0.836 cycle 0.233 idt 0.214 grad_g 30.67 grad_d 15.01 lr 2.0e-04
+2026-09-28 18:52:44,845 INFO epoch 22 step 6525/18000 loss_g 4.760 loss_d_a 0.205 loss_d_b 0.100 gan_ab 0.571 gan_ba 0.402 cycle 0.259 idt 0.239 grad_g 30.45 grad_d 14.06 lr 2.0e-04
+2026-09-28 18:52:46,525 INFO epoch 22 step 6550/18000 loss_g 5.547 loss_d_a 0.182 loss_d_b 0.076 gan_ab 0.843 gan_ba 0.535 cycle 0.282 idt 0.270 grad_g 31.04 grad_d 12.44 lr 2.0e-04
+2026-09-28 18:52:48,196 INFO epoch 22 step 6575/18000 loss_g 5.736 loss_d_a 0.232 loss_d_b 0.182 gan_ab 1.458 gan_ba 0.377 cycle 0.259 idt 0.262 grad_g 43.26 grad_d 19.61 lr 2.0e-04
+2026-09-28 18:52:49,913 INFO epoch 22 step 6600/18000 loss_g 4.314 loss_d_a 0.190 loss_d_b 0.104 gan_ab 0.598 gan_ba 0.458 cycle 0.216 idt 0.220 grad_g 26.42 grad_d 17.57 lr 2.0e-04
+2026-09-28 18:52:49,914 INFO epoch 22 done loss_g 5.224 loss_d_a 0.198 loss_d_b 0.102 cycle 0.283 idt 0.268 time 20.9s images/sec 114.9
+2026-09-28 18:52:52,149 INFO epoch 23 step 6625/18000 loss_g 6.261 loss_d_a 0.196 loss_d_b 0.196 gan_ab 1.216 gan_ba 0.491 cycle 0.321 idt 0.268 grad_g 45.52 grad_d 21.99 lr 2.0e-04
+2026-09-28 18:52:53,961 INFO epoch 23 step 6650/18000 loss_g 4.898 loss_d_a 0.255 loss_d_b 0.043 gan_ab 0.475 gan_ba 0.129 cycle 0.297 idt 0.266 grad_g 30.19 grad_d 22.40 lr 2.0e-04
