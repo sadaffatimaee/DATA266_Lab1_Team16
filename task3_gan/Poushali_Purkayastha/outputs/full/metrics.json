@@ -65,9 +65,9 @@
   "Human audit artifacts mean": "to fill: run audit.py",
   "Human audit Cohen's kappa (mean over criteria)": "to fill: run audit.py",
   "Human audit percent agreement (mean over criteria)": "to fill: run audit.py",
-  "Kaggle public score": "to fill: outputs/<run>/kaggle/kaggle_results.json",
-  "Kaggle private score": "to fill",
-  "Kaggle leaderboard rank": "to fill",
+  "Kaggle public score": 48.85532,
+  "Kaggle private score": null,
+  "Kaggle leaderboard rank": 1,
   "Submission FID": 97.29096146960956,
   "Submission MiFID": 0.41968183532712106,
   "Submission score source": "official evaluation script"

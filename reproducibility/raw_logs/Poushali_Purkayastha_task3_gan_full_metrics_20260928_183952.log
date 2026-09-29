@@ -1,0 +1,82 @@
+2026-09-28 18:39:52,682 INFO run_id full_metrics_20260928_183952 member Poushali_Purkayastha task task3_gan stage metrics
+2026-09-28 18:39:52,682 INFO config task3_gan/Poushali_Purkayastha/src/configs/full.yaml {"run_name": "full", "is_final": true, "seed": 20, "data": {"photo_dir": "task3_gan/data/photo_jpg", "monet_dir": "task3_gan/data/monet_jpg", "max_photos": null, "max_monet": null, "image_size": 128, "infer_size": 256, "holdout_photo": 300, "holdout_monet": 30}, "model": {"ngf": 64, "ndf": 64, "n_res_blocks": 6, "n_d_layers": 3, "dropout": 0.0}, "train": {"epochs": 24, "steps_per_epoch": 300, "batch_size": 4, "lr": 0.0002, "beta1": 0.5, "decay_start_epoch": 12, "gan_mode": "lsgan", "lambda_cycle": 10.0, "lambda_identity": 5.0, "pool_size": 50, "grad_clip": 10.0, "amp": true, "amp_nan_limit": 5, "log_interval": 25, "sample_every": 1}, "translate": {"batch_size": 16, "preview_images": 60}, "metrics": {"fid_max_images": 2000, "kid_subsets": 100, "kid_subset_size": 1000, "knn_k": 3, "mifid_epsilon": 0.1, "lpips_net": "alex", "batch_size": 50}, "audit": {"n_samples": 30, "raters": ["Poushali", "Sadaf"]}, "kaggle": {"competition": "data-266-fall-2026-gan-image-style-transfer", "zip_name": "images.zip"}}
+2026-09-28 18:39:52,697 INFO hardware {"platform": "Windows-11-10.0.26200-SP0", "python": "3.12.10", "torch": "2.11.0+cu128", "cpu": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel", "cpu_cores": 24, "ram_gb": 68.1, "cuda_available": true, "cuda_version": "12.8", "gpus": ["NVIDIA GeForce RTX 5090"], "nvidia_smi": "Mon Sep 28 18:39:52 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.60                 KMD Version: 610.60        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5090      WDDM  |   00000000:01:00.0  On |                  N/A |\n|  0%   40C    P8              9W /  575W |    2870MiB /  32607MiB |      1%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            4440    C+G   ...8bbwe\\PhoneExperienceHost.exe      N/A      |\n|    0   N/A  N/A            5928    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           21940    C+G   ...yb3d8bbwe\\Notepad\\Notepad.exe      N/A      |\n|    0   N/A  N/A           35204    C+G   ...xyewy\\ShellExperienceHost.exe      N/A      |\n|    0   N/A  N/A           37976    C+G   C:\\Windows\\explorer.exe               N/A      |\n|    0   N/A  N/A           38560    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           39272    C+G   ...indows\\System32\\ShellHost.exe      N/A      |\n|    0   N/A  N/A           42664    C+G   ...erControlCenter_v2\\Killer.exe      N/A      |\n|    0   N/A  N/A           48032    C+G   ...SnippingTool\\SnippingTool.exe      N/A      |\n|    0   N/A  N/A           48148    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           49320    C+G   ...2txyewy\\CrossDeviceResume.exe      N/A      |\n|    0   N/A  N/A           50472    C+G   ...yb3d8bbwe\\WindowsTerminal.exe      N/A      |\n|    0   N/A  N/A           50808    C+G   ...\\SubAgent\\AlienFXSubAgent.exe      N/A      |\n|    0   N/A  N/A           51328    C+G   ..._cw5n1h2txyewy\\SearchHost.exe      N/A      |\n|    0   N/A  N/A           51424    C+G   ...y\\StartMenuExperienceHost.exe      N/A      |\n|    0   N/A  N/A           53500    C+G   ...Chrome\\Application\\chrome.exe      N/A      |\n|    0   N/A  N/A           53548    C+G   ....0.4234.48\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           59892    C+G   ...5n1h2txyewy\\TextInputHost.exe      N/A      |\n+-----------------------------------------------------------------------------------------+"}
+2026-09-28 18:39:52,697 INFO git {"commit": "8cc374228d64a577c3e1490dfaaa01b65f70f747", "branch": "main", "dirty": true}
+2026-09-28 18:39:52,835 INFO data photos 7038 (train 6738 holdout 300) monets 300 (train 270 holdout 30) size 128
+2026-09-28 18:39:54,944 INFO inception feature extraction on cuda
+2026-09-28 18:40:02,142 INFO features {"real_monet": [300, 2048], "real_photo": [2000, 2048], "fake_monet": [2000, 2048], "fake_photo": [300, 2048]}
+2026-09-28 18:40:20,166 INFO submission.csv written with FID 97.2910 MiFID 0.4197 from official evaluation script
+2026-09-28 18:40:20,172 INFO metric FID photo->monet = 98.79323050797723
+2026-09-28 18:40:20,173 INFO metric KID mean photo->monet = 0.021474292501807213
+2026-09-28 18:40:20,173 INFO metric KID std photo->monet = 0.0010904831578955054
+2026-09-28 18:40:20,173 INFO metric Precision photo->monet = 0.3700000047683716
+2026-09-28 18:40:20,173 INFO metric Recall photo->monet = 0.4699999988079071
+2026-09-28 18:40:20,173 INFO metric Density photo->monet = 0.3243333399295807
+2026-09-28 18:40:20,173 INFO metric Coverage photo->monet = 0.7133333086967468
+2026-09-28 18:40:20,173 INFO metric Images compared photo->monet (real, fake) = 300, 2000
+2026-09-28 18:40:20,173 INFO metric FID monet->photo = 100.08104149919367
+2026-09-28 18:40:20,173 INFO metric KID mean monet->photo = 0.03213416412472725
+2026-09-28 18:40:20,173 INFO metric KID std monet->photo = 0.0012934545520693064
+2026-09-28 18:40:20,174 INFO metric Precision monet->photo = 0.4633333384990692
+2026-09-28 18:40:20,174 INFO metric Recall monet->photo = 0.29249998927116394
+2026-09-28 18:40:20,174 INFO metric Density monet->photo = 0.5155555605888367
+2026-09-28 18:40:20,174 INFO metric Coverage monet->photo = 0.1509999930858612
+2026-09-28 18:40:20,174 INFO metric Images compared monet->photo (real, fake) = 2000, 300
+2026-09-28 18:40:20,174 INFO metric Memorization distance photo->monet = 0.2614727318286896
+2026-09-28 18:40:20,174 INFO metric MiFID-like photo->monet (epsilon 0.1) = 98.79323050797723
+2026-09-28 18:40:20,174 INFO metric MiFID course definition photo->monet (mean cosine distance) = 0.4214271306991577
+2026-09-28 18:40:20,174 INFO metric Course leaderboard score (FID + MiFID) / 2 = 49.60732881933819
+2026-09-28 18:40:20,174 INFO metric Cycle-reconstruction L1 photo->monet->photo = 0.06410163640975952
+2026-09-28 18:40:20,174 INFO metric Cycle-reconstruction L1 monet->photo->monet = 0.08061029016971588
+2026-09-28 18:40:20,174 INFO metric Identity L1 G_BA(photo) vs photo = 0.06462041288614273
+2026-09-28 18:40:20,174 INFO metric Identity L1 G_AB(monet) vs monet = 0.07657024264335632
+2026-09-28 18:40:20,175 INFO metric LPIPS input vs translation photo->monet = 0.3632068336009979
+2026-09-28 18:40:20,175 INFO metric LPIPS input vs translation monet->photo = 0.240374356508255
+2026-09-28 18:40:20,175 INFO metric LPIPS input vs reconstruction photo->monet->photo = 0.22132860124111176
+2026-09-28 18:40:20,175 INFO metric LPIPS input vs reconstruction monet->photo->monet = 0.29101717472076416
+2026-09-28 18:40:20,175 INFO metric Content cosine similarity photo->monet = 0.7117455005645752
+2026-09-28 18:40:20,175 INFO metric Content cosine similarity monet->photo = 0.7856502532958984
+2026-09-28 18:40:20,175 INFO metric Holdout images (photo, monet) = 300, 30
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_g = 4.627786689599355
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_d_a = 0.16587922625243665
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_d_b = 0.07461170428742965
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_gan_ab = 0.6588514481981596
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_gan_ba = 0.4453331816196442
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_cycle = 0.23192618717749913
+2026-09-28 18:40:20,175 INFO metric Final epoch mean loss_identity = 0.2408680418630441
+2026-09-28 18:40:20,175 INFO metric Gradient norm G mean = 34.32710845073064
+2026-09-28 18:40:20,176 INFO metric Gradient norm G max = 134.86611938476562
+2026-09-28 18:40:20,176 INFO metric Gradient norm D mean = 15.739743186765248
+2026-09-28 18:40:20,176 INFO metric Gradient norm D max = 131.0941925048828
+2026-09-28 18:40:20,176 INFO metric NaN or Inf losses = 0
+2026-09-28 18:40:20,176 INFO metric Mixed precision disabled at step = None
+2026-09-28 18:40:20,176 INFO metric Parameter count g_ab = 7837699
+2026-09-28 18:40:20,176 INFO metric Parameter count g_ba = 7837699
+2026-09-28 18:40:20,176 INFO metric Parameter count d_a = 2764737
+2026-09-28 18:40:20,176 INFO metric Parameter count d_b = 2764737
+2026-09-28 18:40:20,176 INFO metric Parameter count total = 21204872
+2026-09-28 18:40:20,176 INFO metric Training time (sec) = 523.7961242198944
+2026-09-28 18:40:20,176 INFO metric Training images/sec = 109.96644941919996
+2026-09-28 18:40:20,176 INFO metric Training image size = 128
+2026-09-28 18:40:20,176 INFO metric Epochs = 24
+2026-09-28 18:40:20,176 INFO metric Optimizer steps = 7200
+2026-09-28 18:40:20,177 INFO metric Peak memory (MB) = 1299.3
+2026-09-28 18:40:20,177 INFO metric Peak memory source = cuda_max_memory_allocated
+2026-09-28 18:40:20,177 INFO metric Device = NVIDIA GeForce RTX 5090
+2026-09-28 18:40:20,177 INFO metric Inference images/sec photo->monet = 255.90501758201455
+2026-09-28 18:40:20,177 INFO metric Inference images/sec monet->photo = 246.62980358659436
+2026-09-28 18:40:20,177 INFO metric Inference image size = 256
+2026-09-28 18:40:20,177 INFO metric Submission images = 7038
+2026-09-28 18:40:20,177 INFO metric Human audit style mean = to fill: run audit.py
+2026-09-28 18:40:20,177 INFO metric Human audit content mean = to fill: run audit.py
+2026-09-28 18:40:20,177 INFO metric Human audit artifacts mean = to fill: run audit.py
+2026-09-28 18:40:20,177 INFO metric Human audit Cohen's kappa (mean over criteria) = to fill: run audit.py
+2026-09-28 18:40:20,177 INFO metric Human audit percent agreement (mean over criteria) = to fill: run audit.py
+2026-09-28 18:40:20,177 INFO metric Kaggle public score = 48.85532
+2026-09-28 18:40:20,177 INFO metric Kaggle private score = None
+2026-09-28 18:40:20,177 INFO metric Kaggle leaderboard rank = 1
+2026-09-28 18:40:20,177 INFO metric Submission FID = 97.29096146960956
+2026-09-28 18:40:20,177 INFO metric Submission MiFID = 0.41968183532712106
+2026-09-28 18:40:20,178 INFO metric Submission score source = official evaluation script
+2026-09-28 18:40:20,723 INFO manifest reproducibility/manifests/Poushali_Purkayastha_task3_gan_full_metrics_20260928_183952.json
+2026-09-28 18:40:20,723 INFO run finished in 28.4 sec
