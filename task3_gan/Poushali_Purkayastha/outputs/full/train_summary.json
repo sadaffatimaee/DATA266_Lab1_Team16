@@ -1,0 +1,47 @@
+{
+  "device": "NVIDIA GeForce RTX 5090",
+  "amp_dtype": "torch.bfloat16",
+  "amp_disabled_step": null,
+  "param_count": {
+    "g_ab": 7837699,
+    "g_ba": 7837699,
+    "d_a": 2764737,
+    "d_b": 2764737,
+    "total": 21204872
+  },
+  "image_size": 128,
+  "epochs": 24,
+  "steps_per_epoch": 300,
+  "optimizer_steps": 7200,
+  "batch_size": 4,
+  "train_time_sec": 523.7961242198944,
+  "train_images_per_sec": 109.96644941919996,
+  "final_epoch_losses": {
+    "epoch": 24,
+    "lr": 1.5384615384615374e-05,
+    "epoch_time_sec": 22.994588613510132,
+    "loss_g": 4.627786689599355,
+    "loss_d_a": 0.16587922625243665,
+    "loss_d_b": 0.07461170428742965,
+    "loss_gan_ab": 0.6588514481981596,
+    "loss_gan_ba": 0.4453331816196442,
+    "loss_cycle": 0.23192618717749913,
+    "loss_identity": 0.2408680418630441
+  },
+  "grad_norm_g_mean": 34.32710845073064,
+  "grad_norm_g_max": 134.86611938476562,
+  "grad_norm_d_mean": 15.739743186765248,
+  "grad_norm_d_max": 131.0941925048828,
+  "nan_losses": 0,
+  "checkpoints": {
+    "generators.pt": {
+      "epoch": 24
+    },
+    "last.pt": {
+      "epoch": 24
+    }
+  },
+  "peak_memory_mb": 1299.3,
+  "peak_memory_source": "cuda_max_memory_allocated",
+  "run_id": "full_20260928_180436"
+}

@@ -1,0 +1,73 @@
+Metric,Value
+FID photo->monet,98.79323050797723
+KID mean photo->monet,0.021474292501807213
+KID std photo->monet,0.0010904831578955054
+Precision photo->monet,0.3700000047683716
+Recall photo->monet,0.4699999988079071
+Density photo->monet,0.3243333399295807
+Coverage photo->monet,0.7133333086967468
+"Images compared photo->monet (real, fake)","300, 2000"
+FID monet->photo,100.08104149919367
+KID mean monet->photo,0.03213416412472725
+KID std monet->photo,0.0012934545520693064
+Precision monet->photo,0.4633333384990692
+Recall monet->photo,0.29249998927116394
+Density monet->photo,0.5155555605888367
+Coverage monet->photo,0.1509999930858612
+"Images compared monet->photo (real, fake)","2000, 300"
+Memorization distance photo->monet,0.2614727318286896
+MiFID-like photo->monet (epsilon 0.1),98.79323050797723
+MiFID course definition photo->monet (mean cosine distance),0.4214271306991577
+Course leaderboard score (FID + MiFID) / 2,49.60732881933819
+Cycle-reconstruction L1 photo->monet->photo,0.06410163640975952
+Cycle-reconstruction L1 monet->photo->monet,0.08061029016971588
+Identity L1 G_BA(photo) vs photo,0.06462041288614273
+Identity L1 G_AB(monet) vs monet,0.07657024264335632
+LPIPS input vs translation photo->monet,0.3632068336009979
+LPIPS input vs translation monet->photo,0.240374356508255
+LPIPS input vs reconstruction photo->monet->photo,0.22132860124111176
+LPIPS input vs reconstruction monet->photo->monet,0.29101717472076416
+Content cosine similarity photo->monet,0.7117455005645752
+Content cosine similarity monet->photo,0.7856502532958984
+"Holdout images (photo, monet)","300, 30"
+Final epoch mean loss_g,4.627786689599355
+Final epoch mean loss_d_a,0.16587922625243665
+Final epoch mean loss_d_b,0.07461170428742965
+Final epoch mean loss_gan_ab,0.6588514481981596
+Final epoch mean loss_gan_ba,0.4453331816196442
+Final epoch mean loss_cycle,0.23192618717749913
+Final epoch mean loss_identity,0.2408680418630441
+Gradient norm G mean,34.32710845073064
+Gradient norm G max,134.86611938476562
+Gradient norm D mean,15.739743186765248
+Gradient norm D max,131.0941925048828
+NaN or Inf losses,0
+Mixed precision disabled at step,
+Parameter count g_ab,7837699
+Parameter count g_ba,7837699
+Parameter count d_a,2764737
+Parameter count d_b,2764737
+Parameter count total,21204872
+Training time (sec),523.7961242198944
+Training images/sec,109.96644941919996
+Training image size,128
+Epochs,24
+Optimizer steps,7200
+Peak memory (MB),1299.3
+Peak memory source,cuda_max_memory_allocated
+Device,NVIDIA GeForce RTX 5090
+Inference images/sec photo->monet,255.90501758201455
+Inference images/sec monet->photo,246.62980358659436
+Inference image size,256
+Submission images,7038
+Human audit style mean,to fill: run audit.py
+Human audit content mean,to fill: run audit.py
+Human audit artifacts mean,to fill: run audit.py
+Human audit Cohen's kappa (mean over criteria),to fill: run audit.py
+Human audit percent agreement (mean over criteria),to fill: run audit.py
+Kaggle public score,to fill: outputs/<run>/kaggle/kaggle_results.json
+Kaggle private score,to fill
+Kaggle leaderboard rank,to fill
+Submission FID,98.79323050797723
+Submission MiFID,0.4214271306991577
+Submission score source,"local metrics.py on a subsample, replace with kaggle_eval.py values"

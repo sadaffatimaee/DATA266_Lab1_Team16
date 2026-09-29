@@ -1,0 +1,18 @@
+{
+  "run_id": "full_20260928_180436",
+  "infer_size": 256,
+  "device": "NVIDIA GeForce RTX 5090",
+  "a2b": {
+    "images": 7038,
+    "images_per_sec": 255.90501758201455,
+    "seconds": 27.502391576766968
+  },
+  "b2a": {
+    "images": 300,
+    "images_per_sec": 246.62980358659436,
+    "seconds": 1.216398000717163
+  },
+  "preview_images": 60,
+  "submission_images": 7038,
+  "submission_zip": "task3_gan/Poushali_Purkayastha/outputs/full/kaggle/images.zip"
+}

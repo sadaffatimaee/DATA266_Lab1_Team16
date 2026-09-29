@@ -1,0 +1,26 @@
+{
+  "FID": 97.29096146960956,
+  "MiFID": 0.41972164577524834,
+  "score": 48.855341557692405,
+  "MiFID_all_pairs": 0.4215961322601123,
+  "n_generated": 7038,
+  "n_real": 300,
+  "subsample_size": 300,
+  "seed": 0,
+  "fid_stats_source": "real_stats.npz",
+  "real_feature_source": "C:\\Users\\sadaf\\DATA266_Lab1_Team16\\task3_gan\\data\\monet_jpg",
+  "real_stats_keys": {
+    "mu_real": [
+      2048
+    ],
+    "sigma_real": [
+      2048,
+      2048
+    ],
+    "feats_real": [
+      300,
+      2048
+    ]
+  },
+  "inception": "torchvision inception_v3 IMAGENET1K_V1 pool features, 299 px bilinear"
+}

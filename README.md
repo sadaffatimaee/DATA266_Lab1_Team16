@@ -274,4 +274,4 @@ Raw datasets are not committed. Zipped copies with read access:
 | --- | --- | --- |
 | 1 | TinyStories archive | https://drive.google.com/file/d/1uqVRUej1XNxDCxLaXkqyVURgLkKECd8a/view?usp=drive_link |
 | 2 | Yelp polarity, official train and test parquet files | to add |
-| 3 | monet_jpg and photo_jpg from the class competition | to add |
+| 3 | monet_jpg and photo_jpg from the class competition | https://drive.google.com/file/d/13lZ9iqetIWUWEklGvMHdHIrB0LxHW5RC/view?usp=sharing |
