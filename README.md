@@ -2,7 +2,7 @@
 
 LLM pretraining from scratch, Yelp polarity sentiment classification, and CycleGAN style transfer.
 
-Members: Poushali Purkayastha, Sadaf Fatima Syeda. Each member builds, trains, and documents their own model for every task under their own named folder.
+Members: Poushali Purkayastha, Sadaf Fatima Syeda. .
 
 ## Layout
 
@@ -41,6 +41,7 @@ We did not push the datasets to GitHub. We zipped them, uploaded them to Google 
 | Task 2 | Yelp polarity, Sadaf's copy | https://drive.google.com/file/d/1v5QTeH2d_eDnleRc7VAI6QkBa6a-a8Qt/view?usp=drive_link | https://huggingface.co/datasets/fancyzhx/yelp_polarity |
 | Task 2 | Yelp polarity, official train and test parquet files, Poushali's copy | https://drive.google.com/file/d/1YVAViROaFKkmK8XWJdg3f_nxLuIUrGNi/view?usp=drive_link | https://huggingface.co/datasets/fancyzhx/yelp_polarity |
 | Task 3 | monet_jpg and photo_jpg from the Kaggle competition | https://drive.google.com/file/d/13lZ9iqetIWUWEklGvMHdHIrB0LxHW5RC/view?usp=sharing | https://www.kaggle.com/competitions/data-266-fall-2026-gan-image-style-transfer |
+| Task 3 | monet_jpg and photo_jpg from the Kaggle competition, Sadaf's copy | https://drive.google.com/file/d/134CWIvesmfKNRHsX_CWI_jpdgHYeWcZc/view?usp=drive_link | https://www.kaggle.com/competitions/data-266-fall-2026-gan-image-style-transfer |
 
 For Task 2 we use Yelp, not IMDB, as the instructor corrected.
 
@@ -56,7 +57,7 @@ On Windows activate with `.venv\Scripts\activate`. Python 3.12 was used. On Linu
 
 ## Smoke test (one command)
 
-Runs Poushali's Task 1 pipeline end to end on a tiny config, on CPU, in about a minute. It streams a few hundred TinyStories from Hugging Face, trains a 2-layer model for one epoch, generates text, and writes metrics, plots, a raw log, and a manifest.
+
 
 ```
 python task1_llm/Poushali_Purkayastha/src/run.py --config configs/smoke.yaml
@@ -271,4 +272,49 @@ After the human audit or a leaderboard update, `src/update_report_rows.py` merge
 
 ```
 python task3_gan/Poushali_Purkayastha/src/update_report_rows.py --config configs/full.yaml
-``` Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
+```
+
+Leaderboard results go into outputs/full/kaggle/kaggle_results.json with public_score, private_score, and rank, and evaluate_local.py pulls them into the metrics report.
+
+## Task 3, Sadaf Fatima Syeda
+
+I trained a CycleGAN from scratch on the competition's Monet and photo images. I follow the official evaluation script's naming: domain A is Monet, domain B is photo. pred_A2B holds Monet-to-photo images and pred_B2A holds photo-to-Monet images (the Kaggle direction).
+
+- Generators: U-Net with skip connections (ngf 48, 8 down-sampling steps), 30.6M parameters each
+- Discriminators: PatchGAN (ndf 64), 0.66M parameters each
+- Loss: BCE adversarial loss, cycle loss with weight 8, identity loss logged but not trained
+- Training: batch 1, Adam at 2e-4, linear decay over the second half, image pool of 50, mixed precision, 20,000 steps on a Colab T4
+- Holdout: I kept the first 300 sorted photos out of training, since those are the ones the evaluation scores
+
+I did not use any pretrained generators or pretrained weights. Inception-v3 is only used inside the evaluation, the same as the official script.
+
+To run it, open `task3_gan/Sadaf_Fatima_Syeda/src/task3_sadaf.ipynb` in Colab, pick a T4 GPU and click Run all. The first cell holds all the settings. The notebook downloads the dataset from my Drive copy (linked in the Datasets section), trains, translates, evaluates and pushes the results to GitHub.
+
+Results:
+
+| | Photo→Monet (B2A) | Monet→Photo (A2B) | Mean |
+| --- | --- | --- | --- |
+| FID | 123.28 | 143.48 | 133.38 |
+| MiFID | 0.4046 | 0.4430 | 0.4238 |
+| Leaderboard score | | | **66.90** |
+
+Kaggle public score: 66.90192 (team PairProgramming_Team_16, submitted 2026-09-28). It matches my local score from evaluate_local.py.
+
+I also ran a longer run of 80,000 steps on an RTX 4090 with the same settings. It scored 68.30, so worse, and I kept the 20,000-step run as my submission. Its files are in outputs/long_run_80k/.
+
+| File | What's in it |
+| --- | --- |
+| submission.csv | the Kaggle file: ID, FID, MiFID |
+| evaluate_local.py | the official FID / MiFID method plus KID and precision / recall / density / coverage |
+| evaluation.json | every number evaluate_local.py computes |
+| full_metrics_report.csv | all Task 3 metrics for both directions (also in src/) |
+| outputs/pred_A2B, outputs/pred_B2A | the first 300 translated images of each direction, the ones that get scored |
+| outputs/samples/ | a sample grid every 1,000 steps |
+| outputs/loss_curves.png, final_grid.png, training_history.csv | training curves and the final translations |
+| outputs/audit/ | 30 blinded samples and the two rater sheets for the human audit |
+| outputs/kaggle_results.json | my Kaggle score |
+| outputs/long_run_80k/ | the 80,000-step comparison run |
+| checkpoints/ | both generators in fp16 |
+| data_processed/holdout.json | the holdout and audit file names |
+| results.md | my design choices and results |
+| failure_analysis.md | where the model fails and why |
