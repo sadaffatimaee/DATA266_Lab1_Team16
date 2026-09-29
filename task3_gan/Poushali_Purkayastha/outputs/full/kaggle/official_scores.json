@@ -1,14 +1,15 @@
 {
   "FID": 97.29096146960956,
-  "MiFID": 0.41972164577524834,
-  "score": 48.855341557692405,
-  "MiFID_all_pairs": 0.4215961322601123,
+  "MiFID": 0.41968183532712106,
+  "score": 48.85532165246834,
+  "MiFID_all_pairs": 0.42164654002640406,
   "n_generated": 7038,
   "n_real": 300,
   "subsample_size": 300,
   "seed": 0,
   "fid_stats_source": "real_stats.npz",
-  "real_feature_source": "C:\\Users\\sadaf\\DATA266_Lab1_Team16\\task3_gan\\data\\monet_jpg",
+  "real_feature_source": "real_stats.npz",
+  "inception_match_cosine": 0.9998638069123463,
   "real_stats_keys": {
     "mu_real": [
       2048

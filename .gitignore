@@ -16,3 +16,5 @@ task3_gan/**/outputs/**/pred_A2B/
 task3_gan/**/outputs/**/pred_B2A/
 task3_gan/**/outputs/**/kaggle/images.zip
 task3_gan/**/outputs/**/audit/blind/
+/monet_photo_data.zip
+/lab_backup.tar.gz
