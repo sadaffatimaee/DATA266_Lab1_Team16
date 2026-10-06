@@ -1,0 +1,20 @@
+{
+  "status": "one rater",
+  "raters": [
+    "Poushali"
+  ],
+  "n_rated": 30,
+  "means": {
+    "style": 4.266666666666667,
+    "content": 3.933333333333333,
+    "artifacts": 3.6666666666666665
+  },
+  "report_rows": {
+    "Human audit style mean": 4.267,
+    "Human audit content mean": 3.933,
+    "Human audit artifacts mean": 3.667,
+    "Human audit Cohen's kappa (mean over criteria)": "pending: Sadaf's sheet_Sadaf.csv not yet filled",
+    "Human audit percent agreement (mean over criteria)": "pending: Sadaf's sheet_Sadaf.csv not yet filled",
+    "Human audit rated outputs": "30 by Poushali"
+  }
+}

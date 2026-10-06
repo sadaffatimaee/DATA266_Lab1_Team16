@@ -60,14 +60,15 @@ Inference images/sec photo->monet,255.90501758201455
 Inference images/sec monet->photo,246.62980358659436
 Inference image size,256
 Submission images,7038
-Human audit style mean,to fill: run audit.py
-Human audit content mean,to fill: run audit.py
-Human audit artifacts mean,to fill: run audit.py
-Human audit Cohen's kappa (mean over criteria),to fill: run audit.py
-Human audit percent agreement (mean over criteria),to fill: run audit.py
+Human audit style mean,4.267
+Human audit content mean,3.933
+Human audit artifacts mean,3.667
+Human audit Cohen's kappa (mean over criteria),pending: Sadaf's sheet_Sadaf.csv not yet filled
+Human audit percent agreement (mean over criteria),pending: Sadaf's sheet_Sadaf.csv not yet filled
 Kaggle public score,48.85532
 Kaggle private score,to fill
 Kaggle leaderboard rank,1
 Submission FID,97.29096146960956
 Submission MiFID,0.41968183532712106
 Submission score source,"official_scores.json from kaggle_eval.py, course definitions with the course real_stats.npz"
+Human audit rated outputs,30 by Poushali
