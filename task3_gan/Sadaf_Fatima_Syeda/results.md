@@ -62,15 +62,22 @@ The Monet versions keep the scene and use Monet's soft colours. The main problem
 
 ## Human audit
 
-I rated 30 blinded Photo to Monet samples from the holdout photos on a 1 to 5 scale (5 is best).
+Both team members rated the same 30 blinded Photo to Monet samples from the holdout photos, each on their own, on a 1 to 5 scale (5 is best).
 
-| | My mean score |
-| --- | --- |
-| Style (looks like Monet) | 3.4 |
-| Content (scene kept) | 3.1 |
-| Artifacts (5 = clean) | 2.8 |
+| | Sadaf | Poushali | Mean of both |
+| --- | --- | --- | --- |
+| Style (looks like Monet) | 3.40 | 3.37 | 3.38 |
+| Content (scene kept) | 3.10 | 3.20 | 3.15 |
+| Artifacts (5 = clean) | 2.80 | 3.00 | 2.90 |
 
-- The style comes through in most images: 12 of 30 got a style score of 4 or 5.
-- Artifacts are the weakest part: 13 of 30 got 2 or lower, mostly from the repeated sky pattern and white smears described in failure_analysis.md.
-- Best samples: 03, 09 and 30. Worst: 08, 26 and 15.
+Agreement between the two raters:
 
+| | Style | Content | Artifacts |
+| --- | --- | --- | --- |
+| Cohen's kappa | 0.16 | 0.11 | -0.12 |
+| Ratings within 1 point | 90% | 97% | 73% |
+
+- Both raters agree the style comes through but artifacts are the weakest part, which matches the repeated sky pattern and white smears in failure_analysis.md.
+- Kappa is low, which is common with a 1 to 5 scale and only 30 samples. The two raters were within 1 point of each other most of the time, so the disagreement is mostly about exact scores, not about which images are good or bad.
+- We disagreed most on artifacts, since judging how bad a defect is depends on the person.
+- For comparison, the same two raters gave Poushali's model higher scores (style 4.17, content 3.78, artifacts 3.65), which matches its better Kaggle score.
