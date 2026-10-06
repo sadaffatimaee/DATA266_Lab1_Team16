@@ -45,10 +45,21 @@ stability,cycle_last20pct,0.17068847650547084
 stability,gnorm_G_max,inf (fp16 overflow steps skipped by GradScaler; losses stayed finite)
 stability,gnorm_D_max,inf (fp16 overflow steps skipped by GradScaler; losses stayed finite)
 stability,non-finite (NaN/Inf) steps,0
-human audit,style mean (Sadaf),3.4
-human audit,content mean (Sadaf),3.1
-human audit,artifacts mean (Sadaf),2.8
-
+human audit,style mean (Sadaf),3.40
+human audit,content mean (Sadaf),3.10
+human audit,artifacts mean (Sadaf),2.80
+human audit,style mean (Poushali),3.37
+human audit,content mean (Poushali),3.20
+human audit,artifacts mean (Poushali),3.00
+human audit,style mean (both raters),3.38
+human audit,content mean (both raters),3.15
+human audit,artifacts mean (both raters),2.90
+human audit,Cohen's kappa style,0.158
+human audit,Cohen's kappa content,0.107
+human audit,Cohen's kappa artifacts,-0.121
+human audit,linear-weighted kappa style / content / artifacts,0.258 / 0.226 / -0.081
+human audit,ratings within 1 point style / content / artifacts,0.90 / 0.97 / 0.73
+human audit,rated samples,30 by each of 2 raters
 efficiency,parameters G_AB,30604035
 efficiency,parameters G_BA,30604035
 efficiency,parameters D_A,662593
