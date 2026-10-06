@@ -42,6 +42,75 @@ def group_csv(path):
     return {r["metric"]: r["value"] for r in rows}
 
 
+def audit_summary():
+    import numpy as np
+    try:
+        from sklearn.metrics import cohen_kappa_score
+    except Exception:
+        cohen_kappa_score = None
+    out = {}
+
+    def finish(name, r1, r2, r1_name, r2_name):
+        crits = ["style", "content", "artifacts"]
+        info = {"n": 0, "means": {}, "kappa": {}, "agree": {}, "raters": [r1_name, r2_name], "single": None}
+        if r1 and r2:
+            common = sorted(set(r1) & set(r2))
+            info["n"] = len(common)
+            for c in crits:
+                a = [r1[k][c] for k in common]
+                b = [r2[k][c] for k in common]
+                info["means"][c] = float(np.mean(a + b))
+                if cohen_kappa_score and common:
+                    info["kappa"][c] = float(cohen_kappa_score(a, b))
+                    info["agree"][c] = float(np.mean(np.array(a) == np.array(b)))
+        elif r1 or r2:
+            r, who = (r1, r1_name) if r1 else (r2, r2_name)
+            info["single"] = who
+            info["n"] = len(r)
+            for c in crits:
+                info["means"][c] = float(np.mean([r[k][c] for k in r]))
+        out[name] = info
+
+    def read_simple(path):
+        if not path.exists():
+            return {}
+        rows = {}
+        with open(path, encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                vals = {c: row.get(c, "").strip() for c in ("style", "content", "artifacts")}
+                if all(vals.values()):
+                    rows[row["sample"]] = {c: int(float(v)) for c, v in vals.items()}
+        return rows
+
+    def read_blind(path):
+        if not path.exists():
+            return {}
+        rows = {}
+        with open(path, encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                vals = {c: row.get(f"{c}_1to5", "").strip() for c in ("style", "content", "artifacts")}
+                if all(vals.values()):
+                    rows[row["blind_id"]] = {c: int(float(v)) for c, v in vals.items()}
+        return rows
+
+    sa = S3 / "outputs" / "audit"
+    finish("Sadaf", read_simple(sa / "sheet_rater1_Sadaf.csv"), read_simple(sa / "sheet_rater2_Poushali.csv"), "Sadaf", "Poushali")
+    pa = P3 / "outputs" / "full" / "audit"
+    finish("Poushali", read_blind(pa / "sheet_Poushali.csv"), read_blind(pa / "sheet_Sadaf.csv"), "Poushali", "Sadaf")
+    return out
+
+
+def audit_cell(info, fallback):
+    if info["n"] == 0:
+        return fallback
+    m = info["means"]
+    base = f"style {m['style']:.2f}, content {m['content']:.2f}, artifacts {m['artifacts']:.2f} (1 to 5, n = {info['n']})"
+    if info["kappa"]:
+        k = info["kappa"]
+        return base + f"; Cohen's kappa style {k['style']:.2f}, content {k['content']:.2f}, artifacts {k['artifacts']:.2f}; both raters"
+    return base + f"; one rater so far ({info['single']})"
+
+
 def fmt(v, nd=4):
     try:
         x = float(v)
@@ -137,7 +206,7 @@ def build():
     d = r.doc
     d.add_heading("DATA 266 Lab 1 Report, Team 16", 0)
     r.p("LLM pretraining from scratch, Yelp polarity sentiment classification, CycleGAN style transfer")
-    r.p("Poushali Purkayastha and Sadaf Fatima Syeda. Fall 2026. Report date 2026-09-28.")
+    r.p("Poushali Purkayastha and Sadaf Fatima Syeda. Fall 2026. Report date 2026-10-06.")
     r.p(f"Repository: {REPO_URL}")
     r.p("Kaggle team: PairProgramming_Team_16, competition data-266-fall-2026-gan-image-style-transfer.")
 
@@ -358,6 +427,7 @@ def build():
     ko = json.loads((P3 / "outputs" / "full" / "kaggle" / "official_scores.json").read_text(encoding="utf-8"))
     kr = json.loads((P3 / "outputs" / "full" / "kaggle" / "kaggle_results.json").read_text(encoding="utf-8"))
     skr = json.loads((S3 / "outputs" / "kaggle_results.json").read_text(encoding="utf-8"))
+    audit = audit_summary()
     r.h("5. Task 3: CycleGAN Monet and photo style transfer", 1)
     r.h("5.1 Comparison table", 2)
     r.p("Directions are named by content: photo to Monet is the Kaggle direction. In Sadaf's files domain A is Monet, so her 'B2A' values are photo to Monet; in Poushali's files domain A is photo.")
@@ -389,7 +459,8 @@ def build():
         ["Gradient norms, NaN count", f'G mean {fmt(p3["Gradient norm G mean"], 1)} max {fmt(p3["Gradient norm G max"], 1)}; D mean {fmt(p3["Gradient norm D mean"], 1)} max {fmt(p3["Gradient norm D max"], 1)}; NaN {p3["NaN or Inf losses"]}', f'G max {s3["gnorm_G_max"]}, D max {s3["gnorm_D_max"]} (fp16 overflow readings); non-finite steps {s3["non-finite (NaN/Inf) steps"]}'],
         ["Competition FID / MiFID / score (submission.csv)", f'{fmt(ko["FID"], 2)} / {fmt(ko["MiFID"], 4)} / {fmt(ko["score"], 3)}, all 7,038 generated images against the competition real_stats.npz', f'{fmt(s3["submission FID (mean of both directions)"], 2)} / {fmt(s3["submission MiFID (mean of both directions)"], 4)} / {fmt(s3["leaderboard score estimate (FID + MiFID) / 2"], 3)}, mean of both directions on 300 images'],
         ["Kaggle public score, date", f'{kr["public_score"]}, 2026-09-28 (rank {kr["rank"]} that day)', f'{skr["public_score"]}, {skr["submitted_on"]}'],
-        ["Human audit", "pending: blinded 30-photo set built with src/audit.py, both raters to score style, content, artifacts", "pending: blinded set in outputs/audit with sheets for both raters"],
+        ["Longer-run check", "not run; the 24-epoch run is the only full run", "80,000 steps on an RTX 4090 scored 68.30 against 66.90, so the 20,000-step run was kept"],
+        ["Human audit, photo to Monet, 30 blinded samples", audit_cell(audit["Poushali"], "pending: blinded set built with src/audit.py; sheets not yet in the repo"), audit_cell(audit["Sadaf"], "pending")],
         ["Evidence", "task3_gan/Poushali_Purkayastha/outputs/full: loss_curves.png, lr_schedule.png, samples/, pred_A2B_preview, pred_B2A_preview, kaggle/; checkpoints/full/generators.pt; raw log and manifest Poushali_Purkayastha_task3_gan_full_20260928_180436", "task3_gan/Sadaf_Fatima_Syeda/outputs: loss_curves.png, final_grid.png, samples/, pred_A2B, pred_B2A; checkpoints/G_AB_monet2photo_fp16.pt, G_BA_photo2monet_fp16.pt; raw log and manifest task3_sadaf_20260927_181844"],
     ]
     r.table(["", "Poushali Purkayastha", "Sadaf Fatima Syeda"], rows, font=8, widths=[1.7, 2.55, 2.55])
@@ -402,7 +473,7 @@ def build():
     r.p(
         f"Both members submitted under PairProgramming_Team_16 in the required format, a submission.csv with ID, FID, and MiFID. Poushali's submission scored {kr['public_score']} and Sadaf's {skr['public_score']}; lower is better, and the score is the average of FID and MiFID as defined on the competition's Overview page. "
         "Poushali's numbers were computed by src/kaggle_eval.py on all 7,038 generated images against the competition's real_stats.npz, whose stored features match ours with cosine 0.9999, so they follow the course definitions exactly. "
-        "On 2026-09-28 the team's best submission ranked first on the public leaderboard. The private score and the final rank will be recorded in each member's kaggle_results.json and metrics report when the competition closes. Every submitted image is the unedited output of the member's own generator; the full image sets are archived on Google Drive."
+        "On 2026-09-28 the team's best submission ranked first on the public leaderboard. The competition closes on 2026-10-06; the private score and the final rank are recorded in each member's kaggle_results.json and metrics report once Kaggle publishes them. Every submitted image is the unedited output of the member's own generator; the full image sets are archived on Google Drive."
     )
 
     r.h("5.3 Joint analysis", 2)
@@ -413,7 +484,8 @@ def build():
     )
     r.p(
         "Weaknesses. Poushali's model shows a checkerboard texture in its 256 px outputs, a consequence of transposed-convolution upsampling in a generator trained at 128 px, and it translates Monet to photo weakly (LPIPS 0.24, coverage 0.15), which the identity loss and the 270-image Monet domain explain. "
-        "Sadaf's model changes its inputs more (LPIPS 0.54 to 0.56 against 0.24 to 0.36) at the cost of realism as measured by FID, and without an identity term its untrained identity L1 is high (0.33 to 0.43), meaning the generators recolour images that already belong to the target domain. Her discriminator losses stayed near 0.5 throughout, the balanced regime of BCE training, while Poushali's Monet discriminator pulled ahead during learning-rate decay."
+        "Sadaf's model changes its inputs more (LPIPS 0.54 to 0.56 against 0.24 to 0.36) at the cost of realism as measured by FID, and without an identity term its untrained identity L1 is high (0.33 to 0.43), meaning the generators recolour images that already belong to the target domain. Her discriminator losses stayed near 0.5 throughout, the balanced regime of BCE training, while Poushali's Monet discriminator pulled ahead during learning-rate decay. "
+        "Her 80,000-step rerun is a useful negative result: four times longer training made the score worse (68.30 against 66.90), the discriminator loss fell to about 0.3, and the outputs turned grainy, so for this data size the discriminator, not the step count, is the limiting factor."
     )
     r.p(
         "Limitations. FID against only 300 real Monets is noisy and upward-biased for every team, so absolute values should not be compared with published numbers; KID and the manifold metrics are reported for that reason. The two members' competition scores are not computed on identical image sets (all 7,038 photos against a 300-image holdout, and one direction against the mean of both), so the leaderboard, which scores the same way for everyone, is the fair comparison. The human audit had not been scored when this report was written, so image quality is judged here only through Inception features and the sample grids."
@@ -432,13 +504,44 @@ def build():
     r.p("Training stability: no NaN or Inf loss in 7,200 steps, mixed precision on throughout, nine gradient-norm spikes above 100 in the first three epochs clipped at 10, and a Monet discriminator that gained the upper hand during decay (D_B loss 0.46 to 0.075 while G_AB adversarial loss rose 0.47 to 0.66).")
     r.picture(P3 / "outputs" / "full" / "pred_A2B_preview" / "000ded5c41.jpg", 2.4, "Poushali, case 1: checkerboard texture in a 256 px photo-to-Monet translation.")
     r.picture(P3 / "outputs" / "full" / "pred_B2A_preview" / "000c1e3bff.jpg", 2.4, "Poushali, case 3: a Monet-to-photo translation that remains a painting.")
-    r.p("Sadaf Fatima Syeda: her Task 3 failure analysis is to be added to task3_gan/Sadaf_Fatima_Syeda/failure_analysis.md and to this section before the final push. Her sample grid (outputs/final_grid.png) and loss curves are included above, and her metrics record no non-finite steps and discriminator losses of about 0.5 in the last 20% of training.")
+    r.p("Sadaf Fatima Syeda, from task3_gan/Sadaf_Fatima_Syeda/failure_analysis.md. Rows and columns refer to outputs/final_grid.png (row 2 photo to Monet, row 4 Monet to photo).")
+    r.table(["Case", "Where to look", "Failure type", "Observation and fix"], [
+        ["1", "final grid row 2, columns 2, 4, 5, 6", "repeated stamp texture", "A small flower-like pattern repeats across flat sky areas in unrelated images; the 2-layer PatchGAN only sees 34x34 patches and cannot detect the repetition, which matches the low photo-to-Monet precision of 0.27. Fix: identity loss and upsample-and-convolution in the decoder."],
+        ["2", "final grid row 4, columns 3, 4", "dark, blurry photos", "Monet-to-photo outputs lose detail and turn dark; the model must invent detail from only 300 paintings, which matches FID 143 and recall 0.26 in that direction. Fix: more Monet-side augmentation and least-squares loss."],
+        ["3", "final grid row 4 column 2, row 2 column 3", "white smears and ghost shapes", "Bright edges pass straight through the U-Net skip connections while the colours change, leaving white outlines. Fix: a ResNet generator without long skips."],
+        ["4", "outputs/long_run_80k", "longer training made it worse", "An 80,000-step run on an RTX 4090 scored 68.30 against 66.90 (FID 127.0 and 145.4 against 123.3 and 143.5); the discriminator loss fell to about 0.3 and outputs became grainy. Fix: select the checkpoint by FID and slow the discriminator."],
+        ["5", "final grid row 2, columns 1, 7", "weak style in busy scenes", "Colours move to Monet's palette but busy scenes look like a filtered photo; cycle weight 8 keeps a lot of detail (content cosine 0.66). Fix: try a lower cycle weight."],
+    ], font=8, widths=[0.4, 1.7, 1.3, 3.5])
+    r.p("Training stability: no NaN or Inf losses in 20,000 steps; discriminator losses stayed near 0.5 in the last 20% of training; the recorded maximum gradient norms read inf because fp16 overflow steps were skipped by the gradient scaler while the losses stayed finite.")
 
     r.h("5.5 Human audit", 2)
     r.p(
-        "Protocol: 30 fixed holdout photos are translated by each member's generator, the outputs are shuffled and renamed so raters cannot tell which model produced them, and both members score every output from 1 to 5 on style (how Monet-like), content (how well the scene is kept), and artifacts (5 means none). Agreement is reported as Cohen's kappa, linear-weighted kappa, and percent agreement per criterion. "
-        "Both members have built their blinded sets (task3_gan/Poushali_Purkayastha/src/audit.py and task3_gan/Sadaf_Fatima_Syeda/outputs/audit). The ratings and agreement values will be added to each member's metrics report and to this section when both sheets are filled."
+        "Protocol: 30 fixed holdout photos are translated by a member's generator, the outputs are shuffled and renamed so raters cannot tell which image is which, and both members score every output from 1 to 5 on style (how Monet-like), content (how well the scene is kept), and artifacts (5 means none). Agreement is reported as Cohen's kappa and percent agreement per criterion. "
+        "Each member has a blinded set of 30 photo-to-Monet samples: Sadaf's in task3_gan/Sadaf_Fatima_Syeda/outputs/audit (sheet_rater1_Sadaf.csv, sheet_rater2_Poushali.csv) and Poushali's built with task3_gan/Poushali_Purkayastha/src/audit.py from her generators.pt on the 30 photos her seed selects (sheet_Poushali.csv, sheet_Sadaf.csv)."
     )
+    sa_info, pa_info = audit["Sadaf"], audit["Poushali"]
+    if sa_info["n"]:
+        m = sa_info["means"]
+        txt = f"Sadaf's model: mean style {m['style']:.2f}, content {m['content']:.2f}, artifacts {m['artifacts']:.2f} over {sa_info['n']} samples"
+        if sa_info["kappa"]:
+            k, g = sa_info["kappa"], sa_info["agree"]
+            txt += f", rated by both members; Cohen's kappa style {k['style']:.2f}, content {k['content']:.2f}, artifacts {k['artifacts']:.2f}; exact agreement {100 * g['style']:.0f}%, {100 * g['content']:.0f}%, {100 * g['artifacts']:.0f}%."
+        else:
+            txt += f", rated so far by {sa_info['single']} only. In her own rating 12 of 30 samples scored 4 or 5 on style and 13 of 30 scored 2 or lower on artifacts, which agrees with the texture failures in section 5.4."
+        r.p(txt)
+    else:
+        r.p("Sadaf's model: ratings pending.")
+    if pa_info["n"]:
+        m = pa_info["means"]
+        txt = f"Poushali's model: mean style {m['style']:.2f}, content {m['content']:.2f}, artifacts {m['artifacts']:.2f} over {pa_info['n']} samples"
+        if pa_info["kappa"]:
+            k, g = pa_info["kappa"], pa_info["agree"]
+            txt += f", rated by both members; Cohen's kappa style {k['style']:.2f}, content {k['content']:.2f}, artifacts {k['artifacts']:.2f}; exact agreement {100 * g['style']:.0f}%, {100 * g['content']:.0f}%, {100 * g['artifacts']:.0f}%."
+        else:
+            txt += f", rated so far by {pa_info['single']} only."
+        r.p(txt)
+    else:
+        r.p("Poushali's model: Sadaf rated the 30 blinded samples at style 4.07, content 3.63, artifacts 3.63 on the same scale, higher than her own model on all three criteria and in line with its better competition score; her sheet and the blinded set are to be pushed to task3_gan/Poushali_Purkayastha/outputs/full/audit, after which Poushali's ratings and Cohen's kappa are added here.")
 
     r.h("6. References", 1)
     r.bullets([

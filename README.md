@@ -2,7 +2,7 @@
 
 LLM pretraining from scratch, Yelp polarity sentiment classification, and CycleGAN style transfer.
 
-Members: Poushali Purkayastha, Sadaf Fatima Syeda. .
+Members: Poushali Purkayastha, Sadaf Fatima Syeda. Each member builds, trains, and documents their own model for every task under their own named folder.
 
 ## Layout
 
