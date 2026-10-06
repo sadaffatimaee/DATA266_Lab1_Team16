@@ -124,7 +124,15 @@ submission.csv holds ID, FID, and MiFID as the class competition requires, with 
 
 ## Human audit
 
-To fill from outputs/full/audit/audit_results.json once both raters have scored the blinded set: mean style, content, and artifact scores per model and the inter-rater agreement. The set is built with src/audit.py from the 30 fixed holdout photos, translated by both members' generators.
+Both members rated the 30 blinded photo-to-Monet samples of my model (outputs/full/audit, built with src/audit.py from 30 fixed holdout photos chosen by seed 20; raters saw only the shuffled blind ids next to the input photos). Scores are 1 to 5; results in outputs/full/audit/audit_results.json.
+
+| Criterion | Poushali mean | Sadaf mean | Overall mean | Cohen's kappa | Linear-weighted kappa | Exact agreement | Within 1 point |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Style | 4.27 | 4.07 | 4.17 | 0.27 | 0.27 | 53% | 90% |
+| Content | 3.93 | 3.63 | 3.78 | 0.17 | 0.31 | 43% | 93% |
+| Artifacts | 3.67 | 3.63 | 3.65 | 0.20 | 0.34 | 43% | 87% |
+
+Reading the numbers: both raters put the style around 4 and content and artifacts between 3.5 and 4, so the Monet look comes through on most samples while texture defects cost about a point. Exact agreement is below half and the unweighted kappas are low, which is typical for a five-point scale with two raters; within one point the raters agree on most samples, and the weighted kappas are higher. For comparison, on Sadaf's blinded set the same two raters gave her model style 3.4 and 3.4, content 3.1 and 3.2, artifacts 2.8 and 3.0, so both raters independently placed my model higher on all three criteria, consistent with its lower FID and competition score.
 
 ## Shortcomings and future work
 
