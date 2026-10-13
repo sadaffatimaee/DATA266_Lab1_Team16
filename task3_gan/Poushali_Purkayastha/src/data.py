@@ -32,15 +32,19 @@ def cache_folder(folder, size, cache_path, max_images=None):
     key = hashlib.md5(("|".join(names) + f"|{size}").encode("utf-8")).hexdigest()
     cache_path = Path(cache_path)
     meta_path = cache_path.with_suffix(".json")
-    if cache_path.exists() and meta_path.exists():
+    key_path = cache_path.with_suffix(".npy.key")
+    if cache_path.exists() and meta_path.exists() and key_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
-        if meta.get("key") == key:
-            return np.load(cache_path), paths
+        if meta.get("key") == key and key_path.read_text(encoding="utf-8").strip() == key:
+            arr = np.load(cache_path)
+            if arr.shape[0] == len(paths):
+                return arr, paths
     arr = np.zeros((len(paths), size, size, 3), dtype=np.uint8)
     for i, p in enumerate(paths):
         arr[i] = load_image(p, size)
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     np.save(cache_path, arr)
+    key_path.write_text(key, encoding="utf-8")
     meta = {"key": key, "folder": str(folder), "count": len(names), "size": size, "files": names}
     meta_path.write_text(json.dumps(meta, indent=1), encoding="utf-8")
     return arr, paths
