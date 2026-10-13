@@ -61,12 +61,17 @@ def main():
     ap.add_argument("--out", default=str(MEMBER_DIR / "outputs" / "full" / "kaggle" / "official_scores.json"))
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--batch", type=int, default=50)
+    ap.add_argument("--max-generated", type=int, default=None)
     args = ap.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     gen_paths = list_images(args.generated)
     if not gen_paths:
         raise SystemExit(f"no images in {args.generated}")
+    if args.max_generated and len(gen_paths) > args.max_generated:
+        chosen = np.random.default_rng(args.seed).choice(len(gen_paths), args.max_generated, replace=False)
+        gen_paths = [gen_paths[i] for i in sorted(chosen)]
+        print(f"using a random subset of {len(gen_paths)} generated images (seed {args.seed}); drop --max-generated for the full set")
     problems = check_images(gen_paths)
     if problems:
         print("images that break the 256x256 RGB JPG rule:", *problems[:10], sep="\n  ")
